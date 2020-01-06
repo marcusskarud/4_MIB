@@ -21,7 +21,7 @@ import java.util.Random;
 public class NyregistreraAlien extends javax.swing.JFrame {
 
     private static InfDB db;
-    private static Random randGenerator;
+    private static Random randGenerator = new Random();
     /**
      * Creates new form BytLosenord
      */
@@ -185,14 +185,14 @@ public class NyregistreraAlien extends javax.swing.JFrame {
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -286,25 +286,40 @@ public class NyregistreraAlien extends javax.swing.JFrame {
 // GÖRGÖRGÖRGÖRGÖRGÖRGÖRGÖR!!!
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if (Validering.textNotEmpty(jTextField1) && Validering.textNotEmpty(jTextField2)){                
+            int nyAlienID = 0;
+            String namn = "";
+            int plats = 0;
+            String platsnamn = "";
+            String registreringsdatum = "";
+            String lösenord = "";
+            String telefon = "";
+            String ansvarig_agent = "";
+            String rasSträng = ""; 
+            
+            
+            
             if (jComboBox1.getSelectedItem().toString().equals("Worm")
                     || jComboBox1.getSelectedItem().toString().equals("Squid") && Validering.textNotEmpty(jTextField3)
                     || jComboBox1.getSelectedItem().toString().equals("Boglodite") && Validering.textNotEmpty(jTextField3)){
                 
                 try{
-                    int nyAlienID = Integer.parseInt(db.getAutoIncrement("ALIEN", "ALIEN_ID"));
+                    nyAlienID = Integer.parseInt(db.getAutoIncrement("ALIEN", "ALIEN_ID"));
                     
                     DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
                     Date nyttDatum = new Date();
-                    String registreringsdatum = dateFormat.format(nyttDatum);
+                    registreringsdatum = dateFormat.format(nyttDatum);
                     
-                    String lösenord = "123456";
-                    
-                    String namn = jTextField1.getText().toString();
-                    String telefon = jTextField2.getText().toString();
+                    lösenord = "" + randGenerator.nextInt(10) + randGenerator.nextInt(10) + randGenerator.nextInt(10) +randGenerator.nextInt(10) +randGenerator.nextInt(10) + randGenerator.nextInt(10);
+                    System.out.println(lösenord);
+                    namn = jTextField1.getText();
+                    telefon = jTextField2.getText();
 
-                    //String plats = randGenerator.nextInt();
+                    plats = randGenerator.nextInt(Integer.parseInt(db.fetchSingle("SELECT COUNT(PLATS_ID) FROM PLATS"))) + 1;
+                    platsnamn = db.fetchSingle("SELECT BENAMNING FROM PLATS WHERE PLATS_ID = " + plats);
                     
-                    String rasSträng = "";
+                    ansvarig_agent = db.fetchSingle("");
+                    
+                    rasSträng = "";
                     if (jComboBox1.getSelectedItem().toString().equals("Worm")){
                         rasSträng = "INSERT INTO WORM VALUES (\'" + nyAlienID + "\')";
                     }
@@ -323,6 +338,9 @@ public class NyregistreraAlien extends javax.swing.JFrame {
                 catch(InfException undantag){
             
                 }
+                
+                JOptionPane.showMessageDialog(null, "Ny alien registrerad!\nNamn: " + namn + "\nAlienID: " + nyAlienID + "\nLösenord: " + lösenord + "\nTelefon: " + telefon + "\nRegistreringsdatum: " + registreringsdatum + "\nTilldelad plats: " + platsnamn);
+
             }    
             
             
@@ -332,7 +350,6 @@ public class NyregistreraAlien extends javax.swing.JFrame {
             
             
             
-            JOptionPane.showMessageDialog(null, "");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -341,15 +358,7 @@ public class NyregistreraAlien extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel header;
-    private javax.swing.JPanel header1;
-    private javax.swing.JPanel header2;
-    private javax.swing.JPanel header3;
     private javax.swing.JPanel header5;
-    private javax.swing.JLabel headerLbl;
-    private javax.swing.JLabel headerLbl1;
-    private javax.swing.JLabel headerLbl2;
-    private javax.swing.JLabel headerLbl3;
     private javax.swing.JLabel headerLbl5;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
@@ -366,20 +375,8 @@ public class NyregistreraAlien extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JLabel mibpLbl;
-    private javax.swing.JLabel mibpLbl1;
-    private javax.swing.JLabel mibpLbl2;
-    private javax.swing.JLabel mibpLbl3;
     private javax.swing.JLabel mibpLbl5;
-    private javax.swing.JLabel sidLbl;
-    private javax.swing.JLabel sidLbl1;
-    private javax.swing.JLabel sidLbl2;
-    private javax.swing.JLabel sidLbl3;
     private javax.swing.JLabel sidLbl5;
-    private javax.swing.JSeparator skiljestreck;
-    private javax.swing.JSeparator skiljestreck1;
-    private javax.swing.JSeparator skiljestreck2;
-    private javax.swing.JSeparator skiljestreck3;
     private javax.swing.JSeparator skiljestreck5;
     // End of variables declaration//GEN-END:variables
 }
