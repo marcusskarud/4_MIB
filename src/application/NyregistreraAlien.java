@@ -299,6 +299,7 @@ public class NyregistreraAlien extends javax.swing.JFrame {
                 String lösenord = "";
                 String telefon = "";
                 String ansvarig_agent = "";
+                int ansvarig_agentID = 0;
                 String rasFraga = "";
                 String rasInfo = "";
                 
@@ -318,28 +319,23 @@ public class NyregistreraAlien extends javax.swing.JFrame {
                     platsnamn = db.fetchSingle("SELECT BENAMNING FROM PLATS WHERE PLATS_ID = " + plats);
                     
                     ansvarig_agent = db.fetchSingle("SELECT NAMN FROM AGENT WHERE AGENT_ID = (SELECT FIRST 1 ANSVARIG_AGENT FROM ALIEN JOIN PLATS ON ALIEN.PLATS = PLATS_ID WHERE ANSVARIG_AGENT IN (SELECT AGENT_ID FROM AGENT JOIN PLATS ON AGENT.OMRADE=PLATS.FINNS_I WHERE PLATS_ID =" + plats + ") GROUP BY ANSVARIG_AGENT ORDER BY COUNT(ANSVARIG_AGENT) ASC)");
-                    
-                     
-                    
+                    ansvarig_agentID = Integer.parseInt(db.fetchSingle("SELECT AGENT_ID FROM AGENT WHERE NAMN = \'" + ansvarig_agent + "\'" ));
                     
                     
                     if (jComboBox1.getSelectedItem().toString().equals("Worm")){
-                        rasFraga = "INSERT INTO WORM VALUES (\'" + nyAlienID + "\')";
+                        rasFraga = "INSERT INTO WORM VALUES (" + nyAlienID + ")";
                         rasInfo = "\nRas: Worm";
                     }
                     else if (jComboBox1.getSelectedItem().toString().equals("Squid")){
-                        rasFraga = "INSERT INTO SQUID VALUES (\'" + nyAlienID + "\', \'" + jTextField3.getText().toString() + "\')";
+                        rasFraga = "INSERT INTO SQUID VALUES (" + nyAlienID + ", " + Integer.parseInt(jTextField3.getText()) + ")";
                         rasInfo = "\nRas: Squid\nArmar: " + jTextField3.getText().toString();
                     }
                     else if (jComboBox1.getSelectedItem().toString().equals("Boglodite")){
-                        rasFraga = "INSERT INTO BOGLODITE VALUES (\'" + nyAlienID + "\', \'" + jTextField3.getText().toString() + "\')";
+                        rasFraga = "INSERT INTO BOGLODITE VALUES (" + nyAlienID + ", " + Integer.parseInt(jTextField3.getText()) + ")";
                         rasInfo = "\nRas: Boglodite\nBoogies: " + jTextField3.getText().toString();
                     }
-                    
-                    
-                    
-                    
-                    
+                    db.insert("INSERT INTO ALIEN VALUES("+ nyAlienID + ", \'" + registreringsdatum + "\' , \'" + lösenord + "\', \'" + namn +"\', \'" + telefon + "\', " + plats + ", " + ansvarig_agentID + ")");
+                    db.insert(rasFraga);
                 }
                 catch(InfException undantag){
             
