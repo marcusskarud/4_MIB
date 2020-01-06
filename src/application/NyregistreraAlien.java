@@ -286,21 +286,21 @@ public class NyregistreraAlien extends javax.swing.JFrame {
 // GÖRGÖRGÖRGÖRGÖRGÖRGÖRGÖR!!!
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if (Validering.textNotEmpty(jTextField1) && Validering.textNotEmpty(jTextField2)){                
-            int nyAlienID = 0;
-            String namn = "";
-            int plats = 0;
-            String platsnamn = "";
-            String registreringsdatum = "";
-            String lösenord = "";
-            String telefon = "";
-            String ansvarig_agent = "";
-            String rasSträng = ""; 
-            
-            
             
             if (jComboBox1.getSelectedItem().toString().equals("Worm")
                     || jComboBox1.getSelectedItem().toString().equals("Squid") && Validering.textNotEmpty(jTextField3)
                     || jComboBox1.getSelectedItem().toString().equals("Boglodite") && Validering.textNotEmpty(jTextField3)){
+                
+                int nyAlienID = 0;
+                String namn = "";
+                int plats = 0;
+                String platsnamn = "";
+                String registreringsdatum = "";
+                String lösenord = "";
+                String telefon = "";
+                String ansvarig_agent = "";
+                String rasFraga = "";
+                String rasInfo = "";
                 
                 try{
                     nyAlienID = Integer.parseInt(db.getAutoIncrement("ALIEN", "ALIEN_ID"));
@@ -317,17 +317,23 @@ public class NyregistreraAlien extends javax.swing.JFrame {
                     plats = randGenerator.nextInt(Integer.parseInt(db.fetchSingle("SELECT COUNT(PLATS_ID) FROM PLATS"))) + 1;
                     platsnamn = db.fetchSingle("SELECT BENAMNING FROM PLATS WHERE PLATS_ID = " + plats);
                     
-                    ansvarig_agent = db.fetchSingle("");
+                    ansvarig_agent = db.fetchSingle("SELECT NAMN FROM AGENT WHERE AGENT_ID = (SELECT FIRST 1 ANSVARIG_AGENT FROM ALIEN JOIN PLATS ON ALIEN.PLATS = PLATS_ID WHERE ANSVARIG_AGENT IN (SELECT AGENT_ID FROM AGENT JOIN PLATS ON AGENT.OMRADE=PLATS.FINNS_I WHERE PLATS_ID =" + plats + ") GROUP BY ANSVARIG_AGENT ORDER BY COUNT(ANSVARIG_AGENT) ASC)");
                     
-                    rasSträng = "";
+                     
+                    
+                    
+                    
                     if (jComboBox1.getSelectedItem().toString().equals("Worm")){
-                        rasSträng = "INSERT INTO WORM VALUES (\'" + nyAlienID + "\')";
+                        rasFraga = "INSERT INTO WORM VALUES (\'" + nyAlienID + "\')";
+                        rasInfo = "\nRas: Worm";
                     }
                     else if (jComboBox1.getSelectedItem().toString().equals("Squid")){
-                        rasSträng = "INSERT INTO SQUID VALUES (\'" + nyAlienID + "\', \'" + jTextField3.getText().toString() + "\')";            
+                        rasFraga = "INSERT INTO SQUID VALUES (\'" + nyAlienID + "\', \'" + jTextField3.getText().toString() + "\')";
+                        rasInfo = "\nRas: Squid\nArmar: " + jTextField3.getText().toString();
                     }
                     else if (jComboBox1.getSelectedItem().toString().equals("Boglodite")){
-                        rasSträng = "INSERT INTO BOGLODITE VALUES (\'" + nyAlienID + "\', \'" + jTextField3.getText().toString() + "\')";
+                        rasFraga = "INSERT INTO BOGLODITE VALUES (\'" + nyAlienID + "\', \'" + jTextField3.getText().toString() + "\')";
+                        rasInfo = "\nRas: Boglodite\nBoogies: " + jTextField3.getText().toString();
                     }
                     
                     
@@ -339,9 +345,20 @@ public class NyregistreraAlien extends javax.swing.JFrame {
             
                 }
                 
-                JOptionPane.showMessageDialog(null, "Ny alien registrerad!\nNamn: " + namn + "\nAlienID: " + nyAlienID + "\nLösenord: " + lösenord + "\nTelefon: " + telefon + "\nRegistreringsdatum: " + registreringsdatum + "\nTilldelad plats: " + platsnamn);
+                JOptionPane.showMessageDialog(null, "Ny alien registrerad!" +
+                        "\n\nNamn: " + namn + 
+                        rasInfo +
+                        "\n\nAlienID: " + nyAlienID + 
+                        "\nLösenord: " + lösenord + 
+                        "\nTelefon: " + telefon + 
+                        "\n\nRegistreringsdatum: " + registreringsdatum + 
+                        "\nTilldelad plats: " + platsnamn + 
+                        "\nAnsvarig agent: " + ansvarig_agent);
 
-            }    
+            } 
+            else{
+                JOptionPane.showMessageDialog(null, "");
+            }
             
             
             
