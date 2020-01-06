@@ -19,7 +19,7 @@ public class Start {
     public static void main(String args[]) {
 
         try {
-            db = new InfDB("/Users/MarcusSkarud/db/MIBDB.FDB");
+            db = new InfDB("/Program/db/MIBDB.FDB");
         }
         catch (InfException ettUndantag) {
             JOptionPane.showMessageDialog(null, "Något gick fel med uppkopplingen!");
