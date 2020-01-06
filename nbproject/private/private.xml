@@ -5,9 +5,12 @@
         <group>
             <file>file:/Users/MarcusSkarud/Documents/Studier,%20Örebro%20Universitet/MiB%20-%20Realisering/MiB_realisering/src/application/Start.java</file>
             <file>file:/Users/MarcusSkarud/Documents/Studier,%20Örebro%20Universitet/MiB%20-%20Realisering/MiB_realisering/src/application/Huvudfönster.java</file>
-            <file>file:/Users/MarcusSkarud/Documents/Studier,%20Örebro%20Universitet/MiB%20-%20Realisering/MiB_realisering/src/application/AlienPortal.java</file>
+            <file>file:/Users/MarcusSkarud/Documents/Studier,%20Örebro%20Universitet/MiB%20-%20Realisering/MiB_realisering/src/application/NyregistreraAlien.java</file>
             <file>file:/Users/MarcusSkarud/Documents/Studier,%20Örebro%20Universitet/MiB%20-%20Realisering/MiB_realisering/src/application/AgentPortal.java</file>
+            <file>file:/Users/MarcusSkarud/Documents/Studier,%20Örebro%20Universitet/MiB%20-%20Realisering/MiB_realisering/src/application/AlienBytLosenord.java</file>
+            <file>file:/Users/MarcusSkarud/Documents/Studier,%20Örebro%20Universitet/MiB%20-%20Realisering/MiB_realisering/src/application/Validering.java</file>
             <file>file:/Users/MarcusSkarud/Documents/Studier,%20Örebro%20Universitet/MiB%20-%20Realisering/MiB_realisering/src/application/AgentLogin.java</file>
+            <file>file:/Users/MarcusSkarud/Documents/Studier,%20Örebro%20Universitet/MiB%20-%20Realisering/MiB_realisering/src/application/AgentBytLosenord.java</file>
         </group>
     </open-files>
 </project-private>
