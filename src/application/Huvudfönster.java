@@ -111,7 +111,7 @@ public class Huvudfönster extends javax.swing.JFrame {
 
         agentBtn.setBackground(new java.awt.Color(150, 150, 150));
         agentBtn.setForeground(new java.awt.Color(0, 0, 0));
-        agentBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/agentIkon.png"))); // NOI18N
+        agentBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/agentIkon.png"))); // NOI18N
         agentBtn.setText("Agent");
         agentBtn.setIconTextGap(0);
         agentBtn.setOpaque(false);
@@ -125,7 +125,7 @@ public class Huvudfönster extends javax.swing.JFrame {
 
         alienBtn.setBackground(new java.awt.Color(150, 150, 150));
         alienBtn.setForeground(new java.awt.Color(0, 0, 0));
-        alienBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/alienIkon.png"))); // NOI18N
+        alienBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/alienIkon.png"))); // NOI18N
         alienBtn.setText("Alien");
         alienBtn.setIconTextGap(0);
         alienBtn.setOpaque(false);
@@ -139,7 +139,7 @@ public class Huvudfönster extends javax.swing.JFrame {
 
         adminBtn.setBackground(new java.awt.Color(150, 150, 150));
         adminBtn.setForeground(new java.awt.Color(0, 0, 0));
-        adminBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adminIkon.png"))); // NOI18N
+        adminBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/adminIkon.png"))); // NOI18N
         adminBtn.setText("Admin");
         adminBtn.setIconTextGap(0);
         adminBtn.setOpaque(false);
