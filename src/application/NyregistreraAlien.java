@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 import oru.inf.InfDB;
 import oru.inf.InfException;
 import java.util.Date;
-import java.util.Calendar;
+import java.util.ArrayList;
 import java.text.SimpleDateFormat;
 import java.text.DateFormat;
 import java.util.Random;
@@ -283,7 +283,6 @@ public class NyregistreraAlien extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_jComboBox1ActionPerformed
-// GÖRGÖRGÖRGÖRGÖRGÖRGÖRGÖR!!!
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if (Validering.textNotEmpty(jTextField1) && Validering.textNotEmpty(jTextField2)){                
             
@@ -302,6 +301,7 @@ public class NyregistreraAlien extends javax.swing.JFrame {
                 int ansvarig_agentID = 0;
                 String rasFraga = "";
                 String rasInfo = "";
+                String omrade = "";
                 
                 try{
                     nyAlienID = Integer.parseInt(db.getAutoIncrement("ALIEN", "ALIEN_ID"));
@@ -311,16 +311,21 @@ public class NyregistreraAlien extends javax.swing.JFrame {
                     registreringsdatum = dateFormat.format(nyttDatum);
                     
                     lösenord = "" + randGenerator.nextInt(10) + randGenerator.nextInt(10) + randGenerator.nextInt(10) +randGenerator.nextInt(10) +randGenerator.nextInt(10) + randGenerator.nextInt(10);
-                    System.out.println(lösenord);
                     namn = jTextField1.getText();
                     telefon = jTextField2.getText();
 
-                    plats = randGenerator.nextInt(Integer.parseInt(db.fetchSingle("SELECT COUNT(PLATS_ID) FROM PLATS"))) + 1;
+                    plats = randGenerator.nextInt(Integer.parseInt(db.fetchSingle("SELECT COUNT(PLATS_ID) FROM PLATS"))) + 1;                   
                     platsnamn = db.fetchSingle("SELECT BENAMNING FROM PLATS WHERE PLATS_ID = " + plats);
+                    omrade = db.fetchSingle("SELECT FINNS_I FROM PLATS WHERE PLATS_ID = " + plats);
                     
-                    ansvarig_agent = db.fetchSingle("SELECT NAMN FROM AGENT WHERE AGENT_ID = (SELECT FIRST 1 ANSVARIG_AGENT FROM ALIEN JOIN PLATS ON ALIEN.PLATS = PLATS_ID WHERE ANSVARIG_AGENT IN (SELECT AGENT_ID FROM AGENT JOIN PLATS ON AGENT.OMRADE=PLATS.FINNS_I WHERE PLATS_ID =" + plats + ") GROUP BY ANSVARIG_AGENT ORDER BY COUNT(ANSVARIG_AGENT) ASC)");
-                    ansvarig_agentID = Integer.parseInt(db.fetchSingle("SELECT AGENT_ID FROM AGENT WHERE NAMN = \'" + ansvarig_agent + "\'" ));
+                    System.out.println(plats);
+                    System.out.println(platsnamn);
+                    System.out.println(omrade);
                     
+                    ansvarig_agentID = Integer.parseInt(db.fetchSingle("SELECT FIRST 1 AGENT_ID, COUNT(ANSVARIG_AGENT) FROM AGENT LEFT JOIN ALIEN ON ANSVARIG_AGENT = AGENT_ID WHERE OMRADE = " + omrade + " GROUP BY AGENT_ID ORDER BY COUNT(*) ASC"));
+                    System.out.println(ansvarig_agentID);
+                    ansvarig_agent = db.fetchSingle("SELECT NAMN FROM AGENT WHERE AGENT_ID = " + ansvarig_agentID);
+                    System.out.println(ansvarig_agent);
                     
                     if (jComboBox1.getSelectedItem().toString().equals("Worm")){
                         rasFraga = "INSERT INTO WORM VALUES (" + nyAlienID + ")";
