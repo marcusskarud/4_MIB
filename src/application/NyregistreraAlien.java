@@ -111,7 +111,7 @@ public class NyregistreraAlien extends javax.swing.JFrame {
         header5Layout.setVerticalGroup(
             header5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(header5Layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
+                .addContainerGap(9, Short.MAX_VALUE)
                 .addComponent(headerLbl5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(skiljestreck5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -128,17 +128,14 @@ public class NyregistreraAlien extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(170, 170, 170));
         jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Namn:");
         jLabel1.setPreferredSize(new java.awt.Dimension(110, 16));
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Telefon:");
         jLabel2.setPreferredSize(new java.awt.Dimension(110, 16));
 
         jTextField2.setPreferredSize(new java.awt.Dimension(110, 24));
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Ras:");
         jLabel3.setPreferredSize(new java.awt.Dimension(110, 16));
 
@@ -150,7 +147,6 @@ public class NyregistreraAlien extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("---");
         jLabel4.setPreferredSize(new java.awt.Dimension(110, 16));
 

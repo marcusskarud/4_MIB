@@ -120,14 +120,14 @@ public class AdminPortal extends javax.swing.JFrame {
                                 .addGap(6, 6, 6)
                                 .addComponent(mibpLbl))
                             .addComponent(skiljestreck, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
                 .addComponent(sidLbl)
                 .addGap(39, 39, 39))
         );
         headerLayout.setVerticalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headerLayout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
+                .addContainerGap(9, Short.MAX_VALUE)
                 .addComponent(headerLbl)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(skiljestreck, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -226,7 +226,6 @@ public class AdminPortal extends javax.swing.JFrame {
 
         jTabbedPane4.setBackground(new java.awt.Color(130, 130, 130));
         jTabbedPane4.setPreferredSize(new java.awt.Dimension(260, 400));
-        jTabbedPane4.setSize(new java.awt.Dimension(260, 400));
 
         jPanel4.setBackground(new java.awt.Color(150, 150, 150));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
