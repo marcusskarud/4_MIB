@@ -9,7 +9,6 @@ import javax.swing.JOptionPane;
 import oru.inf.InfDB;
 import oru.inf.InfException;
 import java.util.Date;
-import java.util.ArrayList;
 import java.text.SimpleDateFormat;
 import java.text.DateFormat;
 import java.util.Random;
@@ -111,7 +110,7 @@ public class NyregistreraAlien extends javax.swing.JFrame {
         header5Layout.setVerticalGroup(
             header5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(header5Layout.createSequentialGroup()
-                .addContainerGap(9, Short.MAX_VALUE)
+                .addContainerGap(13, Short.MAX_VALUE)
                 .addComponent(headerLbl5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(skiljestreck5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -351,6 +350,7 @@ public class NyregistreraAlien extends javax.swing.JFrame {
                         "\n\nRegistreringsdatum: " + registreringsdatum + 
                         "\nTilldelad plats: " + platsnamn + 
                         "\nAnsvarig agent: " + ansvarig_agent);
+                NyregistreraAlien.this.dispose();
 
             } 
             else{
