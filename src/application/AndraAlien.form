@@ -22,6 +22,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
+<<<<<<< HEAD
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
         <Property name="text" type="java.lang.String" value="ACCEPTERA &#xc4;NDRINGAR"/>
@@ -31,6 +32,9 @@
       </Events>
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator3">
+=======
+    <Component class="javax.swing.JSpinner" name="jSpinner1">
+>>>>>>> ae075cb7efbbccb9e49ab4aa4b974a027986a0a0
     </Component>
   </NonVisualComponents>
   <Properties>
