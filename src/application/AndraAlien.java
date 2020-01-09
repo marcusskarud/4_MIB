@@ -639,7 +639,6 @@ public class AndraAlien extends javax.swing.JFrame {
         else{
             jLabel12.setVisible(false);
             jTextField9.setVisible(false);
-            
         }
     }//GEN-LAST:event_rasBoxenActionPerformed
     @SuppressWarnings("unchecked")    
