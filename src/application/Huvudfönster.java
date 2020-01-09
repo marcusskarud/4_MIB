@@ -41,7 +41,6 @@ public class Huvudfönster extends javax.swing.JFrame {
         infoLbl = new javax.swing.JLabel();
         agentBtn = new javax.swing.JButton();
         alienBtn = new javax.swing.JButton();
-        adminBtn = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jButton1 = new javax.swing.JButton();
 
@@ -137,20 +136,6 @@ public class Huvudfönster extends javax.swing.JFrame {
             }
         });
 
-        adminBtn.setBackground(new java.awt.Color(150, 150, 150));
-        adminBtn.setForeground(new java.awt.Color(0, 0, 0));
-        adminBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/adminIkon.png"))); // NOI18N
-        adminBtn.setText("Admin");
-        adminBtn.setIconTextGap(0);
-        adminBtn.setOpaque(false);
-        adminBtn.setPreferredSize(new java.awt.Dimension(200, 200));
-        adminBtn.setSize(new java.awt.Dimension(200, 200));
-        adminBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminBtnActionPerformed(evt);
-            }
-        });
-
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
         jSeparator1.setToolTipText("");
@@ -172,12 +157,12 @@ public class Huvudfönster extends javax.swing.JFrame {
                 .addGroup(bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(infoLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(bodyLayout.createSequentialGroup()
+                        .addGap(75, 75, 75)
                         .addComponent(agentBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(alienBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
-                        .addComponent(adminBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(välkommenLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(75, 75, 75))
+                    .addComponent(välkommenLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE))
                 .addGap(50, 50, 50))
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bodyLayout.createSequentialGroup()
@@ -196,8 +181,7 @@ public class Huvudfönster extends javax.swing.JFrame {
                 .addGap(50, 50, 50)
                 .addGroup(bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(agentBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(alienBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(adminBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(alienBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
                 .addContainerGap())
@@ -222,16 +206,12 @@ public class Huvudfönster extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void agentBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agentBtnActionPerformed
-        new AgentLogin(db).setVisible(true);
+        new Login(db, true).setVisible(true);
     }//GEN-LAST:event_agentBtnActionPerformed
 
     private void alienBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alienBtnActionPerformed
-        new AlienLogin(db).setVisible(true);
+        new Login(db, false).setVisible(true);
     }//GEN-LAST:event_alienBtnActionPerformed
-
-    private void adminBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminBtnActionPerformed
-        new AdminLogin(db).setVisible(true);
-    }//GEN-LAST:event_adminBtnActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         new Credits().setVisible(true);
@@ -243,7 +223,6 @@ public class Huvudfönster extends javax.swing.JFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton adminBtn;
     private javax.swing.JButton agentBtn;
     private javax.swing.JButton alienBtn;
     private javax.swing.JPanel body;

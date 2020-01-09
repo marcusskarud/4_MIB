@@ -426,8 +426,7 @@ public class AlienPortal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bytLosenordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bytLosenordActionPerformed
-        // TODO add your handling code here:
-        new AlienBytLosenord(db, alienID).setVisible(true);
+        new BytLosenord(db, alienID, false).setVisible(true);
     }//GEN-LAST:event_bytLosenordActionPerformed
 
 
