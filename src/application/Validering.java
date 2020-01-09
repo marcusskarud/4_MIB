@@ -57,30 +57,6 @@ public class Validering {
     
     }
     
-    // Kollar formatet på ett textfält för att se om det överensstämmer med ett datum.
-    static public boolean checkDatumFormat(JTextField datumField){
-        String[] datum = datumField.toString().split("-");
-        boolean allNumbers = true;
-        for (String datumet : datum){
-            try{
-                int testInt = Integer.parseInt(datumet);
-            }
-            catch( NumberFormatException undantag){
-                allNumbers = false;
-            }
-        }
-        if (allNumbers && datum.length == 3 && datum[0].length() == 4 && datum[1].length() == 2 && datum[2].length() == 2){
-            return true;
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Inmatningsfel! Datumformatet ska varanumeriskt, enligt detta format 'yyyy/MM/dd'.");
-            datumField.requestFocus();
-            return false;
-        }
-        
-    }
-    
-    
     // Kollar om längden på lösenordet är högst 6 tecken.
     static public boolean passwordLengthCheck(JPasswordField txt){
         if (new String(txt.getPassword()).length() <= 6){
