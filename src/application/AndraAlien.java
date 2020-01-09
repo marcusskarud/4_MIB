@@ -45,6 +45,7 @@ public class AndraAlien extends javax.swing.JFrame {
 
         jTextField1 = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jSpinner1 = new javax.swing.JSpinner();
         header = new javax.swing.JPanel();
         headerLbl = new javax.swing.JLabel();
         mibpLbl = new javax.swing.JLabel();
@@ -326,19 +327,21 @@ public class AndraAlien extends javax.swing.JFrame {
             Validering.textNotEmpty(jTextField4) && Validering.textNotEmpty(jTextField5) &&
             Validering.textNotEmpty(jTextField6) && Validering.textNotEmpty(jTextField7)) 
         {
-            ArrayList<HashMap<String,String>> Alien;
-
-        try{
-            String valtNamn = BoxMedAlienNamn.getSelectedItem().toString();
-            String fraga = "SELECT * FROM ALIEN WHERE NAMN = '" + valtNamn + "'";
-            Alien = db.fetchRows(fraga);
-            for(HashMap<String, String> valdAlien: Alien){
-                db.update("UPDATE ALIEN SET NAMN = '" + jTextField2.getText()+ "' WHERE NAMN = '" + jTextField2.getText()+ "'");
+            String alienNamn = BoxMedAlienNamn.getSelectedItem().toString();
+                
+            try{
+                db.update("UPDATE ALIEN SET ALIEN_ID = '" + jTextField2.getText() + "' WHERE NAMN = '" + alienNamn + "'"); //funkar
+                db.update("UPDATE ALIEN SET NAMN = '" + jTextField3.getText() + "' WHERE NAMN = '" + alienNamn + "'"); //funkar
+                
+                db.update("UPDATE ALIEN SET LOSENORD = '" + jTextField4.getText() + "' WHERE NAMN = '" + alienNamn + "'"); //funkar ej
+                db.update("UPDATE ALIEN SET TELEFON = '" + jTextField5.getText() + "' WHERE NAMN = '" + alienNamn + "'");   //funkar ej
+                db.update("UPDATE ALIEN SET PLATS = '" + jTextField6.getText() + "' WHERE NAMN = '" + alienNamn + "'"); // funkar ej
+                db.update("UPDATE ALIEN SET REGISTRERINGSDATUM = '" + jTextField7.getText() + "' WHERE NAMN = '" + alienNamn + "'");//funkar ej
+                AndraAlien.this.dispose();
             }
-            }
-            catch(Exception e){
-            System.out.println(e);
-        }
+                catch(InfException undantag){
+                    System.out.println(undantag);
+                }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -369,6 +372,7 @@ public class AndraAlien extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
