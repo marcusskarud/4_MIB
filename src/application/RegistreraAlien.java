@@ -312,14 +312,9 @@ public class RegistreraAlien extends javax.swing.JFrame {
                     platsnamn = db.fetchSingle("SELECT BENAMNING FROM PLATS WHERE PLATS_ID = " + plats);
                     omrade = db.fetchSingle("SELECT FINNS_I FROM PLATS WHERE PLATS_ID = " + plats);
                     
-                    System.out.println(plats);
-                    System.out.println(platsnamn);
-                    System.out.println(omrade);
                     
                     ansvarig_agentID = Integer.parseInt(db.fetchSingle("SELECT FIRST 1 AGENT_ID, COUNT(ANSVARIG_AGENT) FROM AGENT LEFT JOIN ALIEN ON ANSVARIG_AGENT = AGENT_ID WHERE OMRADE = " + omrade + " GROUP BY AGENT_ID ORDER BY COUNT(*) ASC"));
-                    System.out.println(ansvarig_agentID);
                     ansvarig_agent = db.fetchSingle("SELECT NAMN FROM AGENT WHERE AGENT_ID = " + ansvarig_agentID);
-                    System.out.println(ansvarig_agent);
                     
                     if (jComboBox1.getSelectedItem().toString().equals("Worm")){
                         rasFraga = "INSERT INTO WORM VALUES (" + nyAlienID + ")";
