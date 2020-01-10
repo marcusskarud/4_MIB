@@ -67,9 +67,10 @@ public class Validering {
             }
             catch( NumberFormatException undantag){
                 allNumbers = false;
+                System.out.println("Inte nummer");
             }
         }
-        if (allNumbers && datum.length == 3 && datum[0].length() == 4 && datum[1].length() == 2 && datum[2].length() == 2){
+        if (datum.length == 3 && datum[0].length() == 4 && datum[1].length() == 2 && datum[2].length() == 2){
             return true;
         }
         else{

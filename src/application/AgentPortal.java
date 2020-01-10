@@ -629,7 +629,7 @@ public class AgentPortal extends javax.swing.JFrame {
         jPanel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel10.setPreferredSize(new java.awt.Dimension(275, 2));
 
-        jButton2.setText("Ändra alien");
+        jButton2.setText("Ändra/ta bort alien");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -1188,7 +1188,7 @@ public class AgentPortal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        new AndraAlien(db).setVisible(true);
+        new AndraTaBortAlien(db, admin).setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
@@ -1315,6 +1315,7 @@ public class AgentPortal extends javax.swing.JFrame {
             jTabbedPane4.remove(jPanel8);
             sidLbl.setText("AgentPortal");
             jPanel13.setVisible(false);
+            jButton2.setText("Ändra alien");
         }
     }
 

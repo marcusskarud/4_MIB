@@ -10,23 +10,26 @@ import oru.inf.InfException;
 import javax.swing.DefaultComboBoxModel;
 import java.util.ArrayList;
 import java.util.HashMap;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author MarcusSkarud
  */
-public class AndraAlien extends javax.swing.JFrame {
+public class AndraTaBortAlien extends javax.swing.JFrame {
     
     private static InfDB db;
+    private boolean admin;
     /**
      * Creates new form andraAlien
      * @param db
      */
-    public AndraAlien(InfDB db) {
+    public AndraTaBortAlien(InfDB db, boolean admin) {
         this.db = db;
+        this.admin = admin;
         initComponents();
-        jLabel12.setVisible(false);
-        jTextField9.setVisible(false);
+        initAndraAlien(admin);
+        
                 
         
     }
@@ -68,7 +71,7 @@ public class AndraAlien extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         rasBoxen = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        sparaUppdateradInfo = new javax.swing.JButton();
         jTextField7 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         platsBoxen = new javax.swing.JComboBox<>();
@@ -94,6 +97,7 @@ public class AndraAlien extends javax.swing.JFrame {
         });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(40, 40, 40));
 
@@ -114,7 +118,7 @@ public class AndraAlien extends javax.swing.JFrame {
         sidLbl.setBackground(new java.awt.Color(120, 120, 120));
         sidLbl.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
         sidLbl.setForeground(new java.awt.Color(200, 200, 200));
-        sidLbl.setText("Ändra alieninfo");
+        sidLbl.setText("Ändra/ta bort alieninfo");
 
         skiljestreck.setForeground(new java.awt.Color(200, 200, 200));
 
@@ -222,10 +226,10 @@ public class AndraAlien extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Spara ändringar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        sparaUppdateradInfo.setText("Spara ändringar");
+        sparaUppdateradInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                sparaUppdateradInfoActionPerformed(evt);
             }
         });
 
@@ -285,6 +289,11 @@ public class AndraAlien extends javax.swing.JFrame {
         });
 
         jButton5.setText("Ta bort alien");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jTextField2.setEditable(false);
 
@@ -333,7 +342,7 @@ public class AndraAlien extends javax.swing.JFrame {
                         .addComponent(jSeparator4))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton1)
+                        .addComponent(sparaUppdateradInfo)
                         .addGap(126, 126, 126)
                         .addComponent(jButton5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -409,7 +418,7 @@ public class AndraAlien extends javax.swing.JFrame {
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(sparaUppdateradInfo)
                     .addComponent(jButton4)
                     .addComponent(jButton5))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -482,8 +491,8 @@ public class AndraAlien extends javax.swing.JFrame {
                 setRasBoxen(ras, alienID);
                 
 
-                String omrade = db.fetchSingle("SELECT BENAMNING FROM PLATS WHERE PLATS_ID = " + valdAlien.get("PLATS"));
-                String plats = db.fetchSingle("SELECT BENAMNING FROM OMRADE WHERE OMRADES_ID = (SELECT FINNS_I FROM PLATS WHERE PLATS_ID = " + valdAlien.get("PLATS") + ")");
+                String plats = db.fetchSingle("SELECT BENAMNING FROM PLATS WHERE PLATS_ID = " + valdAlien.get("PLATS"));
+                String omrade = db.fetchSingle("SELECT BENAMNING FROM OMRADE WHERE OMRADES_ID = (SELECT FINNS_I FROM PLATS WHERE PLATS_ID = " + valdAlien.get("PLATS") + ")");
                 int finnsI = Integer.parseInt(db.fetchSingle("SELECT FINNS_I FROM PLATS WHERE PLATS_ID = " + valdAlien.get("PLATS")));
                 
                 System.out.println(finnsI);
@@ -573,6 +582,16 @@ public class AndraAlien extends javax.swing.JFrame {
         
     }
     
+    private void initAndraAlien(boolean admin){
+        jLabel12.setVisible(false);
+        jTextField9.setVisible(false);
+        if(!admin){
+            jButton5.setVisible(false);
+            sidLbl.setText("Ändra alieninfo");
+        } 
+    
+    }
+    
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         
     }//GEN-LAST:event_jTextField3ActionPerformed
@@ -589,31 +608,48 @@ public class AndraAlien extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jTextField7ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void sparaUppdateradInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sparaUppdateradInfoActionPerformed
         if (Validering.textNotEmpty(jTextField3) && Validering.textNotEmpty(jTextField4) &&
-                Validering.textNotEmpty(jTextField5) && Validering.textNotEmpty(jTextField7)){
-            ArrayList<HashMap<String,String>> Alien;
-
+            Validering.textNotEmpty(jTextField5) && Validering.textNotEmpty(jTextField7) && 
+            Validering.textNotEmpty(jTextField9)){
+            
+            String[] alienSök = valjAlienComboBox.getSelectedItem().toString().split(" ");
+            int alienID = Integer.parseInt(alienSök[1]);
+            String gammalRas = alienSök[7];
+            
+            
             try{
-                String valtNamn = valjAlienComboBox.getSelectedItem().toString();
-                String fraga = "SELECT * FROM ALIEN WHERE NAMN = '" + valtNamn + "'";
-                Alien = db.fetchRows(fraga);
-                for(HashMap<String, String> valdAlien: Alien){
-                    db.update("UPDATE ALIEN SET NAMN = '" + jTextField3.getText() + "' WHERE NAMN = '" + jTextField2.getText()+ "'");
+                
+                String ansvarigAgent = db.fetchSingle("SELECT ANSVARIG_AGENT FROM ALIEN WHERE ALIEN_ID = " + alienID);
+                deleteAlien(alienID, gammalRas);
+               
+                String platsID = db.fetchSingle("SELECT PLATS_ID FROM PLATS WHERE BENAMNING = '" + platsBoxen.getSelectedItem().toString() + "'");
+                System.out.println(platsID);
+                db.insert("INSERT INTO ALIEN VALUES ( " + alienID + " , '" + jTextField7.getText().toString() + "' , '" + jTextField4.getText().toString() + "' , '" + jTextField3.getText().toString() + "' , '" + jTextField5.getText().toString() + "' , " + platsID + " , " + ansvarigAgent + ")");
+                System.out.println("Gick också!");    
+                if (rasBoxen.getSelectedItem().toString().equals("Squid") || rasBoxen.getSelectedItem().toString().equals("Boglodite")){
+                    db.insert("INSERT INTO " + rasBoxen.getSelectedItem().toString() + " VALUES ( " + alienID + " , " + jTextField9.getText().toString() + ")");
                 }
+                else{
+                    db.insert("INSERT INTO " + rasBoxen.getSelectedItem().toString() + " VALUES ( " + alienID + ")");
+                }
+                
+                JOptionPane.showMessageDialog(null, "Ändringarna sparade!");
+                AndraTaBortAlien.this.dispose();
+                
             }
             catch(Exception e){
                 System.out.println(e);
             }
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_sparaUppdateradInfoActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        AndraAlien.this.dispose();
+        AndraTaBortAlien.this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
@@ -657,6 +693,14 @@ public class AndraAlien extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_omradesBoxenActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        String[] alienSök = valjAlienComboBox.getSelectedItem().toString().split(" ");
+        int alienID = Integer.parseInt(alienSök[1]);
+        String gammalRas = alienSök[7];
+
+        deleteAlien(alienID, gammalRas);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
     @SuppressWarnings("unchecked")
     private void setJComboBox(String söktNamn){
         try{
@@ -690,14 +734,24 @@ public class AndraAlien extends javax.swing.JFrame {
         valjAlienComboBox.setModel(söktaAlienTillComboBox);
         }
         catch(InfException undantag){
-            System.out.println("Fel med databas!" + undantag);
+            System.out.println("Fel med databasen!" + undantag);
+        }
+        
+    }
+    
+    private void deleteAlien(int alienID, String gammalRas){
+        try{
+                db.delete("DELETE FROM " + gammalRas + " WHERE ALIEN_ID = " + alienID);
+                db.delete("DELETE FROM ALIEN WHERE ALIEN_ID = " + alienID);    
+        }
+        catch(InfException undantag){
+            System.out.println("KUNDE INTE TA BORT ALIEN! " + undantag);
         }
     }
-            
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel header;
     private javax.swing.JLabel headerLbl;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -735,6 +789,7 @@ public class AndraAlien extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> rasBoxen;
     private javax.swing.JLabel sidLbl;
     private javax.swing.JSeparator skiljestreck;
+    private javax.swing.JButton sparaUppdateradInfo;
     private javax.swing.JComboBox<String> valjAlienComboBox;
     // End of variables declaration//GEN-END:variables
 }
