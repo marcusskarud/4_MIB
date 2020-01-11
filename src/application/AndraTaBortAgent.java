@@ -26,7 +26,6 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
     public AndraTaBortAgent(InfDB db) {
         this.db = db;
         initComponents();
-        initAndraAlien();
         
                 
         
@@ -433,38 +432,9 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
             System.out.println(undantag);
         }
         
-    }
-
-    @SuppressWarnings("unchecked")    
-    private void setAnsvarigAgentBoxen(int alienID, int finnsI){
-        DefaultComboBoxModel agentBox = new DefaultComboBoxModel();
+    }    
+    
         
-        try{
-            String agentNamn = db.fetchSingle("SELECT NAMN FROM AGENT WHERE AGENT_ID = (SELECT ANSVARIG_AGENT FROM ALIEN WHERE ALIEN_ID = " + alienID + ")");
-            ArrayList<String> agentIOmrade = db.fetchColumn("SELECT NAMN FROM AGENT WHERE OMRADE = " + finnsI);
-            for(String agent : agentIOmrade ){
-                agentBox.addElement(agent);
-            }
-        
-            ansvarigAgentBoxen.setModel(agentBox);
-            ansvarigAgentBoxen.setSelectedItem(agentNamn);
-        }
-            catch(InfException undantag){
-            System.out.println(undantag);
-        }
-    }
-    
-    
-    private void initAndraAlien(){
-        jLabel12.setVisible(false);
-        jTextField9.setVisible(false);
-        if(!admin){
-            jButton5.setVisible(false);
-            sidLbl.setText("Ändra alieninfo");
-        } 
-    
-    }
-    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -494,11 +464,9 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
             String[] alienSök = valjAgentComboBox.getSelectedItem().toString().split(" ");
             int alienID = Integer.parseInt(alienSök[1]);
             int nyFinnsI = Integer.parseInt(db.fetchSingle("SELECT OMRADES_ID FROM OMRADE WHERE BENAMNING = '" + omradesBoxen.getSelectedItem().toString() + "'"));
-            setAnsvarigAgentBoxen(alienID, nyFinnsI);
             for(String platsen : platser ){
                 platsBox.addElement(platsen);
             }
-            platsBoxen.setModel(platsBox);
         }
         catch (InfException undantag){
 
@@ -519,8 +487,8 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
 
     private void sparaUppdateradInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sparaUppdateradInfoActionPerformed
         if (Validering.textNotEmpty(jTextField3) && Validering.textNotEmpty(jTextField4) &&
-            Validering.textNotEmpty(jTextField5) && Validering.textNotEmpty(jTextField7) &&
-            Validering.textNotEmpty(jTextField9)){
+            Validering.textNotEmpty(jTextField5) && Validering.textNotEmpty(jTextField7))
+            {
 
             String[] alienSök = valjAgentComboBox.getSelectedItem().toString().split(" ");
             int alienID = Integer.parseInt(alienSök[1]);
@@ -529,17 +497,9 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
             try{
 
                 deleteAlien(alienID, gammalRas);
-                String ansvarigAgent = db.fetchSingle("SELECT AGENT_ID FROM AGENT WHERE NAMN = '" + ansvarigAgentBoxen.getSelectedItem().toString() + "'");
-                String platsID = db.fetchSingle("SELECT PLATS_ID FROM PLATS WHERE BENAMNING = '" + platsBoxen.getSelectedItem().toString() + "'");
-                System.out.println(platsID);
-                db.insert("INSERT INTO ALIEN VALUES ( " + alienID + " , '" + jTextField7.getText().toString() + "' , '" + jTextField4.getText().toString() + "' , '" + jTextField3.getText().toString() + "' , '" + jTextField5.getText().toString() + "' , " + platsID + " , " + ansvarigAgent + ")");
+                db.insert("INSERT INTO ALIEN VALUES ( " + alienID + " , '" + jTextField7.getText().toString() + "' , '" + jTextField4.getText().toString() + "' , '" + jTextField3.getText().toString() + "' , '" + jTextField5.getText().toString() + "')");
                 System.out.println("Gick också!");
-                if (rasBoxen.getSelectedItem().toString().equals("Squid") || rasBoxen.getSelectedItem().toString().equals("Boglodite")){
-                    db.insert("INSERT INTO " + rasBoxen.getSelectedItem().toString() + " VALUES ( " + alienID + " , " + jTextField9.getText().toString() + ")");
-                }
-                else{
-                    db.insert("INSERT INTO " + rasBoxen.getSelectedItem().toString() + " VALUES ( " + alienID + ")");
-                }
+                
 
                 JOptionPane.showMessageDialog(null, "Ändringarna sparade!");
                 AndraTaBortAgent.this.dispose();
@@ -562,12 +522,7 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
             jTextField4.setText("");
             jTextField5.setText("");
             jTextField7.setText("");
-            jLabel12.setVisible(false);
-            jTextField9.setVisible(false);
             omradesBoxen.setModel(tomBox);
-            platsBoxen.setModel(tomBox);
-            rasBoxen.setModel(tomBox);
-            ansvarigAgentBoxen.setModel(tomBox);
 
         }
         else{
@@ -578,15 +533,12 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
                 String ras = alienSök[7];
 
                 HashMap<String,String> valdAlien = db.fetchRow("SELECT * FROM ALIEN WHERE ALIEN_ID = " + alienID);
-                setRasBoxen(ras, alienID);
 
                 String plats = db.fetchSingle("SELECT BENAMNING FROM PLATS WHERE PLATS_ID = " + valdAlien.get("PLATS"));
                 String omrade = db.fetchSingle("SELECT BENAMNING FROM OMRADE WHERE OMRADES_ID = (SELECT FINNS_I FROM PLATS WHERE PLATS_ID = " + valdAlien.get("PLATS") + ")");
                 int finnsI = Integer.parseInt(db.fetchSingle("SELECT FINNS_I FROM PLATS WHERE PLATS_ID = " + valdAlien.get("PLATS")));
 
                 setOmradesBoxen(omrade);
-                setPlatsBoxen(plats, finnsI);
-                setAnsvarigAgentBoxen(alienID, finnsI);
 
                 jTextField2.setText(valdAlien.get("ALIEN_ID"));
                 jTextField3.setText(valdAlien.get("NAMN"));
