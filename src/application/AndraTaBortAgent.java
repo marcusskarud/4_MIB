@@ -26,7 +26,6 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
     public AndraTaBortAgent(InfDB db) {
         this.db = db;
         initComponents();
-        
                 
         
     }
@@ -40,10 +39,6 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jButton2 = new javax.swing.JButton();
-        jSeparator3 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
         header = new javax.swing.JPanel();
         headerLbl = new javax.swing.JLabel();
@@ -76,17 +71,6 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
         jCheckBox1 = new javax.swing.JCheckBox();
-
-        jTextField1.setText("jTextField1");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jButton2.setText("ACCEPTERA ÄNDRINGAR");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -253,7 +237,7 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setText("Ta bort alien");
+        jButton5.setText("Ta bort agent");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -263,9 +247,10 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
         jTextField2.setEditable(false);
 
         jCheckBox1.setBackground(new java.awt.Color(60, 60, 60));
-        jCheckBox1.setForeground(new java.awt.Color(200, 200, 200));
+        jCheckBox1.setForeground(new java.awt.Color(0, 0, 0));
         jCheckBox1.setText("Administratör");
         jCheckBox1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jCheckBox1.setOpaque(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -435,16 +420,14 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
     }    
     
         
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        String[] alienSök = valjAgentComboBox.getSelectedItem().toString().split(" ");
-        int alienID = Integer.parseInt(alienSök[1]);
-        String gammalRas = alienSök[7];
+        String[] agentSök = valjAgentComboBox.getSelectedItem().toString().split(" ");
+        int agentID = Integer.parseInt(agentSök[1]);
 
-        deleteAlien(alienID, gammalRas);
+        deleteAgent(agentID);
+        jTextField8.setText("");
+        jTextField8ActionPerformed(evt);
+        valjAgentComboBoxActionPerformed(evt);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -457,20 +440,7 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
 
    @SuppressWarnings("unchecked")    
     private void omradesBoxenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_omradesBoxenActionPerformed
-        DefaultComboBoxModel platsBox = new DefaultComboBoxModel();
-
-        try{
-            ArrayList<String> platser = db.fetchColumn("SELECT BENAMNING FROM PLATS WHERE FINNS_I = (SELECT OMRADES_ID FROM OMRADE WHERE BENAMNING = '" + omradesBoxen.getSelectedItem().toString() + "')" );
-            String[] alienSök = valjAgentComboBox.getSelectedItem().toString().split(" ");
-            int alienID = Integer.parseInt(alienSök[1]);
-            int nyFinnsI = Integer.parseInt(db.fetchSingle("SELECT OMRADES_ID FROM OMRADE WHERE BENAMNING = '" + omradesBoxen.getSelectedItem().toString() + "'"));
-            for(String platsen : platser ){
-                platsBox.addElement(platsen);
-            }
-        }
-        catch (InfException undantag){
-
-        }
+        
     }//GEN-LAST:event_omradesBoxenActionPerformed
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
@@ -490,15 +460,21 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
             Validering.textNotEmpty(jTextField5) && Validering.textNotEmpty(jTextField7))
             {
 
-            String[] alienSök = valjAgentComboBox.getSelectedItem().toString().split(" ");
-            int alienID = Integer.parseInt(alienSök[1]);
-            String gammalRas = alienSök[7];
+            String[] agentSök = valjAgentComboBox.getSelectedItem().toString().split(" ");
+            int agentID = Integer.parseInt(agentSök[1]);
 
+            String adminStatus = "J";
+            if(jCheckBox1.getSelectedObjects() == null){
+                adminStatus = "N";
+            }
+            
             try{
 
-                deleteAlien(alienID, gammalRas);
-                db.insert("INSERT INTO ALIEN VALUES ( " + alienID + " , '" + jTextField7.getText().toString() + "' , '" + jTextField4.getText().toString() + "' , '" + jTextField3.getText().toString() + "' , '" + jTextField5.getText().toString() + "')");
-                System.out.println("Gick också!");
+                String omrade = db.fetchSingle("SELECT OMRADES_ID FROM OMRADE WHERE BENAMNING = '" + omradesBoxen.getSelectedItem().toString() + "'");
+                
+                String namn = jTextField3.getText().toString();
+                deleteAgent(agentID);
+                db.insert("INSERT INTO AGENT VALUES ( " + agentID + " , '" + namn + "' , '" + jTextField5.getText().toString() + "' , '" + jTextField7.getText().toString() + "' , '" + adminStatus + "' , '" + jTextField4.getText().toString() + "' , " + omrade + ")");
                 
 
                 JOptionPane.showMessageDialog(null, "Ändringarna sparade!");
@@ -515,36 +491,32 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
     private void valjAgentComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valjAgentComboBoxActionPerformed
 
         if (valjAgentComboBox.getSelectedItem().equals("---")){
-            DefaultComboBoxModel tomBox = new DefaultComboBoxModel();
-            tomBox.addElement("---");
-            jTextField2.setText("");
-            jTextField3.setText("");
-            jTextField4.setText("");
-            jTextField5.setText("");
-            jTextField7.setText("");
-            omradesBoxen.setModel(tomBox);
+            rensaFalt();
 
         }
         else{
 
             try{
                 String[] alienSök = valjAgentComboBox.getSelectedItem().toString().split(" ");
-                int alienID = Integer.parseInt(alienSök[1]);
-                String ras = alienSök[7];
+                int agentID = Integer.parseInt(alienSök[1]);
 
-                HashMap<String,String> valdAlien = db.fetchRow("SELECT * FROM ALIEN WHERE ALIEN_ID = " + alienID);
+                HashMap<String,String> valdAgent = db.fetchRow("SELECT * FROM AGENT WHERE AGENT_ID = " + agentID);
 
-                String plats = db.fetchSingle("SELECT BENAMNING FROM PLATS WHERE PLATS_ID = " + valdAlien.get("PLATS"));
-                String omrade = db.fetchSingle("SELECT BENAMNING FROM OMRADE WHERE OMRADES_ID = (SELECT FINNS_I FROM PLATS WHERE PLATS_ID = " + valdAlien.get("PLATS") + ")");
-                int finnsI = Integer.parseInt(db.fetchSingle("SELECT FINNS_I FROM PLATS WHERE PLATS_ID = " + valdAlien.get("PLATS")));
+                String omrade = db.fetchSingle("SELECT BENAMNING FROM OMRADE WHERE OMRADES_ID = " + valdAgent.get("OMRADE"));
 
                 setOmradesBoxen(omrade);
 
-                jTextField2.setText(valdAlien.get("ALIEN_ID"));
-                jTextField3.setText(valdAlien.get("NAMN"));
-                jTextField4.setText(valdAlien.get("LOSENORD"));
-                jTextField5.setText(valdAlien.get("TELEFON"));
-                jTextField7.setText(valdAlien.get("REGISTRERINGSDATUM"));
+                jTextField2.setText(valdAgent.get("AGENT_ID"));
+                jTextField3.setText(valdAgent.get("NAMN"));
+                jTextField4.setText(valdAgent.get("LOSENORD"));
+                jTextField5.setText(valdAgent.get("TELEFON"));
+                jTextField7.setText(valdAgent.get("ANSTALLNINGSDATUM"));
+                if(new String(db.fetchSingle("SELECT ADMINISTRATOR FROM AGENT WHERE AGENT_ID =" + agentID)).equals("J")){
+                    jCheckBox1.setSelected(true);
+                }
+                else {
+                    jCheckBox1.setSelected(false);
+                }
             }
             catch(InfException e){
                 System.out.println(e);
@@ -563,34 +535,18 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     private void setJComboBox(String söktNamn){
         try{
-        ArrayList<HashMap<String,String>> alien = db.fetchRows("SELECT * FROM ALIEN WHERE NAMN = '" + söktNamn + "'");
-        DefaultComboBoxModel söktaAlienTillComboBox = new DefaultComboBoxModel();
-        if (alien == null){
-            söktaAlienTillComboBox.addElement("---");
+        ArrayList<HashMap<String,String>> agent = db.fetchRows("SELECT * FROM AGENT WHERE NAMN = '" + söktNamn + "'");
+        DefaultComboBoxModel söktAgentTillComboBox = new DefaultComboBoxModel();
+        if (agent == null){
+            söktAgentTillComboBox.addElement("---");
         }
         else{
-            for(HashMap listaAlien : alien){
-                String ras = "Boglodite";
-                String rasIdentifierare = db.fetchSingle("SELECT ANTAL_BOOGIES FROM BOGLODITE WHERE ALIEN_ID = " + listaAlien.get("ALIEN_ID"));
-                if(rasIdentifierare == null){
-                    ras = "Squid";
-                    rasIdentifierare = db.fetchSingle("SELECT ANTAL_ARMAR FROM SQUID WHERE ALIEN_ID = " + listaAlien.get("ALIEN_ID"));
-                    if (rasIdentifierare == null){
-                        ras = "Worm";
-                    }
-                }
-                
-                String varjeAlien = "AlienID: " + listaAlien.get("ALIEN_ID") + " | Plats: " +  db.fetchSingle("SELECT BENAMNING FROM PLATS WHERE PLATS_ID = " + listaAlien.get("PLATS")) + " | Ras: " + ras;
-                if (ras.equals("Boglodite")){
-                    varjeAlien += " | Antal boogies: " + rasIdentifierare;
-                }
-                else if(ras.equals("Squid")){
-                    varjeAlien += " | Antal armar: " + rasIdentifierare;            
-                }
-                söktaAlienTillComboBox.addElement(varjeAlien);
+            for(HashMap listaAgent : agent){
+                String varjeAgent = "AgentID: " + listaAgent.get("AGENT_ID") + " | Telefon: " +  listaAgent.get("TELEFON") + " | Område: " +  db.fetchSingle("SELECT BENAMNING FROM OMRADE WHERE OMRADES_ID = " + listaAgent.get("OMRADE"));
+                söktAgentTillComboBox.addElement(varjeAgent);
             }
         }
-        valjAgentComboBox.setModel(söktaAlienTillComboBox);
+        valjAgentComboBox.setModel(söktAgentTillComboBox);
         }
         catch(InfException undantag){
             System.out.println("Fel med databasen!" + undantag);
@@ -598,25 +554,40 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
         
     }
     
-    private void deleteAlien(int alienID, String gammalRas){
+    private void deleteAgent(int agentID){
         try{
-                db.delete("DELETE FROM " + gammalRas + " WHERE ALIEN_ID = " + alienID);
-                db.delete("DELETE FROM ALIEN WHERE ALIEN_ID = " + alienID);    
+            db.delete("DELETE FROM INNEHAR_UTRUSTNING WHERE AGENT_ID = " + agentID);
+            db.delete("DELETE FROM INNEHAR_FORDON WHERE AGENT_ID = " + agentID);
+            db.delete("DELETE FROM FALTAGENT WHERE AGENT_ID = " + agentID);
+            db.delete("DELETE FROM KONTORSCHEF WHERE AGENT_ID = " + agentID);
+            db.delete("DELETE FROM OMRADESCHEF WHERE AGENT_ID = " + agentID);            
+            db.delete("DELETE FROM AGENT WHERE AGENT_ID = " + agentID); 
+            
         }
         catch(InfException undantag){
-            System.out.println("KUNDE INTE TA BORT ALIEN! " + undantag);
+            System.out.println("KUNDE INTE TA BORT AGENT! " + undantag);
         }
+    }
+    
+    private void rensaFalt(){
+        DefaultComboBoxModel tomBox = new DefaultComboBoxModel();
+        tomBox.addElement("---");
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField4.setText("");
+        jTextField5.setText("");
+        jTextField7.setText("");
+        jCheckBox1.setSelected(false);
+        omradesBoxen.setModel(tomBox);
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel header;
     private javax.swing.JLabel headerLbl;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -630,9 +601,7 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;

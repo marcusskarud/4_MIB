@@ -91,7 +91,7 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jButton2.setText("ACCEPTERA Ã„NDRINGAR");
+        jButton2.setText("ACCEPTERA ÄNDRINGAR");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -120,7 +120,7 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
         sidLbl.setBackground(new java.awt.Color(120, 120, 120));
         sidLbl.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
         sidLbl.setForeground(new java.awt.Color(200, 200, 200));
-        sidLbl.setText("Ã„ndra/ta bort alieninfo");
+        sidLbl.setText("Ändra/ta bort alieninfo");
 
         skiljestreck.setForeground(new java.awt.Color(200, 200, 200));
 
@@ -162,7 +162,7 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Namn:");
 
-        jButton3.setText("SÃ¶k alien");
+        jButton3.setText("Sök alien");
         jButton3.setPreferredSize(new java.awt.Dimension(83, 33));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,7 +177,7 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
         });
 
         jLabel10.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel10.setText("SÃ¶k alien med namn:");
+        jLabel10.setText("Sök alien med namn:");
 
         valjAlienComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---" }));
         valjAlienComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -188,7 +188,7 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(250, 250, 250));
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("VÃ¤lj alien att Ã¤ndra:");
+        jLabel1.setText("Välj alien att ändra:");
 
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Registreringsdatum:");
@@ -200,7 +200,7 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
         jLabel7.setText("Telefon:");
 
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("LÃ¶senord:");
+        jLabel6.setText("Lösenord:");
 
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("AlienID:");
@@ -215,7 +215,7 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
         jLabel12.setSize(new java.awt.Dimension(91, 16));
 
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel11.setText("OmrÃ¥de:");
+        jLabel11.setText("Område:");
 
         rasBoxen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---" }));
         rasBoxen.setPreferredSize(new java.awt.Dimension(140, 26));
@@ -225,7 +225,7 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
             }
         });
 
-        sparaUppdateradInfo.setText("Spara Ã¤ndringar");
+        sparaUppdateradInfo.setText("Spara ändringar");
         sparaUppdateradInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sparaUppdateradInfoActionPerformed(evt);
@@ -493,9 +493,9 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
         else{
 
             try{
-                String[] alienSÃ¶k = valjAlienComboBox.getSelectedItem().toString().split(" ");
-                int alienID = Integer.parseInt(alienSÃ¶k[1]);
-                String ras = alienSÃ¶k[7];
+                String[] alienSök = valjAlienComboBox.getSelectedItem().toString().split(" ");
+                int alienID = Integer.parseInt(alienSök[1]);
+                String ras = alienSök[7];
                 
                 
                 HashMap<String,String> valdAlien = db.fetchRow("SELECT * FROM ALIEN WHERE ALIEN_ID = " + alienID);
@@ -618,7 +618,7 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
         jTextField9.setVisible(false);
         if(!admin){
             jButton5.setVisible(false);
-            sidLbl.setText("Ã„ndra alieninfo");
+            sidLbl.setText("Ändra alieninfo");
         } 
     
     }
@@ -644,9 +644,9 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
             Validering.textNotEmpty(jTextField5) && Validering.textNotEmpty(jTextField7) && 
             Validering.textNotEmpty(jTextField9)){
             
-            String[] alienSÃ¶k = valjAlienComboBox.getSelectedItem().toString().split(" ");
-            int alienID = Integer.parseInt(alienSÃ¶k[1]);
-            String gammalRas = alienSÃ¶k[7];
+            String[] alienSök = valjAlienComboBox.getSelectedItem().toString().split(" ");
+            int alienID = Integer.parseInt(alienSök[1]);
+            String gammalRas = alienSök[7];
             
             
             try{
@@ -656,7 +656,7 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
                 String platsID = db.fetchSingle("SELECT PLATS_ID FROM PLATS WHERE BENAMNING = '" + platsBoxen.getSelectedItem().toString() + "'");
                 System.out.println(platsID);
                 db.insert("INSERT INTO ALIEN VALUES ( " + alienID + " , '" + jTextField7.getText().toString() + "' , '" + jTextField4.getText().toString() + "' , '" + jTextField3.getText().toString() + "' , '" + jTextField5.getText().toString() + "' , " + platsID + " , " + ansvarigAgent + ")");
-                System.out.println("Gick ocksÃ¥!");    
+                System.out.println("Gick också!");    
                 if (rasBoxen.getSelectedItem().toString().equals("Squid") || rasBoxen.getSelectedItem().toString().equals("Boglodite")){
                     db.insert("INSERT INTO " + rasBoxen.getSelectedItem().toString() + " VALUES ( " + alienID + " , " + jTextField9.getText().toString() + ")");
                 }
@@ -664,7 +664,7 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
                     db.insert("INSERT INTO " + rasBoxen.getSelectedItem().toString() + " VALUES ( " + alienID + ")");
                 }
                 
-                JOptionPane.showMessageDialog(null, "Ã„ndringarna sparade!");
+                JOptionPane.showMessageDialog(null, "Ändringarna sparade!");
                 AndraTaBortAlien.this.dispose();
                 
             }
@@ -714,8 +714,8 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
         
         try{
             ArrayList<String> platser = db.fetchColumn("SELECT BENAMNING FROM PLATS WHERE FINNS_I = (SELECT OMRADES_ID FROM OMRADE WHERE BENAMNING = '" + omradesBoxen.getSelectedItem().toString() + "')" );
-            String[] alienSÃ¶k = valjAlienComboBox.getSelectedItem().toString().split(" ");
-            int alienID = Integer.parseInt(alienSÃ¶k[1]);
+            String[] alienSök = valjAlienComboBox.getSelectedItem().toString().split(" ");
+            int alienID = Integer.parseInt(alienSök[1]);
             int nyFinnsI = Integer.parseInt(db.fetchSingle("SELECT OMRADES_ID FROM OMRADE WHERE BENAMNING = '" + omradesBoxen.getSelectedItem().toString() + "'"));
             setAnsvarigAgentBoxen(alienID, nyFinnsI);
             for(String platsen : platser ){
@@ -728,21 +728,26 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_omradesBoxenActionPerformed
 
+        @SuppressWarnings("unchecked")
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        String[] alienSÃ¶k = valjAlienComboBox.getSelectedItem().toString().split(" ");
-        int alienID = Integer.parseInt(alienSÃ¶k[1]);
-        String gammalRas = alienSÃ¶k[7];
+        String[] alienSök = valjAlienComboBox.getSelectedItem().toString().split(" ");
+        int alienID = Integer.parseInt(alienSök[1]);
+        String gammalRas = alienSök[7];
 
         deleteAlien(alienID, gammalRas);
+        JOptionPane.showMessageDialog(null, "Alien har raderats!");
+        jTextField8.setText("");
+        jTextField8ActionPerformed(evt);
+        valjAlienComboBoxActionPerformed(evt);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     @SuppressWarnings("unchecked")
-    private void setJComboBox(String sÃ¶ktNamn){
+    private void setJComboBox(String söktNamn){
         try{
-        ArrayList<HashMap<String,String>> alien = db.fetchRows("SELECT * FROM ALIEN WHERE NAMN = '" + sÃ¶ktNamn + "'");
-        DefaultComboBoxModel sÃ¶ktaAlienTillComboBox = new DefaultComboBoxModel();
+        ArrayList<HashMap<String,String>> alien = db.fetchRows("SELECT * FROM ALIEN WHERE NAMN = '" + söktNamn + "'");
+        DefaultComboBoxModel söktaAlienTillComboBox = new DefaultComboBoxModel();
         if (alien == null){
-            sÃ¶ktaAlienTillComboBox.addElement("---");
+            söktaAlienTillComboBox.addElement("---");
         }
         else{
             for(HashMap listaAlien : alien){
@@ -763,17 +768,17 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
                 else if(ras.equals("Squid")){
                     varjeAlien += " | Antal armar: " + rasIdentifierare;            
                 }
-                sÃ¶ktaAlienTillComboBox.addElement(varjeAlien);
+                söktaAlienTillComboBox.addElement(varjeAlien);
             }
         }
-        valjAlienComboBox.setModel(sÃ¶ktaAlienTillComboBox);
+        valjAlienComboBox.setModel(söktaAlienTillComboBox);
         }
         catch(InfException undantag){
             System.out.println("Fel med databasen!" + undantag);
         }
         
     }
-    
+    @SuppressWarnings("unchecked")    
     private void deleteAlien(int alienID, String gammalRas){
         try{
                 db.delete("DELETE FROM " + gammalRas + " WHERE ALIEN_ID = " + alienID);

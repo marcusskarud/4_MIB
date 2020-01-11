@@ -62,7 +62,7 @@ public class AgentPortal extends javax.swing.JFrame {
         agentIDLbl = new javax.swing.JLabel();
         namnLbl = new javax.swing.JLabel();
         telefonLbl = new javax.swing.JLabel();
-        omr√•deLbl = new javax.swing.JLabel();
+        omrÂdeLbl = new javax.swing.JLabel();
         bytLosenord = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
         jTabbedPane4 = new javax.swing.JTabbedPane();
@@ -212,7 +212,7 @@ public class AgentPortal extends javax.swing.JFrame {
         jLabel3.setText("Telefon:");
 
         jLabel5.setForeground(new java.awt.Color(220, 220, 220));
-        jLabel5.setText("Omr√•de:");
+        jLabel5.setText("OmrÂde:");
 
         agentIDLbl.setForeground(new java.awt.Color(220, 220, 220));
 
@@ -220,9 +220,9 @@ public class AgentPortal extends javax.swing.JFrame {
 
         telefonLbl.setForeground(new java.awt.Color(220, 220, 220));
 
-        omr√•deLbl.setForeground(new java.awt.Color(220, 220, 220));
+        omrÂdeLbl.setForeground(new java.awt.Color(220, 220, 220));
 
-        bytLosenord.setText("Byt l√∂senord");
+        bytLosenord.setText("Byt lˆsenord");
         bytLosenord.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bytLosenordActionPerformed(evt);
@@ -248,7 +248,7 @@ public class AgentPortal extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(namnLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(telefonLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(omr√•deLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(omrÂdeLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
@@ -275,7 +275,7 @@ public class AgentPortal extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(omr√•deLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(omrÂdeLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(bytLosenord)
@@ -322,10 +322,10 @@ public class AgentPortal extends javax.swing.JFrame {
         });
 
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("Lista aliens i omr√•de och plats");
+        jLabel6.setText("Lista aliens i omrÂde och plats");
 
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("Omr√•de:");
+        jLabel7.setText("OmrÂde:");
         jLabel7.setPreferredSize(null);
 
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
@@ -361,7 +361,7 @@ public class AgentPortal extends javax.swing.JFrame {
         tillDatum.setModel(new javax.swing.SpinnerDateModel());
 
         jLabel12.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel12.setText("Fr√•n:");
+        jLabel12.setText("FrÂn:");
 
         jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("Till:");
@@ -374,12 +374,12 @@ public class AgentPortal extends javax.swing.JFrame {
         });
 
         jLabel14.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel14.setText("S√∂k all information om enskild alien");
+        jLabel14.setText("Sˆk all information om enskild alien");
 
         jLabel15.setForeground(new java.awt.Color(0, 0, 0));
         jLabel15.setText("Namn:");
 
-        enskildAlienNamnTxt.setName("s√∂k..."); // NOI18N
+        enskildAlienNamnTxt.setName("sˆk..."); // NOI18N
         enskildAlienNamnTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 enskildAlienNamnTxtActionPerformed(evt);
@@ -387,7 +387,7 @@ public class AgentPortal extends javax.swing.JFrame {
         });
 
         jLabel16.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel16.setText("V√§lj:");
+        jLabel16.setText("V‰lj:");
 
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox4.setPreferredSize(new java.awt.Dimension(330, 26));
@@ -397,7 +397,7 @@ public class AgentPortal extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setText("S√∂k alien");
+        jButton4.setText("Sˆk alien");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -578,7 +578,7 @@ public class AgentPortal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPane4.addTab("S√∂k alien", jPanel4);
+        jTabbedPane4.addTab("Sˆk alien", jPanel4);
 
         jPanel2.setBackground(new java.awt.Color(150, 150, 150));
 
@@ -614,7 +614,7 @@ public class AgentPortal extends javax.swing.JFrame {
         jPanel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel10.setPreferredSize(new java.awt.Dimension(275, 2));
 
-        jButton2.setText("√Ñndra/ta bort alien");
+        jButton2.setText("ƒndra/ta bort alien");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -659,7 +659,7 @@ public class AgentPortal extends javax.swing.JFrame {
                 .addContainerGap(395, Short.MAX_VALUE))
         );
 
-        jTabbedPane4.addTab("Registrera/√§ndra alien", jPanel2);
+        jTabbedPane4.addTab("Registrera/‰ndra alien", jPanel2);
 
         jPanel5.setBackground(new java.awt.Color(150, 150, 150));
 
@@ -703,7 +703,7 @@ public class AgentPortal extends javax.swing.JFrame {
         });
 
         jLabel17.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel17.setText("Visa info om omr√•deschef:");
+        jLabel17.setText("Visa info om omrÂdeschef:");
 
         jPanel7.setBackground(new java.awt.Color(190, 190, 190));
         jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -819,7 +819,7 @@ public class AgentPortal extends javax.swing.JFrame {
         jPanel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel14.setPreferredSize(new java.awt.Dimension(275, 2));
 
-        jButton6.setText("L√•na utrustning");
+        jButton6.setText("LÂna utrustning");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -873,7 +873,7 @@ public class AgentPortal extends javax.swing.JFrame {
                 .addContainerGap(291, Short.MAX_VALUE))
         );
 
-        jTabbedPane4.addTab("Utrustning/omr√•de", jPanel5);
+        jTabbedPane4.addTab("Utrustning/omrÂde", jPanel5);
 
         jPanel8.setBackground(new java.awt.Color(150, 150, 150));
 
@@ -909,7 +909,7 @@ public class AgentPortal extends javax.swing.JFrame {
         jPanel17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel17.setPreferredSize(new java.awt.Dimension(275, 2));
 
-        jButton9.setText("√Ñndra/ta bort agent");
+        jButton9.setText("ƒndra/ta bort agent");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
@@ -954,12 +954,12 @@ public class AgentPortal extends javax.swing.JFrame {
                 .addContainerGap(395, Short.MAX_VALUE))
         );
 
-        jTabbedPane4.addTab("L√§gg till/√§ndra agent", jPanel8);
+        jTabbedPane4.addTab("L‰gg till/‰ndra agent", jPanel8);
 
         jPanel15.setBackground(new java.awt.Color(60, 60, 60));
 
         jLabel24.setForeground(new java.awt.Color(220, 220, 220));
-        jLabel24.setText("L√•nad utrustning:");
+        jLabel24.setText("LÂnad utrustning:");
 
         jSeparator6.setForeground(new java.awt.Color(255, 255, 255));
 
@@ -1121,30 +1121,30 @@ public class AgentPortal extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     private void listaAlienPlatsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaAlienPlatsBtnActionPerformed
         jTextArea1.setText("");
-        String resultatstr√§ng = "";
-        String s√∂kPlats = jComboBox2.getSelectedItem().toString();
+        String resultatstr‰ng = "";
+        String sˆkPlats = jComboBox2.getSelectedItem().toString();
 
         ArrayList<String> alienPaPlats = new ArrayList<String>();
         
         try{
-            if (s√∂kPlats.equals("ALLA")){
-                s√∂kPlats = jComboBox1.getSelectedItem().toString();
-                alienPaPlats = db.fetchColumn("SELECT NAMN FROM ALIEN WHERE PLATS IN (SELECT PLATS_ID FROM PLATS WHERE FINNS_I = (SELECT OMRADES_ID FROM OMRADE WHERE BENAMNING = \'" + s√∂kPlats + "\'))");
+            if (sˆkPlats.equals("ALLA")){
+                sˆkPlats = jComboBox1.getSelectedItem().toString();
+                alienPaPlats = db.fetchColumn("SELECT NAMN FROM ALIEN WHERE PLATS IN (SELECT PLATS_ID FROM PLATS WHERE FINNS_I = (SELECT OMRADES_ID FROM OMRADE WHERE BENAMNING = \'" + sˆkPlats + "\'))");
                 
             }
             else{
-                alienPaPlats = db.fetchColumn("SELECT NAMN FROM ALIEN WHERE PLATS = (SELECT PLATS_ID FROM PLATS WHERE BENAMNING = \'" + s√∂kPlats + "\')");
+                alienPaPlats = db.fetchColumn("SELECT NAMN FROM ALIEN WHERE PLATS = (SELECT PLATS_ID FROM PLATS WHERE BENAMNING = \'" + sˆkPlats + "\')");
             }
         
             if (alienPaPlats == null || alienPaPlats.contains(null)){
-                resultatstr√§ng = "Inga aliens p√• valda platsen!";
+                resultatstr‰ng = "Inga aliens pÂ valda platsen!";
             }
             else{
                 for (String alien : alienPaPlats){
-                    resultatstr√§ng += alien + "\n";
+                    resultatstr‰ng += alien + "\n";
                 }
             }
-            jTextArea1.setText(resultatstr√§ng);
+            jTextArea1.setText(resultatstr‰ng);
         }
         catch(InfException undantag){
         
@@ -1154,16 +1154,16 @@ public class AgentPortal extends javax.swing.JFrame {
 
     private void listaAliensRasBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaAliensRasBtnActionPerformed
         try{
-            String s√∂kRas = jComboBox3.getSelectedItem().toString().toUpperCase();
-            String resultatstr√§ng = "";
-            ArrayList<String> rasAliens = db.fetchColumn("SELECT NAMN FROM ALIEN WHERE ALIEN_ID IN (SELECT ALIEN_ID FROM " + s√∂kRas + ")");
+            String sˆkRas = jComboBox3.getSelectedItem().toString().toUpperCase();
+            String resultatstr‰ng = "";
+            ArrayList<String> rasAliens = db.fetchColumn("SELECT NAMN FROM ALIEN WHERE ALIEN_ID IN (SELECT ALIEN_ID FROM " + sˆkRas + ")");
             for (String rasAlien : rasAliens){
-                resultatstr√§ng += rasAlien + "\n";
+                resultatstr‰ng += rasAlien + "\n";
             }
-            jTextArea1.setText(resultatstr√§ng);
+            jTextArea1.setText(resultatstr‰ng);
         }
         catch(InfException undantag){
-            System.out.println("N√•got gick fel! " + undantag);
+            System.out.println("NÂgot gick fel! " + undantag);
         }
     }//GEN-LAST:event_listaAliensRasBtnActionPerformed
 
@@ -1173,12 +1173,12 @@ public class AgentPortal extends javax.swing.JFrame {
             String franD = dateFormat.format(franDatum.getValue());
             String tillD = dateFormat.format(tillDatum.getValue());
             
-            String resultatstr√§ng = "";
+            String resultatstr‰ng = "";
             ArrayList<String> alienMellanDatum = db.fetchColumn("SELECT NAMN FROM ALIEN WHERE REGISTRERINGSDATUM BETWEEN \'" + franD + "\' AND \'" + tillD + "\'");
             for (String alien : alienMellanDatum){
-                resultatstr√§ng += alien + "\n";
+                resultatstr‰ng += alien + "\n";
             }
-            jTextArea1.setText(resultatstr√§ng);
+            jTextArea1.setText(resultatstr‰ng);
         }
         catch(InfException undantag){
             System.out.println(undantag);
@@ -1187,23 +1187,23 @@ public class AgentPortal extends javax.swing.JFrame {
 
     @SuppressWarnings("unchecked")
     private void enskildAlienNamnTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enskildAlienNamnTxtActionPerformed
-        String resultatstr√§ng = "";
+        String resultatstr‰ng = "";
         try{
             ArrayList<String> aliensLista = new ArrayList<String>();
             aliensLista = db.fetchColumn("SELECT ALIEN_ID FROM ALIEN WHERE NAMN = \'" + enskildAlienNamnTxt.getText() + "\'");
             if (aliensLista == null){
-                resultatstr√§ng = "Ingen alien hittad!";
+                resultatstr‰ng = "Ingen alien hittad!";
                 jLabel16.setVisible(false);                
                 jComboBox4.setVisible(false);
             }
             else if (aliensLista.size() == 1){
                 int alienID = Integer.parseInt(db.fetchSingle("SELECT ALIEN_ID FROM ALIEN WHERE NAMN = \'" + enskildAlienNamnTxt.getText() + "\'"));
-                resultatstr√§ng = s√∂kAllInfo(alienID);
+                resultatstr‰ng = sˆkAllInfo(alienID);
                 jLabel16.setVisible(false);                
                 jComboBox4.setVisible(false);
             }
             else{
-                resultatstr√§ng = "Var god specificera din s√∂kning.";
+                resultatstr‰ng = "Var god specificera din sˆkning.";
                 ArrayList<HashMap<String,String>> aliens = db.fetchRows("SELECT * FROM ALIEN WHERE NAMN = \'" + enskildAlienNamnTxt.getText() + "\'");
 
                 DefaultComboBoxModel aliensForCBox = new DefaultComboBoxModel();
@@ -1228,18 +1228,18 @@ public class AgentPortal extends javax.swing.JFrame {
                 jLabel16.setVisible(true);                
                 jComboBox4.setVisible(true);
             }
-            jTextArea1.setText(resultatstr√§ng);
+            jTextArea1.setText(resultatstr‰ng);
             jTextArea1.setCaretPosition(0);
         }
         catch(InfException undantag){
-            System.out.println("N√•got gick fel! " + undantag);
+            System.out.println("NÂgot gick fel! " + undantag);
         }
     }//GEN-LAST:event_enskildAlienNamnTxtActionPerformed
 
     private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
-        String[] alienS√∂k = jComboBox4.getSelectedItem().toString().split(" ");
-        int alienID = Integer.parseInt(alienS√∂k[1]);
-        String allInfoOmAlien = s√∂kAllInfo(alienID);
+        String[] alienSˆk = jComboBox4.getSelectedItem().toString().split(" ");
+        int alienID = Integer.parseInt(alienSˆk[1]);
+        String allInfoOmAlien = sˆkAllInfo(alienID);
         jTextArea1.setText(allInfoOmAlien);
     }//GEN-LAST:event_jComboBox4ActionPerformed
 
@@ -1264,15 +1264,15 @@ public class AgentPortal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox5ActionPerformed
-        String s√∂ktOmr√•de = jComboBox5.getSelectedItem().toString();
+        String sˆktOmrÂde = jComboBox5.getSelectedItem().toString();
         try{
-            HashMap<String,String> omradesChef = db.fetchRow("SELECT * FROM AGENT WHERE AGENT_ID = (SELECT AGENT_ID FROM OMRADESCHEF WHERE OMRADE = (SELECT OMRADES_ID FROM OMRADE WHERE BENAMNING = \'" + s√∂ktOmr√•de + "\'))");
+            HashMap<String,String> omradesChef = db.fetchRow("SELECT * FROM AGENT WHERE AGENT_ID = (SELECT AGENT_ID FROM OMRADESCHEF WHERE OMRADE = (SELECT OMRADES_ID FROM OMRADE WHERE BENAMNING = \'" + sˆktOmrÂde + "\'))");
             jLabel21.setText(omradesChef.get("NAMN"));
             jLabel22.setText(omradesChef.get("AGENT_ID"));
             jLabel23.setText(omradesChef.get("TELEFON"));
         }
         catch(InfException undantag){
-            System.out.println("N√•got gick fel! " + undantag);
+            System.out.println("NÂgot gick fel! " + undantag);
         }
         
     }//GEN-LAST:event_jComboBox5ActionPerformed
@@ -1302,25 +1302,25 @@ public class AgentPortal extends javax.swing.JFrame {
         new AndraTaBortAgent(db).setVisible(true);
     }//GEN-LAST:event_jButton9ActionPerformed
 
-    private String s√∂kAllInfo(int iD){
-        String resultatstr√§ng = "";
+    private String sˆkAllInfo(int iD){
+        String resultatstr‰ng = "";
         try{
         HashMap<String, String> aliens = db.fetchRow("SELECT * FROM ALIEN WHERE ALIEN_ID = " + iD);
-        resultatstr√§ng = "Namn:\n  " + aliens.get("NAMN")
+        resultatstr‰ng = "Namn:\n  " + aliens.get("NAMN")
             + "\nAlienID:\n  " + aliens.get("ALIEN_ID")
             + "\nRegistreringsdatum:\n  " + aliens.get("REGISTRERINGSDATUM")
             + "\nTelefon:\n  " + aliens.get("TELEFON")
             + "\n----------"
-            + "\nOmr√•de:\n  " + db.fetchSingle("SELECT BENAMNING FROM OMRADE WHERE OMRADES_ID = (SELECT FINNS_I FROM PLATS WHERE PLATS_ID = " + Integer.parseInt(aliens.get("PLATS")) + ")")
+            + "\nOmrÂde:\n  " + db.fetchSingle("SELECT BENAMNING FROM OMRADE WHERE OMRADES_ID = (SELECT FINNS_I FROM PLATS WHERE PLATS_ID = " + Integer.parseInt(aliens.get("PLATS")) + ")")
             + "\nPlats:\n  " + db.fetchSingle("SELECT BENAMNING FROM PLATS WHERE PLATS_ID = " + Integer.parseInt(aliens.get("PLATS")))
             + "\n----------"
             + "\nAnsvarig Agent:\n  " + db.fetchSingle("SELECT NAMN FROM AGENT WHERE AGENT_ID = " + Integer.parseInt(aliens.get("ANSVARIG_AGENT")));
         }
         catch (InfException undantag){
-            JOptionPane.showMessageDialog(null, "N√•got gick fel med databasuppkopplingen!");
-            System.out.println("N√•got gick fel! " + undantag);
+            JOptionPane.showMessageDialog(null, "NÂgot gick fel med databasuppkopplingen!");
+            System.out.println("NÂgot gick fel! " + undantag);
         }
-        return resultatstr√§ng;
+        return resultatstr‰ng;
     }    
     
     @SuppressWarnings("unchecked")    
@@ -1362,9 +1362,9 @@ public class AgentPortal extends javax.swing.JFrame {
     
     private void setLanadUtrustningJTextArea(String agentID){
         jTextArea2.setText("");
-        String vapenStr√§ng = "";
-        String kommunikationStr√§ng = "";
-        String teknikStr√§ng = "";
+        String vapenStr‰ng = "";
+        String kommunikationStr‰ng = "";
+        String teknikStr‰ng = "";
         
         try{
             ArrayList<String> allLanadUtrustning = db.fetchColumn("SELECT UTRUSTNINGS_ID FROM INNEHAR_UTRUSTNING WHERE AGENT_ID = " + agentID);
@@ -1372,37 +1372,37 @@ public class AgentPortal extends javax.swing.JFrame {
                 String utrustningsNamn = db.fetchSingle("SELECT BENAMNING FROM UTRUSTNING WHERE UTRUSTNINGS_ID = " + utrustning);
                 String laneDatum = db.fetchSingle("SELECT UTKVITTERINGSDATUM FROM INNEHAR_UTRUSTNING WHERE UTRUSTNINGS_ID = " + utrustning + " AND AGENT_ID = " + agentID);
                 
-                String resultatStr√§ng = db.fetchSingle("SELECT OVERFORINGSTEKNIK FROM KOMMUNIKATION WHERE UTRUSTNINGS_ID = " + utrustning);
+                String resultatStr‰ng = db.fetchSingle("SELECT OVERFORINGSTEKNIK FROM KOMMUNIKATION WHERE UTRUSTNINGS_ID = " + utrustning);
                 
-                if(resultatStr√§ng == null){
-                    resultatStr√§ng = db.fetchSingle("SELECT KRAFTKALLA FROM TEKNIK WHERE UTRUSTNINGS_ID = " + utrustning);
-                    if (resultatStr√§ng == null){
-                        resultatStr√§ng = db.fetchSingle("SELECT KALIBER FROM VAPEN WHERE UTRUSTNINGS_ID = " + utrustning);
-                        vapenStr√§ng += "ID: " + utrustning + "\nNamn: " + utrustningsNamn + "\nKaliber: " + resultatStr√§ng + "\nL√•nedatum: " + laneDatum + "\n\n";
+                if(resultatStr‰ng == null){
+                    resultatStr‰ng = db.fetchSingle("SELECT KRAFTKALLA FROM TEKNIK WHERE UTRUSTNINGS_ID = " + utrustning);
+                    if (resultatStr‰ng == null){
+                        resultatStr‰ng = db.fetchSingle("SELECT KALIBER FROM VAPEN WHERE UTRUSTNINGS_ID = " + utrustning);
+                        vapenStr‰ng += "ID: " + utrustning + "\nNamn: " + utrustningsNamn + "\nKaliber: " + resultatStr‰ng + "\nLÂnedatum: " + laneDatum + "\n\n";
 
                     }
                     else{
-                        teknikStr√§ng += "ID: " + utrustning + "\nNamn: " + utrustningsNamn + "\nKraftk√§lla: " + resultatStr√§ng + "\nL√•nedatum: " + laneDatum + "\n\n";
+                        teknikStr‰ng += "ID: " + utrustning + "\nNamn: " + utrustningsNamn + "\nKraftk‰lla: " + resultatStr‰ng + "\nLÂnedatum: " + laneDatum + "\n\n";
 
                     }
                 
                 }
                 else{
-                    kommunikationStr√§ng += "ID: " + utrustning + "\nNamn: " + utrustningsNamn + "\n√ñverf√∂ringsteknik: " + resultatStr√§ng + "\nL√•nedatum: " + laneDatum + "\n\n";
+                    kommunikationStr‰ng += "ID: " + utrustning + "\nNamn: " + utrustningsNamn + "\n÷verfˆringsteknik: " + resultatStr‰ng + "\nLÂnedatum: " + laneDatum + "\n\n";
                 }
                 
             }
-            if (!vapenStr√§ng.equals("")){
-                vapenStr√§ng = "-----\nVAPEN\n-----\n" + vapenStr√§ng;
+            if (!vapenStr‰ng.equals("")){
+                vapenStr‰ng = "-----\nVAPEN\n-----\n" + vapenStr‰ng;
             }
-            if (!kommunikationStr√§ng.equals("")){
-                kommunikationStr√§ng = "-----\nKOMMUNIKATION\n-----\n" + kommunikationStr√§ng;                
+            if (!kommunikationStr‰ng.equals("")){
+                kommunikationStr‰ng = "-----\nKOMMUNIKATION\n-----\n" + kommunikationStr‰ng;                
             }
-            if (!teknikStr√§ng.equals("")){
-                teknikStr√§ng = "-----\nTEKNIK\n-----\n" + teknikStr√§ng;                
+            if (!teknikStr‰ng.equals("")){
+                teknikStr‰ng = "-----\nTEKNIK\n-----\n" + teknikStr‰ng;                
             }
             
-            jTextArea2.setText(vapenStr√§ng + kommunikationStr√§ng + teknikStr√§ng);
+            jTextArea2.setText(vapenStr‰ng + kommunikationStr‰ng + teknikStr‰ng);
             jTextArea2.setCaretPosition(0);
             
         }
@@ -1427,11 +1427,11 @@ public class AgentPortal extends javax.swing.JFrame {
         try {
             agentIDLbl.setText(agentID);
             namnLbl.setText(db.fetchSingle("SELECT NAMN FROM AGENT WHERE AGENT_ID = " + agentID));
-            omr√•deLbl.setText(String.valueOf(db.fetchSingle("SELECT BENAMNING FROM OMRADE WHERE OMRADES_ID = (SELECT OMRADE FROM AGENT WHERE AGENT_ID = " + agentID + ")")));
+            omrÂdeLbl.setText(String.valueOf(db.fetchSingle("SELECT BENAMNING FROM OMRADE WHERE OMRADES_ID = (SELECT OMRADE FROM AGENT WHERE AGENT_ID = " + agentID + ")")));
             telefonLbl.setText(db.fetchSingle("SELECT TELEFON FROM AGENT WHERE AGENT_ID = " + agentID));            
         }
         catch (InfException undantag){
-            JOptionPane.showMessageDialog(null, "N√•gonting gick fel!");
+            JOptionPane.showMessageDialog(null, "NÂgonting gick fel!");
         }
     }
     
@@ -1440,7 +1440,7 @@ public class AgentPortal extends javax.swing.JFrame {
             jTabbedPane4.remove(jPanel8);
             sidLbl.setText("AgentPortal");
             jPanel13.setVisible(false);
-            jButton2.setText("√Ñndra alien");
+            jButton2.setText("ƒndra alien");
         }
     }
 
@@ -1523,7 +1523,7 @@ public class AgentPortal extends javax.swing.JFrame {
     private javax.swing.JButton listaAliensRasBtn;
     private javax.swing.JLabel mibpLbl;
     private javax.swing.JLabel namnLbl;
-    private javax.swing.JLabel omr√•deLbl;
+    private javax.swing.JLabel omrÂdeLbl;
     private javax.swing.JLabel sidLbl;
     private javax.swing.JSeparator skiljestreck;
     private javax.swing.JLabel telefonLbl;
