@@ -124,6 +124,7 @@ public class AgentPortal extends javax.swing.JFrame {
         jSeparator6 = new javax.swing.JSeparator();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
+        jButton7 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -282,7 +283,6 @@ public class AgentPortal extends javax.swing.JFrame {
         jTabbedPane4.setPreferredSize(new java.awt.Dimension(260, 400));
 
         jPanel4.setBackground(new java.awt.Color(150, 150, 150));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel4.setBackground(new java.awt.Color(170, 170, 170));
         jLabel4.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
@@ -536,12 +536,13 @@ public class AgentPortal extends javax.swing.JFrame {
                 .addComponent(jLabel16)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane3.setViewportView(jTextArea1);
 
+        jTextArea1.setEditable(false);
         jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -556,7 +557,7 @@ public class AgentPortal extends javax.swing.JFrame {
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -576,7 +577,6 @@ public class AgentPortal extends javax.swing.JFrame {
         jTabbedPane4.addTab("Sök alien", jPanel4);
 
         jPanel2.setBackground(new java.awt.Color(150, 150, 150));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jPanel9.setBackground(new java.awt.Color(170, 170, 170));
         jPanel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -623,7 +623,7 @@ public class AgentPortal extends javax.swing.JFrame {
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel10Layout.setVerticalGroup(
@@ -642,7 +642,7 @@ public class AgentPortal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
+                .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -652,13 +652,12 @@ public class AgentPortal extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addContainerGap(395, Short.MAX_VALUE))
         );
 
         jTabbedPane4.addTab("Registrera/ändra alien", jPanel2);
 
         jPanel5.setBackground(new java.awt.Color(150, 150, 150));
-        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jPanel11.setBackground(new java.awt.Color(170, 170, 170));
         jPanel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -744,9 +743,9 @@ public class AgentPortal extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel18)
-                    .addComponent(jLabel21))
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel21)
+                    .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
@@ -769,7 +768,7 @@ public class AgentPortal extends javax.swing.JFrame {
                     .addComponent(jComboBox5, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel12Layout.createSequentialGroup()
                         .addComponent(jLabel17)
-                        .addGap(0, 92, Short.MAX_VALUE)))
+                        .addGap(0, 94, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel12Layout.setVerticalGroup(
@@ -780,8 +779,8 @@ public class AgentPortal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel13.setBackground(new java.awt.Color(170, 170, 170));
@@ -852,14 +851,14 @@ public class AgentPortal extends javax.swing.JFrame {
                         .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
+                .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -867,7 +866,7 @@ public class AgentPortal extends javax.swing.JFrame {
                         .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(289, Short.MAX_VALUE))
+                .addContainerGap(291, Short.MAX_VALUE))
         );
 
         jTabbedPane4.addTab("Utrustning/område", jPanel5);
@@ -906,6 +905,7 @@ public class AgentPortal extends javax.swing.JFrame {
         jScrollPane2.setVerifyInputWhenFocusTarget(false);
         jScrollPane2.setViewportView(jTextArea2);
 
+        jTextArea2.setEditable(false);
         jTextArea2.setBackground(new java.awt.Color(250, 250, 250));
         jTextArea2.setColumns(20);
         jTextArea2.setForeground(new java.awt.Color(0, 0, 0));
@@ -922,6 +922,13 @@ public class AgentPortal extends javax.swing.JFrame {
         jTextArea2.setVerifyInputWhenFocusTarget(false);
         jScrollPane2.setViewportView(jTextArea2);
 
+        jButton7.setText("Uppdatera");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
         jPanel15Layout.setHorizontalGroup(
@@ -930,6 +937,7 @@ public class AgentPortal extends javax.swing.JFrame {
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addComponent(jLabel24)
@@ -945,6 +953,8 @@ public class AgentPortal extends javax.swing.JFrame {
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton7)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1202,12 +1212,17 @@ public class AgentPortal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        
         new TaBortUtrustning(db).setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         new LanaUtrustning(db, agentID).setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        setLanadUtrustningJTextArea(agentID);
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     private String sökAllInfo(int iD){
         String resultatsträng = "";
@@ -1247,10 +1262,6 @@ public class AgentPortal extends javax.swing.JFrame {
         
     }
     
-    private void setLanadUtrustning(){
-        
-    
-    }
     
     private void setDatumJSpinner(){
         try{
@@ -1269,9 +1280,65 @@ public class AgentPortal extends javax.swing.JFrame {
         }
     }
     
+    
+    
+    private void setLanadUtrustningJTextArea(String agentID){
+        jTextArea2.setText("");
+        String vapenSträng = "";
+        String kommunikationSträng = "";
+        String teknikSträng = "";
+        
+        try{
+            ArrayList<String> allLanadUtrustning = db.fetchColumn("SELECT UTRUSTNINGS_ID FROM INNEHAR_UTRUSTNING WHERE AGENT_ID = " + agentID);
+            for (String utrustning : allLanadUtrustning){
+                String utrustningsNamn = db.fetchSingle("SELECT BENAMNING FROM UTRUSTNING WHERE UTRUSTNINGS_ID = " + utrustning);
+                String laneDatum = db.fetchSingle("SELECT UTKVITTERINGSDATUM FROM INNEHAR_UTRUSTNING WHERE UTRUSTNINGS_ID = " + utrustning + " AND AGENT_ID = " + agentID);
+                
+                String resultatSträng = db.fetchSingle("SELECT OVERFORINGSTEKNIK FROM KOMMUNIKATION WHERE UTRUSTNINGS_ID = " + utrustning);
+                
+                if(resultatSträng == null){
+                    resultatSträng = db.fetchSingle("SELECT KRAFTKALLA FROM TEKNIK WHERE UTRUSTNINGS_ID = " + utrustning);
+                    if (resultatSträng == null){
+                        resultatSträng = db.fetchSingle("SELECT KALIBER FROM VAPEN WHERE UTRUSTNINGS_ID = " + utrustning);
+                        vapenSträng += "ID: " + utrustning + "\nNamn: " + utrustningsNamn + "\nKaliber: " + resultatSträng + "\nLånedatum: " + laneDatum + "\n\n";
+
+                    }
+                    else{
+                        teknikSträng += "ID: " + utrustning + "\nNamn: " + utrustningsNamn + "\nKraftkälla: " + resultatSträng + "\nLånedatum: " + laneDatum + "\n\n";
+
+                    }
+                
+                }
+                else{
+                    kommunikationSträng += "ID: " + utrustning + "\nNamn: " + utrustningsNamn + "\nÖverföringsteknik: " + resultatSträng + "\nLånedatum: " + laneDatum + "\n\n";
+                }
+                
+            }
+            if (!vapenSträng.equals("")){
+                vapenSträng = "-----\nVAPEN\n-----\n" + vapenSträng;
+            }
+            if (!kommunikationSträng.equals("")){
+                kommunikationSträng = "-----\nKOMMUNIKATION\n-----\n" + kommunikationSträng;                
+            }
+            if (!teknikSträng.equals("")){
+                teknikSträng = "-----\nTEKNIK\n-----\n" + teknikSträng;                
+            }
+            
+            jTextArea2.setText(vapenSträng + kommunikationSträng + teknikSträng);
+            jTextArea2.setCaretPosition(0);
+            
+        }
+        catch(InfException undantag){
+            System.out.println("Fel med databasen! " + undantag);
+        }
+    
+    }
+
+    
     private void initAgentPortal(){
         setOmradeJComboBox(jComboBox1);
         setOmradeJComboBox(jComboBox5);
+        setLanadUtrustningJTextArea(agentID);
         setDatumJSpinner();
         setAdminMode(admin);
 
@@ -1313,6 +1380,7 @@ public class AgentPortal extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
