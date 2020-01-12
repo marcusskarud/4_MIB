@@ -472,9 +472,8 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
 
                 String omrade = db.fetchSingle("SELECT OMRADES_ID FROM OMRADE WHERE BENAMNING = '" + omradesBoxen.getSelectedItem().toString() + "'");
                 
-                String namn = jTextField3.getText().toString();
                 deleteAgent(agentID);
-                db.insert("INSERT INTO AGENT VALUES ( " + agentID + " , '" + namn + "' , '" + jTextField5.getText().toString() + "' , '" + jTextField7.getText().toString() + "' , '" + adminStatus + "' , '" + jTextField4.getText().toString() + "' , " + omrade + ")");
+                db.insert("INSERT INTO AGENT VALUES ( " + agentID + " , '" + jTextField3.getText().toString() + "' , '" + jTextField5.getText().toString() + "' , '" + jTextField7.getText().toString() + "' , '" + adminStatus + "' , '" + jTextField4.getText().toString() + "' , " + omrade + ")");
                 
 
                 JOptionPane.showMessageDialog(null, "Ändringarna sparade!");

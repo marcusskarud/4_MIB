@@ -8,27 +8,29 @@ package application;
 import javax.swing.JOptionPane;
 import oru.inf.InfDB;
 import oru.inf.InfException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.text.DateFormat;
 import java.util.Random;
+import javax.swing.DefaultComboBoxModel;
 
 /**
  *
  * @author MarcusSkarud
  */
-public class RegistreraAlien extends javax.swing.JFrame {
+public class RegistreraAgent extends javax.swing.JFrame {
 
     private static InfDB db;
     private static Random randGenerator = new Random();
     /**
      * Creates new form BytLosenord
      */
-    public RegistreraAlien(InfDB db) {
+    public RegistreraAgent(InfDB db) {
         this.db = db;
         initComponents();
-        jTextField3.setEnabled(false);
-        jLabel4.setEnabled(false);
+        setOmradesBox();
+        
     }
 
     /**
@@ -53,13 +55,12 @@ public class RegistreraAlien extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        omradesBox = new javax.swing.JComboBox<>();
         jSeparator4 = new javax.swing.JSeparator();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jCheckBox1 = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -83,7 +84,7 @@ public class RegistreraAlien extends javax.swing.JFrame {
         sidLbl5.setBackground(new java.awt.Color(120, 120, 120));
         sidLbl5.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
         sidLbl5.setForeground(new java.awt.Color(200, 200, 200));
-        sidLbl5.setText("Nyregistrera Alien");
+        sidLbl5.setText("Nyregistrera Agent");
 
         skiljestreck5.setForeground(new java.awt.Color(200, 200, 200));
 
@@ -137,24 +138,17 @@ public class RegistreraAlien extends javax.swing.JFrame {
         jTextField2.setPreferredSize(new java.awt.Dimension(110, 24));
 
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Ras:");
+        jLabel3.setText("Område:");
         jLabel3.setPreferredSize(new java.awt.Dimension(110, 16));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Worm", "Squid", "Boglodite" }));
-        jComboBox1.setPreferredSize(new java.awt.Dimension(110, 26));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        omradesBox.setPreferredSize(new java.awt.Dimension(110, 26));
+        omradesBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                omradesBoxActionPerformed(evt);
             }
         });
 
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("---");
-        jLabel4.setPreferredSize(new java.awt.Dimension(110, 16));
-
-        jTextField3.setPreferredSize(new java.awt.Dimension(110, 24));
-
-        jButton1.setText("Nyregistrera Alien");
+        jButton1.setText("Nyregistrera Agent");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -168,6 +162,10 @@ public class RegistreraAlien extends javax.swing.JFrame {
             }
         });
 
+        jCheckBox1.setBackground(new java.awt.Color(170, 170, 170));
+        jCheckBox1.setForeground(new java.awt.Color(0, 0, 0));
+        jCheckBox1.setText("Administratör");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -177,21 +175,18 @@ public class RegistreraAlien extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(omradesBox, javax.swing.GroupLayout.Alignment.LEADING, 0, 200, Short.MAX_VALUE)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -208,20 +203,18 @@ public class RegistreraAlien extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(omradesBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jCheckBox1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton3))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -233,9 +226,9 @@ public class RegistreraAlien extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addComponent(jSeparator5)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(117, 117, 117)
+                .addGap(142, 142, 142)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(117, 117, 117))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -243,9 +236,9 @@ public class RegistreraAlien extends javax.swing.JFrame {
                 .addComponent(header5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addGap(42, 42, 42)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -256,129 +249,104 @@ public class RegistreraAlien extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        setBounds(0, 0, 533, 522);
+        setBounds(0, 0, 533, 484);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        if(jComboBox1.getSelectedItem().toString().equals("Squid")){
-            jTextField3.setEnabled(true);
-            jLabel4.setEnabled(true);
-            jLabel4.setText("Antal armar:");
-            
-        }
-        else if(jComboBox1.getSelectedItem().toString().equals("Boglodite")){
-            jTextField3.setEnabled(true);
-            jLabel4.setEnabled(true);
-            jLabel4.setText("Antal boogies:");
-        }
-        else{
-            jTextField3.setEnabled(false);
-            jLabel4.setEnabled(false);
-            jLabel4.setText("---");
-
-        }
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    private void omradesBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_omradesBoxActionPerformed
+        
+    }//GEN-LAST:event_omradesBoxActionPerformed
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if (Validering.textNotEmpty(jTextField1) && Validering.textNotEmpty(jTextField2)){                
             
-            if (jComboBox1.getSelectedItem().toString().equals("Worm")
-                    || jComboBox1.getSelectedItem().toString().equals("Squid") && Validering.textNotEmpty(jTextField3)
-                    || jComboBox1.getSelectedItem().toString().equals("Boglodite") && Validering.textNotEmpty(jTextField3)){
-                
-                int nyAlienID = 0;
-                String namn = "";
-                int plats = 0;
-                String platsnamn = "";
-                String registreringsdatum = "";
-                String lösenord = "";
-                String telefon = "";
-                String ansvarig_agent = "";
-                int ansvarig_agentID = 0;
-                String rasFraga = "";
-                String rasInfo = "";
-                String omrade = "";
-                
-                try{
-                    nyAlienID = Integer.parseInt(db.getAutoIncrement("ALIEN", "ALIEN_ID"));
-                    
-                    DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-                    Date nyttDatum = new Date();
-                    registreringsdatum = dateFormat.format(nyttDatum);
-                    
-                    lösenord = "" + randGenerator.nextInt(10) + randGenerator.nextInt(10) + randGenerator.nextInt(10) +randGenerator.nextInt(10) +randGenerator.nextInt(10) + randGenerator.nextInt(10);
-                    namn = jTextField1.getText();
-                    telefon = jTextField2.getText();
-
-                    plats = randGenerator.nextInt(Integer.parseInt(db.fetchSingle("SELECT COUNT(PLATS_ID) FROM PLATS"))) + 1;                   
-                    platsnamn = db.fetchSingle("SELECT BENAMNING FROM PLATS WHERE PLATS_ID = " + plats);
-                    omrade = db.fetchSingle("SELECT FINNS_I FROM PLATS WHERE PLATS_ID = " + plats);
-                    
-                    
-                    ansvarig_agentID = Integer.parseInt(db.fetchSingle("SELECT FIRST 1 AGENT_ID, COUNT(ANSVARIG_AGENT) FROM AGENT LEFT JOIN ALIEN ON ANSVARIG_AGENT = AGENT_ID WHERE OMRADE = " + omrade + " GROUP BY AGENT_ID ORDER BY COUNT(*) ASC"));
-                    ansvarig_agent = db.fetchSingle("SELECT NAMN FROM AGENT WHERE AGENT_ID = " + ansvarig_agentID);
-                    
-                    if (jComboBox1.getSelectedItem().toString().equals("Worm")){
-                        rasFraga = "INSERT INTO WORM VALUES (" + nyAlienID + ")";
-                        rasInfo = "\nRas: Worm";
-                    }
-                    else if (jComboBox1.getSelectedItem().toString().equals("Squid")){
-                        rasFraga = "INSERT INTO SQUID VALUES (" + nyAlienID + ", " + Integer.parseInt(jTextField3.getText()) + ")";
-                        rasInfo = "\nRas: Squid\nArmar: " + jTextField3.getText().toString();
-                    }
-                    else if (jComboBox1.getSelectedItem().toString().equals("Boglodite")){
-                        rasFraga = "INSERT INTO BOGLODITE VALUES (" + nyAlienID + ", " + Integer.parseInt(jTextField3.getText()) + ")";
-                        rasInfo = "\nRas: Boglodite\nBoogies: " + jTextField3.getText().toString();
-                    }
-                    db.insert("INSERT INTO ALIEN VALUES("+ nyAlienID + ", \'" + registreringsdatum + "\' , \'" + lösenord + "\', \'" + namn +"\', \'" + telefon + "\', " + plats + ", " + ansvarig_agentID + ")");
-                    db.insert(rasFraga);
-                }
-                catch(InfException undantag){
             
-                }
-                
-                JOptionPane.showMessageDialog(null, "Ny alien registrerad!" +
-                        "\n\nNamn: " + namn + 
-                        rasInfo +
-                        "\n\nAlienID: " + nyAlienID + 
-                        "\nLösenord: " + lösenord + 
-                        "\nTelefon: " + telefon + 
-                        "\n\nRegistreringsdatum: " + registreringsdatum + 
-                        "\nTilldelad plats: " + platsnamn + 
-                        "\nAnsvarig agent: " + ansvarig_agent);
-                RegistreraAlien.this.dispose();
-
-            } 
-            else{
-                JOptionPane.showMessageDialog(null, "");
+            int nyAgentID = 0;
+            String namn = "";
+            int omradesID = 0;
+            String anstallningsdatum = "";
+            String lösenord = "";
+            String telefon = "";
+            String omrade = omradesBox.getSelectedItem().toString();
+            String administratör = "";
+            String ärAdmin = "";
+            if (jCheckBox1.getSelectedObjects() == null){
+                administratör = "N";
+                ärAdmin = "Nej";
             }
+            else{
+                administratör = "J";
+                ärAdmin = "Ja";
+            }
+
+            try{
+                nyAgentID = Integer.parseInt(db.getAutoIncrement("AGENT", "AGENT_ID"));
+
+                System.out.println(1);
+                DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+                Date nyttDatum = new Date();
+                anstallningsdatum = dateFormat.format(nyttDatum);
+
+                lösenord = "" + randGenerator.nextInt(10) + randGenerator.nextInt(10) + randGenerator.nextInt(10) +randGenerator.nextInt(10) +randGenerator.nextInt(10) + randGenerator.nextInt(10);
+                namn = jTextField1.getText();
+                telefon = jTextField2.getText();
+
+                omradesID = Integer.parseInt(db.fetchSingle("SELECT OMRADES_ID FROM OMRADE WHERE BENAMNING = '" + omradesBox.getSelectedItem().toString() + "'"));
+                omrade = db.fetchSingle("SELECT BENAMNING FROM OMRADE WHERE OMRADES_ID = " + omradesID);
+                System.out.println(2);
+                
+                db.insert("INSERT INTO AGENT VALUES("+ nyAgentID + ", \'" + namn + "\' , \'" + telefon + "\', \'" + anstallningsdatum + "\', \'" + administratör + "\', \'" + lösenord + "\', " + omradesID + ")");
+                System.out.println(3);
+                
+                JOptionPane.showMessageDialog(null, "Ny agent registrerad!" +
+                    "\n\nNamn: " + namn + 
+                    "\n\nAgentID: " + nyAgentID + 
+                    "\nLösenord: " + lösenord + 
+                    "\nTelefon: " + telefon + 
+                    "\n\nAnställningsdatum: " + anstallningsdatum + 
+                    "\nOmråde: " + omrade + 
+                    "\nAdministratör: " + ärAdmin);
+                RegistreraAgent.this.dispose();        
             
-            
-            
-            
-            
-            
-            
-            
+            }
+            catch(InfException undantag){
+                JOptionPane.showMessageDialog(null, "Något gick fel med registreringen!");
+                System.out.println(undantag);
+            }
+                
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        RegistreraAlien.this.dispose();
+        RegistreraAgent.this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    @SuppressWarnings("unchecked")    
+    private void setOmradesBox(){
+        DefaultComboBoxModel omraden = new DefaultComboBoxModel();
+        try{
+            ArrayList<String> omradesLista = db.fetchColumn("SELECT BENAMNING FROM OMRADE");
+            for (String omrade : omradesLista){
+                omraden.addElement(omrade);
+            }
+            omradesBox.setModel(omraden);
+            omradesBox.setSelectedIndex(1);
+        }
+        catch(InfException undantag){
+            System.out.println(undantag);
+        }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel header5;
     private javax.swing.JLabel headerLbl5;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator4;
@@ -386,8 +354,8 @@ public class RegistreraAlien extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel mibpLbl5;
+    private javax.swing.JComboBox<String> omradesBox;
     private javax.swing.JLabel sidLbl5;
     private javax.swing.JSeparator skiljestreck5;
     // End of variables declaration//GEN-END:variables
