@@ -19,10 +19,13 @@ public class Start {
     public static void main(String args[]) {
 
         try {
-            db = new InfDB("/Applications/db/MIBDB.FDB");
+            String aktuellMap = System.getProperty("user.dir");
+            String sokVag = aktuellMap + ("\\MIBDB.FDB");
+            
+            db = new InfDB(sokVag);
         }
         catch (InfException ettUndantag) {
-            JOptionPane.showMessageDialog(null, "NÃ¥got gick fel med uppkopplingen!");
+            JOptionPane.showMessageDialog(null, "Något gick fel med uppkopplingen!");
             System.out.println(ettUndantag);
         }
     

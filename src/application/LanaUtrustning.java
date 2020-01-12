@@ -82,7 +82,7 @@ public class LanaUtrustning extends javax.swing.JFrame {
         sidLbl.setBackground(new java.awt.Color(120, 120, 120));
         sidLbl.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
         sidLbl.setForeground(new java.awt.Color(200, 200, 200));
-        sidLbl.setText("LÃ¥na utrustning");
+        sidLbl.setText("Låna utrustning");
 
         skiljestreck.setForeground(new java.awt.Color(200, 200, 200));
 
@@ -123,7 +123,7 @@ public class LanaUtrustning extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Ã–nskad utrustning:");
+        jLabel1.setText("Önskad utrustning:");
 
         jRadioButton1.setBackground(new java.awt.Color(180, 180, 180));
         buttonGroup1.add(jRadioButton1);
@@ -158,7 +158,7 @@ public class LanaUtrustning extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Ledig utrustning:");
 
-        jButton1.setText("LÃ¥na utrustning");
+        jButton1.setText("Låna utrustning");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
