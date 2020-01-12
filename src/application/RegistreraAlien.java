@@ -293,7 +293,7 @@ public class RegistreraAlien extends javax.swing.JFrame {
                 int plats = 0;
                 String platsnamn = "";
                 String registreringsdatum = "";
-                String lÃ¶senord = "";
+                String lösenord = "";
                 String telefon = "";
                 String ansvarig_agent = "";
                 int ansvarig_agentID = 0;
@@ -308,7 +308,7 @@ public class RegistreraAlien extends javax.swing.JFrame {
                     Date nyttDatum = new Date();
                     registreringsdatum = dateFormat.format(nyttDatum);
                     
-                    lÃ¶senord = "" + randGenerator.nextInt(10) + randGenerator.nextInt(10) + randGenerator.nextInt(10) +randGenerator.nextInt(10) +randGenerator.nextInt(10) + randGenerator.nextInt(10);
+                    lösenord = "" + randGenerator.nextInt(10) + randGenerator.nextInt(10) + randGenerator.nextInt(10) +randGenerator.nextInt(10) +randGenerator.nextInt(10) + randGenerator.nextInt(10);
                     namn = jTextField1.getText();
                     telefon = jTextField2.getText();
 
@@ -332,7 +332,7 @@ public class RegistreraAlien extends javax.swing.JFrame {
                         rasFraga = "INSERT INTO BOGLODITE VALUES (" + nyAlienID + ", " + Integer.parseInt(jTextField3.getText()) + ")";
                         rasInfo = "\nRas: Boglodite\nBoogies: " + jTextField3.getText().toString();
                     }
-                    db.insert("INSERT INTO ALIEN VALUES("+ nyAlienID + ", \'" + registreringsdatum + "\' , \'" + lÃ¶senord + "\', \'" + namn +"\', \'" + telefon + "\', " + plats + ", " + ansvarig_agentID + ")");
+                    db.insert("INSERT INTO ALIEN VALUES("+ nyAlienID + ", \'" + registreringsdatum + "\' , \'" + lösenord + "\', \'" + namn +"\', \'" + telefon + "\', " + plats + ", " + ansvarig_agentID + ")");
                     db.insert(rasFraga);
                 }
                 catch(InfException undantag){
@@ -343,7 +343,7 @@ public class RegistreraAlien extends javax.swing.JFrame {
                         "\n\nNamn: " + namn + 
                         rasInfo +
                         "\n\nAlienID: " + nyAlienID + 
-                        "\nLÃ¶senord: " + lÃ¶senord + 
+                        "\nLösenord: " + lösenord + 
                         "\nTelefon: " + telefon + 
                         "\n\nRegistreringsdatum: " + registreringsdatum + 
                         "\nTilldelad plats: " + platsnamn + 

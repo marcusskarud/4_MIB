@@ -138,7 +138,7 @@ public class RegistreraAgent extends javax.swing.JFrame {
         jTextField2.setPreferredSize(new java.awt.Dimension(110, 24));
 
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("OmrÃ¥de:");
+        jLabel3.setText("Område:");
         jLabel3.setPreferredSize(new java.awt.Dimension(110, 16));
 
         omradesBox.setPreferredSize(new java.awt.Dimension(110, 26));
@@ -164,7 +164,12 @@ public class RegistreraAgent extends javax.swing.JFrame {
 
         jCheckBox1.setBackground(new java.awt.Color(170, 170, 170));
         jCheckBox1.setForeground(new java.awt.Color(0, 0, 0));
-        jCheckBox1.setText("AdministratÃ¶r");
+        jCheckBox1.setText("Administratör");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -266,18 +271,18 @@ public class RegistreraAgent extends javax.swing.JFrame {
             String namn = "";
             int omradesID = 0;
             String anstallningsdatum = "";
-            String lÃ¶senord = "";
+            String lösenord = "";
             String telefon = "";
             String omrade = omradesBox.getSelectedItem().toString();
-            String administratÃ¶r = "";
-            String Ã¤rAdmin = "";
+            String administratör = "";
+            String ärAdmin = "";
             if (jCheckBox1.getSelectedObjects() == null){
-                administratÃ¶r = "N";
-                Ã¤rAdmin = "Nej";
+                administratör = "N";
+                ärAdmin = "Nej";
             }
             else{
-                administratÃ¶r = "J";
-                Ã¤rAdmin = "Ja";
+                administratör = "J";
+                ärAdmin = "Ja";
             }
 
             try{
@@ -288,7 +293,7 @@ public class RegistreraAgent extends javax.swing.JFrame {
                 Date nyttDatum = new Date();
                 anstallningsdatum = dateFormat.format(nyttDatum);
 
-                lÃ¶senord = "" + randGenerator.nextInt(10) + randGenerator.nextInt(10) + randGenerator.nextInt(10) +randGenerator.nextInt(10) +randGenerator.nextInt(10) + randGenerator.nextInt(10);
+                lösenord = "" + randGenerator.nextInt(10) + randGenerator.nextInt(10) + randGenerator.nextInt(10) +randGenerator.nextInt(10) +randGenerator.nextInt(10) + randGenerator.nextInt(10);
                 namn = jTextField1.getText();
                 telefon = jTextField2.getText();
 
@@ -296,22 +301,22 @@ public class RegistreraAgent extends javax.swing.JFrame {
                 omrade = db.fetchSingle("SELECT BENAMNING FROM OMRADE WHERE OMRADES_ID = " + omradesID);
                 System.out.println(2);
                 
-                db.insert("INSERT INTO AGENT VALUES("+ nyAgentID + ", \'" + namn + "\' , \'" + telefon + "\', \'" + anstallningsdatum + "\', \'" + administratÃ¶r + "\', \'" + lÃ¶senord + "\', " + omradesID + ")");
+                db.insert("INSERT INTO AGENT VALUES("+ nyAgentID + ", \'" + namn + "\' , \'" + telefon + "\', \'" + anstallningsdatum + "\', \'" + administratör + "\', \'" + lösenord + "\', " + omradesID + ")");
                 System.out.println(3);
                 
                 JOptionPane.showMessageDialog(null, "Ny agent registrerad!" +
                     "\n\nNamn: " + namn + 
                     "\n\nAgentID: " + nyAgentID + 
-                    "\nLÃ¶senord: " + lÃ¶senord + 
+                    "\nLösenord: " + lösenord + 
                     "\nTelefon: " + telefon + 
-                    "\n\nAnstÃ¤llningsdatum: " + anstallningsdatum + 
-                    "\nOmrÃ¥de: " + omrade + 
-                    "\nAdministratÃ¶r: " + Ã¤rAdmin);
+                    "\n\nAnställningsdatum: " + anstallningsdatum + 
+                    "\nOmråde: " + omrade + 
+                    "\nAdministratör: " + ärAdmin);
                 RegistreraAgent.this.dispose();        
             
             }
             catch(InfException undantag){
-                JOptionPane.showMessageDialog(null, "NÃ¥got gick fel med registreringen!");
+                JOptionPane.showMessageDialog(null, "Något gick fel med registreringen!");
                 System.out.println(undantag);
             }
                 
@@ -321,6 +326,10 @@ public class RegistreraAgent extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         RegistreraAgent.this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     @SuppressWarnings("unchecked")    
     private void setOmradesBox(){

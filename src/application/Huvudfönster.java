@@ -12,13 +12,13 @@ import oru.inf.InfDB;
  *
  * @author MarcusSkarud
  */
-public class Huvudf√∂nster extends javax.swing.JFrame {
+public class Huvudfˆnster extends javax.swing.JFrame {
 
     private static InfDB db;
     /**
      * Creates new form NewJFrame
      */
-    public Huvudf√∂nster(InfDB db) {
+    public Huvudfˆnster(InfDB db) {
         this.db = db;
         initComponents();
     }
@@ -37,7 +37,7 @@ public class Huvudf√∂nster extends javax.swing.JFrame {
         mibpLbl = new javax.swing.JLabel();
         skiljestreck = new javax.swing.JSeparator();
         body = new javax.swing.JPanel();
-        v√§lkommenLbl = new javax.swing.JLabel();
+        v‰lkommenLbl = new javax.swing.JLabel();
         infoLbl = new javax.swing.JLabel();
         agentBtn = new javax.swing.JButton();
         alienBtn = new javax.swing.JButton();
@@ -98,10 +98,10 @@ public class Huvudf√∂nster extends javax.swing.JFrame {
         body.setBackground(new java.awt.Color(80, 80, 80));
         body.setForeground(new java.awt.Color(100, 100, 100));
 
-        v√§lkommenLbl.setFont(new java.awt.Font("Lucida Grande", 0, 30)); // NOI18N
-        v√§lkommenLbl.setForeground(new java.awt.Color(255, 255, 255));
-        v√§lkommenLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        v√§lkommenLbl.setText("V√§lkommen till Men in Black-portalen");
+        v‰lkommenLbl.setFont(new java.awt.Font("Lucida Grande", 0, 30)); // NOI18N
+        v‰lkommenLbl.setForeground(new java.awt.Color(255, 255, 255));
+        v‰lkommenLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        v‰lkommenLbl.setText("V‰lkommen till Men in Black-portalen");
 
         infoLbl.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
         infoLbl.setForeground(new java.awt.Color(255, 255, 255));
@@ -162,7 +162,7 @@ public class Huvudf√∂nster extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(alienBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(75, 75, 75))
-                    .addComponent(v√§lkommenLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE))
+                    .addComponent(v‰lkommenLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE))
                 .addGap(50, 50, 50))
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bodyLayout.createSequentialGroup()
@@ -175,7 +175,7 @@ public class Huvudf√∂nster extends javax.swing.JFrame {
             .addGroup(bodyLayout.createSequentialGroup()
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
-                .addComponent(v√§lkommenLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(v‰lkommenLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addComponent(infoLbl)
                 .addGap(50, 50, 50)
@@ -233,6 +233,6 @@ public class Huvudf√∂nster extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel mibpLbl;
     private javax.swing.JSeparator skiljestreck;
-    private javax.swing.JLabel v√§lkommenLbl;
+    private javax.swing.JLabel v‰lkommenLbl;
     // End of variables declaration//GEN-END:variables
 }

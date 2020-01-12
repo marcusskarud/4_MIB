@@ -79,7 +79,7 @@ public class BytLosenord extends javax.swing.JFrame {
         sidLbl.setBackground(new java.awt.Color(120, 120, 120));
         sidLbl.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
         sidLbl.setForeground(new java.awt.Color(200, 200, 200));
-        sidLbl.setText("Byt LÃ¶senord");
+        sidLbl.setText("Byt Lösenord");
 
         skiljestreck.setForeground(new java.awt.Color(200, 200, 200));
 
@@ -124,13 +124,13 @@ public class BytLosenord extends javax.swing.JFrame {
         bytLosenPanel.setPreferredSize(new java.awt.Dimension(360, 180));
 
         gammaltLosenLbl.setForeground(new java.awt.Color(0, 0, 0));
-        gammaltLosenLbl.setText("Gammalt lÃ¶senord:");
+        gammaltLosenLbl.setText("Gammalt lösenord:");
 
         nyLosenLbl1.setForeground(new java.awt.Color(0, 0, 0));
-        nyLosenLbl1.setText("Nytt lÃ¶senord:");
+        nyLosenLbl1.setText("Nytt lösenord:");
 
         nyLosenLbl2.setForeground(new java.awt.Color(0, 0, 0));
-        nyLosenLbl2.setText("LÃ¶senord:");
+        nyLosenLbl2.setText("Lösenord:");
 
         gammaltLosen.setText("123");
 
@@ -143,7 +143,7 @@ public class BytLosenord extends javax.swing.JFrame {
             }
         });
 
-        bytLosen.setText("Byt lÃ¶senord");
+        bytLosen.setText("Byt lösenord");
         bytLosen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bytLosenActionPerformed(evt);
@@ -178,10 +178,10 @@ public class BytLosenord extends javax.swing.JFrame {
                                     .addComponent(nyLosenLbl1)
                                     .addComponent(nyLosenLbl2))
                                 .addGap(18, 18, 18)
-                                .addGroup(bytLosenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(bytLosenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(nyLosen2, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
                                     .addComponent(nyLosen)
-                                    .addComponent(gammaltLosen)
-                                    .addComponent(nyLosen2, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)))
+                                    .addComponent(gammaltLosen)))
                             .addComponent(skiljestreck2))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, bytLosenPanelLayout.createSequentialGroup()
@@ -226,11 +226,11 @@ public class BytLosenord extends javax.swing.JFrame {
         body.setLayout(bodyLayout);
         bodyLayout.setHorizontalGroup(
             bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bodyLayout.createSequentialGroup()
-                .addContainerGap(90, Short.MAX_VALUE)
-                .addComponent(bytLosenPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(90, 90, 90))
-            .addComponent(jSeparator1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bytLosenPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(80, 80, 80))
         );
         bodyLayout.setVerticalGroup(
             bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,16 +267,16 @@ public class BytLosenord extends javax.swing.JFrame {
                     && Validering.passwordLengthCheck(nyLosen)
                     && Validering.newPasswordMatch(nyLosen, nyLosen2)){
                 db.update("UPDATE " + entitetstyp + " SET LOSENORD=\'" + new String(nyLosen.getPassword()) + "\' WHERE " + entitetstypID +"=" + entitetsID);
-                JOptionPane.showMessageDialog(null, "Nytt lÃ¶senord satt!");
+                JOptionPane.showMessageDialog(null, "Nytt lösenord satt!");
                 BytLosenord.this.dispose();
             }
             else {
-                JOptionPane.showMessageDialog(null, "Fel lÃ¶senord!");
+                JOptionPane.showMessageDialog(null, "Fel lösenord!");
                 gammaltLosen.requestFocus();
             }
         }
         catch(InfException undantag){
-            JOptionPane.showMessageDialog(null, "NÃ¥gonting gick fel!");
+            JOptionPane.showMessageDialog(null, "Någonting gick fel!");
         } 
     }//GEN-LAST:event_bytLosenActionPerformed
 

@@ -266,6 +266,7 @@
                 <Property name="text" type="java.lang.String" value="12345"/>
               </Properties>
               <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="l&#xf6;senordActionPerformed"/>
                 <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="l&#xf6;senordKeyPressed"/>
               </Events>
             </Component>

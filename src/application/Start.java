@@ -29,7 +29,7 @@ public class Start {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HuvudfÃ¶nster(db).setVisible(true);
+                new Huvudfönster(db).setVisible(true);
             }
         });
     }    

@@ -94,7 +94,7 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
         sidLbl.setBackground(new java.awt.Color(120, 120, 120));
         sidLbl.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
         sidLbl.setForeground(new java.awt.Color(200, 200, 200));
-        sidLbl.setText("Ã„ndra/ta bort agent");
+        sidLbl.setText("Ändra/ta bort agent");
 
         skiljestreck.setForeground(new java.awt.Color(200, 200, 200));
 
@@ -136,7 +136,7 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Namn:");
 
-        jButton3.setText("SÃ¶k agent");
+        jButton3.setText("Sök agent");
         jButton3.setPreferredSize(new java.awt.Dimension(83, 33));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,7 +151,7 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
         });
 
         jLabel10.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel10.setText("SÃ¶k agent med namn:");
+        jLabel10.setText("Sök agent med namn:");
 
         valjAgentComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---" }));
         valjAgentComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -162,16 +162,16 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(250, 250, 250));
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("VÃ¤lj agent att Ã¤ndra:");
+        jLabel1.setText("Välj agent att ändra:");
 
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("AnstÃ¤llningsdatum:");
+        jLabel9.setText("Anställningsdatum:");
 
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Telefon:");
 
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("LÃ¶senord:");
+        jLabel6.setText("Lösenord:");
 
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("AgentID:");
@@ -180,9 +180,9 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel11.setText("OmrÃ¥de:");
+        jLabel11.setText("Område:");
 
-        sparaUppdateradInfo.setText("Spara Ã¤ndringar");
+        sparaUppdateradInfo.setText("Spara ändringar");
         sparaUppdateradInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sparaUppdateradInfoActionPerformed(evt);
@@ -248,7 +248,7 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
 
         jCheckBox1.setBackground(new java.awt.Color(60, 60, 60));
         jCheckBox1.setForeground(new java.awt.Color(0, 0, 0));
-        jCheckBox1.setText("AdministratÃ¶r");
+        jCheckBox1.setText("Administratör");
         jCheckBox1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jCheckBox1.setOpaque(false);
 
@@ -421,8 +421,8 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
     
         
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        String[] agentSÃ¶k = valjAgentComboBox.getSelectedItem().toString().split(" ");
-        int agentID = Integer.parseInt(agentSÃ¶k[1]);
+        String[] agentSök = valjAgentComboBox.getSelectedItem().toString().split(" ");
+        int agentID = Integer.parseInt(agentSök[1]);
 
         deleteAgent(agentID);
         jTextField8.setText("");
@@ -460,8 +460,8 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
             Validering.textNotEmpty(jTextField5) && Validering.textNotEmpty(jTextField7))
             {
 
-            String[] agentSÃ¶k = valjAgentComboBox.getSelectedItem().toString().split(" ");
-            int agentID = Integer.parseInt(agentSÃ¶k[1]);
+            String[] agentSök = valjAgentComboBox.getSelectedItem().toString().split(" ");
+            int agentID = Integer.parseInt(agentSök[1]);
 
             String adminStatus = "J";
             if(jCheckBox1.getSelectedObjects() == null){
@@ -476,7 +476,7 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
                 db.insert("INSERT INTO AGENT VALUES ( " + agentID + " , '" + jTextField3.getText().toString() + "' , '" + jTextField5.getText().toString() + "' , '" + jTextField7.getText().toString() + "' , '" + adminStatus + "' , '" + jTextField4.getText().toString() + "' , " + omrade + ")");
                 
 
-                JOptionPane.showMessageDialog(null, "Ã„ndringarna sparade!");
+                JOptionPane.showMessageDialog(null, "Ändringarna sparade!");
                 AndraTaBortAgent.this.dispose();
 
             }
@@ -496,8 +496,8 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
         else{
 
             try{
-                String[] alienSÃ¶k = valjAgentComboBox.getSelectedItem().toString().split(" ");
-                int agentID = Integer.parseInt(alienSÃ¶k[1]);
+                String[] alienSök = valjAgentComboBox.getSelectedItem().toString().split(" ");
+                int agentID = Integer.parseInt(alienSök[1]);
 
                 HashMap<String,String> valdAgent = db.fetchRow("SELECT * FROM AGENT WHERE AGENT_ID = " + agentID);
 
@@ -532,35 +532,43 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     @SuppressWarnings("unchecked")
-    private void setJComboBox(String sÃ¶ktNamn){
+    private void setJComboBox(String söktNamn){
         try{
-        ArrayList<HashMap<String,String>> agent = db.fetchRows("SELECT * FROM AGENT WHERE NAMN = '" + sÃ¶ktNamn + "'");
-        DefaultComboBoxModel sÃ¶ktAgentTillComboBox = new DefaultComboBoxModel();
+        ArrayList<HashMap<String,String>> agent = db.fetchRows("SELECT * FROM AGENT WHERE NAMN = '" + söktNamn + "'");
+        DefaultComboBoxModel söktAgentTillComboBox = new DefaultComboBoxModel();
         if (agent == null){
-            sÃ¶ktAgentTillComboBox.addElement("---");
+            söktAgentTillComboBox.addElement("---");
         }
         else{
             for(HashMap listaAgent : agent){
-                String varjeAgent = "AgentID: " + listaAgent.get("AGENT_ID") + " | Telefon: " +  listaAgent.get("TELEFON") + " | OmrÃ¥de: " +  db.fetchSingle("SELECT BENAMNING FROM OMRADE WHERE OMRADES_ID = " + listaAgent.get("OMRADE"));
-                sÃ¶ktAgentTillComboBox.addElement(varjeAgent);
+                String varjeAgent = "AgentID: " + listaAgent.get("AGENT_ID") + " | Telefon: " +  listaAgent.get("TELEFON") + " | Område: " +  db.fetchSingle("SELECT BENAMNING FROM OMRADE WHERE OMRADES_ID = " + listaAgent.get("OMRADE"));
+                söktAgentTillComboBox.addElement(varjeAgent);
             }
         }
-        valjAgentComboBox.setModel(sÃ¶ktAgentTillComboBox);
+        valjAgentComboBox.setModel(söktAgentTillComboBox);
         }
         catch(InfException undantag){
             System.out.println("Fel med databasen!" + undantag);
         }
         
     }
-    
+    @SuppressWarnings("unchecked")    
     private void deleteAgent(int agentID){
+        
         try{
-            db.delete("DELETE FROM INNEHAR_UTRUSTNING WHERE AGENT_ID = " + agentID);
-            db.delete("DELETE FROM INNEHAR_FORDON WHERE AGENT_ID = " + agentID);
-            db.delete("DELETE FROM FALTAGENT WHERE AGENT_ID = " + agentID);
-            db.delete("DELETE FROM KONTORSCHEF WHERE AGENT_ID = " + agentID);
-            db.delete("DELETE FROM OMRADESCHEF WHERE AGENT_ID = " + agentID);            
-            db.delete("DELETE FROM AGENT WHERE AGENT_ID = " + agentID); 
+            String testSträng = db.fetchSingle("SELECT NAMN FROM ALIEN WHERE ANSVARIG_AGENT = " + agentID);
+            if (testSträng != null){
+                JOptionPane.showMessageDialog(null, "Agenten är ansvarig för en eller flera alien och kan därför inte tas bort!");
+            }
+            else{
+                db.delete("DELETE FROM INNEHAR_UTRUSTNING WHERE AGENT_ID = " + agentID);
+                db.delete("DELETE FROM INNEHAR_FORDON WHERE AGENT_ID = " + agentID);
+                db.delete("DELETE FROM FALTAGENT WHERE AGENT_ID = " + agentID);
+                db.delete("DELETE FROM KONTORSCHEF WHERE AGENT_ID = " + agentID);
+                db.delete("DELETE FROM OMRADESCHEF WHERE AGENT_ID = " + agentID);            
+                db.delete("DELETE FROM AGENT WHERE AGENT_ID = " + agentID);
+            }
+            
             
         }
         catch(InfException undantag){
@@ -568,6 +576,7 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
         }
     }
     
+    @SuppressWarnings("unchecked")     
     private void rensaFalt(){
         DefaultComboBoxModel tomBox = new DefaultComboBoxModel();
         tomBox.addElement("---");

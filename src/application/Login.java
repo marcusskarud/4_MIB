@@ -17,6 +17,7 @@ public class Login extends javax.swing.JFrame  {
 
     private static InfDB db;
     private boolean entitetstyp;
+    private String  checktyp = "agentID";
     /**
      * Creates new form agentLogin
      */
@@ -45,8 +46,8 @@ public class Login extends javax.swing.JFrame  {
         loginPanel = new javax.swing.JPanel();
         iDLbl = new javax.swing.JLabel();
         iD = new javax.swing.JTextField();
-        lÃ¶senLbl = new javax.swing.JLabel();
-        lÃ¶senord = new javax.swing.JPasswordField();
+        lösenLbl = new javax.swing.JLabel();
+        lösenord = new javax.swing.JPasswordField();
         loginBtn = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
 
@@ -119,13 +120,18 @@ public class Login extends javax.swing.JFrame  {
 
         iD.setText("AgentID");
 
-        lÃ¶senLbl.setForeground(new java.awt.Color(0, 0, 0));
-        lÃ¶senLbl.setText("LÃ¶senord:");
+        lösenLbl.setForeground(new java.awt.Color(0, 0, 0));
+        lösenLbl.setText("Lösenord:");
 
-        lÃ¶senord.setText("12345");
-        lÃ¶senord.addKeyListener(new java.awt.event.KeyAdapter() {
+        lösenord.setText("12345");
+        lösenord.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lösenordActionPerformed(evt);
+            }
+        });
+        lösenord.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                lÃ¶senordKeyPressed(evt);
+                lösenordKeyPressed(evt);
             }
         });
 
@@ -145,12 +151,12 @@ public class Login extends javax.swing.JFrame  {
                     .addGroup(loginPanelLayout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lÃ¶senLbl)
+                            .addComponent(lösenLbl)
                             .addComponent(iDLbl))
                         .addGap(58, 58, 58)
                         .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(iD, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
-                            .addComponent(lÃ¶senord)))
+                            .addComponent(lösenord)))
                     .addGroup(loginPanelLayout.createSequentialGroup()
                         .addGap(138, 138, 138)
                         .addComponent(loginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -165,8 +171,8 @@ public class Login extends javax.swing.JFrame  {
                     .addComponent(iD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lÃ¶senLbl)
-                    .addComponent(lÃ¶senord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lösenLbl)
+                    .addComponent(lösenord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(loginBtn)
                 .addContainerGap(16, Short.MAX_VALUE))
@@ -221,12 +227,12 @@ public class Login extends javax.swing.JFrame  {
             Integer.parseInt(iD.getText());
         }
         catch (NumberFormatException undantag){
-            JOptionPane.showMessageDialog(null, "Ett giltigt ID bestÃ¥r av endast heltal!");
+            JOptionPane.showMessageDialog(null, "Ett giltigt ID består av endast heltal!");
             iD.requestFocus();
         }
         try {
             
-            if (entitetstyp && new String(lÃ¶senord.getPassword()).equals(db.fetchSingle("SELECT LOSENORD FROM AGENT WHERE AGENT_ID = " + iD.getText()))){
+            if (entitetstyp && new String(lösenord.getPassword()).equals(db.fetchSingle("SELECT LOSENORD FROM AGENT WHERE AGENT_ID = " + iD.getText()))){
                 found = true;
                 if (db.fetchSingle("SELECT ADMINISTRATOR FROM AGENT WHERE AGENT_ID =" + iD.getText()).equals("J")){
                     admin = true;
@@ -242,36 +248,41 @@ public class Login extends javax.swing.JFrame  {
                     Login.this.dispose();;             
             }
             else if (entitetstyp && !found){
-                JOptionPane.showMessageDialog(null, "Ogiltigt AgentID och/eller lÃ¶senord!");             
+                JOptionPane.showMessageDialog(null, "Ogiltigt " + checktyp + " och/eller lösenord!");             
             }
             
             
-            else if (!entitetstyp && new String(lÃ¶senord.getPassword()).equals(db.fetchSingle("SELECT LOSENORD FROM ALIEN WHERE ALIEN_ID = " + iD.getText()))){
+            else if (!entitetstyp && new String(lösenord.getPassword()).equals(db.fetchSingle("SELECT LOSENORD FROM ALIEN WHERE ALIEN_ID = " + iD.getText()))){
                 new AlienPortal(db, iD.getText()).setVisible(true);
                     Login.this.dispose();
             }
-            else if (!entitetstyp && !new String(lÃ¶senord.getPassword()).equals(db.fetchSingle("SELECT LOSENORD FROM ALIEN WHERE ALIEN_ID = " + iD.getText()))){
-                JOptionPane.showMessageDialog(null, "Ogiltigt AgentID och/eller lÃ¶senord!");                         
+            else if (!entitetstyp && !new String(lösenord.getPassword()).equals(db.fetchSingle("SELECT LOSENORD FROM ALIEN WHERE ALIEN_ID = " + iD.getText()))){
+                JOptionPane.showMessageDialog(null, "Ogiltigt "+ checktyp +" och/eller lösenord!");                         
             }
             
         }
         catch (InfException undantag){
-            JOptionPane.showMessageDialog(null, "NÃ¥gonting gick fel med databasuppkopplingen!");
-            System.out.println("Felet Ã¤r: " + undantag);
+            JOptionPane.showMessageDialog(null, "Någonting gick fel med databasuppkopplingen!");
+            System.out.println("Felet är: " + undantag);
 
         }
         
     }//GEN-LAST:event_loginBtnActionPerformed
-
+    private void lösenordKeyPressed(java.awt.event.KeyEvent evt){ /*
     private void lÃ¶senordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lÃ¶senordKeyPressed
-        // TODO add your handling code here:
+        // TODO add your handling code here:*/
         if (evt.getKeyCode() == evt.VK_ENTER){
         loginBtn.doClick();
         }
     }//GEN-LAST:event_lÃ¶senordKeyPressed
 
+    private void lösenordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lösenordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lösenordActionPerformed
+
     private void checkEntitetstyp(boolean status){
         if (!status){
+            checktyp = "alienID";
             iDLbl.setText("AlienID:");
             iD.setText("AlienID");
             sidLbl.setText("AlienLogin");
@@ -291,8 +302,8 @@ public class Login extends javax.swing.JFrame  {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton loginBtn;
     private javax.swing.JPanel loginPanel;
-    private javax.swing.JLabel lÃ¶senLbl;
-    private javax.swing.JPasswordField lÃ¶senord;
+    private javax.swing.JLabel lösenLbl;
+    private javax.swing.JPasswordField lösenord;
     private javax.swing.JLabel mibpLbl;
     private javax.swing.JLabel sidLbl;
     private javax.swing.JSeparator skiljestreck;
