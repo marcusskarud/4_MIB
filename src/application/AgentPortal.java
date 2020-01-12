@@ -35,6 +35,7 @@ public class AgentPortal extends javax.swing.JFrame {
         initComponents();
         initAgentPortal();
         
+        
     }
 
     /**
@@ -126,6 +127,7 @@ public class AgentPortal extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         jComboBox7 = new javax.swing.JComboBox<>();
         jButton11 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
         jPanel8 = new javax.swing.JPanel();
         jPanel16 = new javax.swing.JPanel();
         jButton8 = new javax.swing.JButton();
@@ -189,7 +191,7 @@ public class AgentPortal extends javax.swing.JFrame {
         headerLayout.setVerticalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headerLayout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
+                .addContainerGap(9, Short.MAX_VALUE)
                 .addComponent(headerLbl)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(skiljestreck, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -780,7 +782,7 @@ public class AgentPortal extends javax.swing.JFrame {
                     .addComponent(jComboBox5, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel12Layout.createSequentialGroup()
                         .addComponent(jLabel17)
-                        .addGap(0, 93, Short.MAX_VALUE)))
+                        .addGap(0, 109, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel12Layout.setVerticalGroup(
@@ -895,6 +897,11 @@ public class AgentPortal extends javax.swing.JFrame {
         jLabel26.setText("Välj ny kontorschef:");
 
         jButton11.setText("Sätt ny kontorschef");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
@@ -923,17 +930,27 @@ public class AgentPortal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jTextField1.setEditable(false);
+        jTextField1.setBackground(new java.awt.Color(250, 250, 250));
+        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
-                    .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
-                    .addComponent(jPanel14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
-                    .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextField1)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
+                    .addComponent(jPanel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
+                    .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
+                    .addComponent(jPanel19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -956,7 +973,9 @@ public class AgentPortal extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(183, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(151, Short.MAX_VALUE))
         );
 
         jTabbedPane4.addTab("Utrustning/område", jPanel5);
@@ -1428,7 +1447,40 @@ public class AgentPortal extends javax.swing.JFrame {
             System.out.println(undantag);
         }
     }//GEN-LAST:event_jButton10ActionPerformed
-
+    @SuppressWarnings("unchecked")
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        try{
+            String[] agentSök = jComboBox7.getSelectedItem().toString().split(" ");
+            int agentID = Integer.parseInt(agentSök[1]);
+            db.update("UPDATE KONTORSCHEF SET AGENT_ID = " + agentID + " WHERE KONTORSBETECKNING = 'Örebrokontoret'");
+            initJtextField1();
+            
+        }
+        catch(InfException undantag){
+            System.out.println(undantag);
+        }
+    }//GEN-LAST:event_jButton11ActionPerformed
+@SuppressWarnings("unchecked")
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+    @SuppressWarnings("unchecked")
+    
+    private void initJtextField1(){
+        
+        try{
+           String hämtaAID = db.fetchSingle("SELECT AGENT_ID FROM KONTORSCHEF");
+           
+        HashMap<String,String> hämtaOC = db.fetchRow("SELECT * FROM AGENT WHERE AGENT_ID = "+hämtaAID);
+        jTextField1.setText("Nuvarande Områdeschef: "+ hämtaOC.get("NAMN")+" | Agent ID: "+ hämtaOC.get("AGENT_ID") );
+        }
+        catch (InfException e){
+        }
+        
+        
+    }
+    
+    @SuppressWarnings("unchecked")
     private String sökAllInfo(int iD){
         String resultatsträng = "";
         String ras = "";
@@ -1489,7 +1541,7 @@ public class AgentPortal extends javax.swing.JFrame {
         
     }
     
-    
+    @SuppressWarnings("unchecked")
     private void setDatumJSpinner(){
         try{
             String stringDatum = db.fetchSingle("SELECT MIN(REGISTRERINGSDATUM) FROM ALIEN");  
@@ -1508,7 +1560,7 @@ public class AgentPortal extends javax.swing.JFrame {
     }
     
     
-    
+    @SuppressWarnings("unchecked")
     private void setLanadUtrustningJTextArea(String agentID){
         jTextArea2.setText("");
         String vapenSträng = "";
@@ -1567,7 +1619,7 @@ public class AgentPortal extends javax.swing.JFrame {
     
     }
 
-    
+    @SuppressWarnings("unchecked")
     private void initAgentPortal(){
         setOmradeJComboBox(jComboBox1);
         setOmradeJComboBox(jComboBox5);
@@ -1575,6 +1627,8 @@ public class AgentPortal extends javax.swing.JFrame {
         setDatumJSpinner();
         setAdminMode(admin);
         setAgenterIOmrade();
+        initJtextField1();
+        
 
         
         jLabel16.setVisible(false);
@@ -1590,7 +1644,7 @@ public class AgentPortal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Någonting gick fel!");
         }
     }
-    
+    @SuppressWarnings("unchecked")
     private void setAgenterIOmrade(){
         
         DefaultComboBoxModel agenterIOmrade = new DefaultComboBoxModel();
@@ -1705,6 +1759,7 @@ public class AgentPortal extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton listaAlienPlatsBtn;
     private javax.swing.JButton listaAliensDatum;
     private javax.swing.JButton listaAliensRasBtn;
