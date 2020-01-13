@@ -36,181 +36,181 @@ public class TaBortUtrustning extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        header = new javax.swing.JPanel();
-        headerLbl = new javax.swing.JLabel();
-        mibpLbl = new javax.swing.JLabel();
-        sidLbl = new javax.swing.JLabel();
-        skiljestreck = new javax.swing.JSeparator();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
+        sidPanel = new javax.swing.JPanel();
+        headerPanel = new javax.swing.JPanel();
+        headerLabel = new javax.swing.JLabel();
+        mibPortalLabel = new javax.swing.JLabel();
+        sidLabel = new javax.swing.JLabel();
+        skiljeStreck1 = new javax.swing.JSeparator();
+        bodyPanel = new javax.swing.JPanel();
+        utrustningNamnLabel = new javax.swing.JLabel();
+        valjUtrustningLabel = new javax.swing.JLabel();
+        utrustningNamnTextField = new javax.swing.JTextField();
+        valjUtrustningBox = new javax.swing.JComboBox<>();
+        sokUtrustningButton = new javax.swing.JButton();
+        taBortUtrustningButton = new javax.swing.JButton();
+        avbrytButton = new javax.swing.JButton();
+        skiljeStreck2 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(40, 40, 40));
+        sidPanel.setBackground(new java.awt.Color(40, 40, 40));
 
-        header.setBackground(new java.awt.Color(80, 80, 80));
-        header.setPreferredSize(new java.awt.Dimension(1095, 100));
+        headerPanel.setBackground(new java.awt.Color(80, 80, 80));
+        headerPanel.setPreferredSize(new java.awt.Dimension(1095, 100));
 
-        headerLbl.setBackground(new java.awt.Color(120, 120, 120));
-        headerLbl.setFont(new java.awt.Font("Lucida Grande", 0, 28)); // NOI18N
-        headerLbl.setForeground(new java.awt.Color(200, 200, 200));
-        headerLbl.setText("Men in Black - Sektor Skandinavien");
+        headerLabel.setBackground(new java.awt.Color(120, 120, 120));
+        headerLabel.setFont(new java.awt.Font("Lucida Grande", 0, 28)); // NOI18N
+        headerLabel.setForeground(new java.awt.Color(200, 200, 200));
+        headerLabel.setText("Men in Black - Sektor Skandinavien");
 
-        mibpLbl.setBackground(new java.awt.Color(120, 120, 120));
-        mibpLbl.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
-        mibpLbl.setForeground(new java.awt.Color(200, 200, 200));
-        mibpLbl.setText("MiB-Portalen");
+        mibPortalLabel.setBackground(new java.awt.Color(120, 120, 120));
+        mibPortalLabel.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
+        mibPortalLabel.setForeground(new java.awt.Color(200, 200, 200));
+        mibPortalLabel.setText("MiB-Portalen");
 
-        sidLbl.setBackground(new java.awt.Color(120, 120, 120));
-        sidLbl.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
-        sidLbl.setForeground(new java.awt.Color(200, 200, 200));
-        sidLbl.setText("Ta bort utrustning");
+        sidLabel.setBackground(new java.awt.Color(120, 120, 120));
+        sidLabel.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
+        sidLabel.setForeground(new java.awt.Color(200, 200, 200));
+        sidLabel.setText("Ta bort utrustning");
 
-        skiljestreck.setForeground(new java.awt.Color(200, 200, 200));
+        skiljeStreck1.setForeground(new java.awt.Color(200, 200, 200));
 
-        javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
-        header.setLayout(headerLayout);
-        headerLayout.setHorizontalGroup(
-            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(headerLayout.createSequentialGroup()
+        javax.swing.GroupLayout headerPanelLayout = new javax.swing.GroupLayout(headerPanel);
+        headerPanel.setLayout(headerPanelLayout);
+        headerPanelLayout.setHorizontalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerPanelLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addGroup(headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(headerLayout.createSequentialGroup()
+                .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(headerPanelLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(mibpLbl)
+                        .addComponent(mibPortalLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(sidLbl)
+                        .addComponent(sidLabel)
                         .addGap(39, 39, 39))
-                    .addGroup(headerLayout.createSequentialGroup()
-                        .addGroup(headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(skiljestreck, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(headerLbl))
+                    .addGroup(headerPanelLayout.createSequentialGroup()
+                        .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(skiljeStreck1, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(headerLabel))
                         .addContainerGap(33, Short.MAX_VALUE))))
         );
-        headerLayout.setVerticalGroup(
-            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(headerLayout.createSequentialGroup()
+        headerPanelLayout.setVerticalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerPanelLayout.createSequentialGroup()
                 .addContainerGap(13, Short.MAX_VALUE)
-                .addComponent(headerLbl)
+                .addComponent(headerLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(skiljestreck, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(skiljeStreck1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(mibpLbl)
-                    .addComponent(sidLbl))
+                .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(mibPortalLabel)
+                    .addComponent(sidLabel))
                 .addContainerGap())
         );
 
-        jPanel2.setBackground(new java.awt.Color(170, 170, 170));
-        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        bodyPanel.setBackground(new java.awt.Color(170, 170, 170));
+        bodyPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Namn:");
+        utrustningNamnLabel.setForeground(new java.awt.Color(0, 0, 0));
+        utrustningNamnLabel.setText("Namn:");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        valjUtrustningLabel.setForeground(new java.awt.Color(0, 0, 0));
+        valjUtrustningLabel.setText("Välj utrustning:");
+
+        utrustningNamnTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                utrustningNamnTextFieldActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Ta bort utrustning");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        sokUtrustningButton.setText("Sök");
+        sokUtrustningButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                sokUtrustningButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Avbryt");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        taBortUtrustningButton.setText("Ta bort utrustning");
+        taBortUtrustningButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                taBortUtrustningButtonActionPerformed(evt);
             }
         });
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Välj utrustning:");
-
-        jButton3.setText("Sök");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        avbrytButton.setText("Avbryt");
+        avbrytButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                avbrytButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout bodyPanelLayout = new javax.swing.GroupLayout(bodyPanel);
+        bodyPanel.setLayout(bodyPanelLayout);
+        bodyPanelLayout.setHorizontalGroup(
+            bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bodyPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(bodyPanelLayout.createSequentialGroup()
                         .addGap(40, 40, 40)
-                        .addComponent(jButton1)
+                        .addComponent(taBortUtrustningButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2)
+                        .addComponent(avbrytButton)
                         .addGap(40, 40, 40))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bodyPanelLayout.createSequentialGroup()
+                        .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(skiljeStreck2, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(valjUtrustningBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, bodyPanelLayout.createSequentialGroup()
+                                .addComponent(valjUtrustningLabel)
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addContainerGap())
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                    .addGroup(bodyPanelLayout.createSequentialGroup()
+                        .addComponent(utrustningNamnLabel)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(utrustningNamnTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(sokUtrustningButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        bodyPanelLayout.setVerticalGroup(
+            bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bodyPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3))
+                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(utrustningNamnLabel)
+                    .addComponent(utrustningNamnTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sokUtrustningButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(skiljeStreck2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
+                .addComponent(valjUtrustningLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(valjUtrustningBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
+                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(avbrytButton)
+                    .addComponent(taBortUtrustningButton))
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(header, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 539, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout sidPanelLayout = new javax.swing.GroupLayout(sidPanel);
+        sidPanel.setLayout(sidPanelLayout);
+        sidPanelLayout.setHorizontalGroup(
+            sidPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(headerPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 539, Short.MAX_VALUE)
+            .addGroup(sidPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bodyPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        sidPanelLayout.setVerticalGroup(
+            sidPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sidPanelLayout.createSequentialGroup()
+                .addComponent(headerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bodyPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 18, Short.MAX_VALUE))
         );
 
@@ -218,28 +218,28 @@ public class TaBortUtrustning extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(sidPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(sidPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void avbrytButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avbrytButtonActionPerformed
         TaBortUtrustning.this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_avbrytButtonActionPerformed
 
     @SuppressWarnings("unchecked")    
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void utrustningNamnTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_utrustningNamnTextFieldActionPerformed
         try{
-            ArrayList<HashMap<String, String>> sökResultat = db.fetchRows("SELECT * FROM UTRUSTNING WHERE BENAMNING = \'" + jTextField1.getText() + "\'");
+            ArrayList<HashMap<String, String>> sökResultat = db.fetchRows("SELECT * FROM UTRUSTNING WHERE BENAMNING = \'" + utrustningNamnTextField.getText() + "\'");
         
             if (sökResultat == null){
                 JOptionPane.showMessageDialog(null, "Det finns ingen utrustning med det namnet!");
-                jTextField1.requestFocus();
+                utrustningNamnTextField.requestFocus();
             }
             else{
 
@@ -263,21 +263,21 @@ public class TaBortUtrustning extends javax.swing.JFrame {
                     
                     
                 }
-                jComboBox1.setModel(utrustningTillComboBox);
+                valjUtrustningBox.setModel(utrustningTillComboBox);
             }
         }
         catch(InfException undantag){
             
             System.out.println(undantag);
         }
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_utrustningNamnTextFieldActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        jTextField1ActionPerformed(evt);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void sokUtrustningButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sokUtrustningButtonActionPerformed
+        utrustningNamnTextFieldActionPerformed(evt);
+    }//GEN-LAST:event_sokUtrustningButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String[] valdUtrustning = jComboBox1.getSelectedItem().toString().split(" ");
+    private void taBortUtrustningButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_taBortUtrustningButtonActionPerformed
+        String[] valdUtrustning = valjUtrustningBox.getSelectedItem().toString().split(" ");
         int utrustningsID = Integer.parseInt(valdUtrustning[1]);
         try{
             
@@ -302,27 +302,27 @@ public class TaBortUtrustning extends javax.swing.JFrame {
         catch (InfException undantag){
             JOptionPane.showMessageDialog(null, "FEL!!!!!");
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_taBortUtrustningButtonActionPerformed
 
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel header;
-    private javax.swing.JLabel headerLbl;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel mibpLbl;
-    private javax.swing.JLabel sidLbl;
-    private javax.swing.JSeparator skiljestreck;
+    private javax.swing.JButton avbrytButton;
+    private javax.swing.JPanel bodyPanel;
+    private javax.swing.JLabel headerLabel;
+    private javax.swing.JPanel headerPanel;
+    private javax.swing.JLabel mibPortalLabel;
+    private javax.swing.JLabel sidLabel;
+    private javax.swing.JPanel sidPanel;
+    private javax.swing.JSeparator skiljeStreck1;
+    private javax.swing.JSeparator skiljeStreck2;
+    private javax.swing.JButton sokUtrustningButton;
+    private javax.swing.JButton taBortUtrustningButton;
+    private javax.swing.JLabel utrustningNamnLabel;
+    private javax.swing.JTextField utrustningNamnTextField;
+    private javax.swing.JComboBox<String> valjUtrustningBox;
+    private javax.swing.JLabel valjUtrustningLabel;
     // End of variables declaration//GEN-END:variables
 }

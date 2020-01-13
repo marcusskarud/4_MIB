@@ -27,8 +27,8 @@ public class RegistreraAlien extends javax.swing.JFrame {
     public RegistreraAlien(InfDB db) {
         this.db = db;
         initComponents();
-        jTextField3.setEnabled(false);
-        jLabel4.setEnabled(false);
+        nyAlienExtraAttributTextField.setEnabled(false);
+        nyAlienExtraAttributLabel.setEnabled(false);
     }
 
     /**
@@ -40,211 +40,211 @@ public class RegistreraAlien extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        header5 = new javax.swing.JPanel();
-        headerLbl5 = new javax.swing.JLabel();
-        mibpLbl5 = new javax.swing.JLabel();
-        sidLbl5 = new javax.swing.JLabel();
-        skiljestreck5 = new javax.swing.JSeparator();
-        jSeparator5 = new javax.swing.JSeparator();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jSeparator4 = new javax.swing.JSeparator();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jSeparator6 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        sidPanel = new javax.swing.JPanel();
+        headerPanel = new javax.swing.JPanel();
+        headerLabel = new javax.swing.JLabel();
+        mibPortalLabel = new javax.swing.JLabel();
+        sidLabel = new javax.swing.JLabel();
+        skiljeStreck1 = new javax.swing.JSeparator();
+        skiljeStreck2 = new javax.swing.JSeparator();
+        bodyPanel = new javax.swing.JPanel();
+        nyAlienNamnLabel = new javax.swing.JLabel();
+        nyAlienTelefonLabel = new javax.swing.JLabel();
+        nyAlienRasLabel = new javax.swing.JLabel();
+        nyAlienExtraAttributLabel = new javax.swing.JLabel();
+        nyAlienNamnTextField = new javax.swing.JTextField();
+        nyAlienTelefonTextField = new javax.swing.JTextField();
+        nyAlienExtraAttributTextField = new javax.swing.JTextField();
+        nyAlienRasBox = new javax.swing.JComboBox<>();
+        skiljeStreck3 = new javax.swing.JSeparator();
+        skiljeStreck4 = new javax.swing.JSeparator();
+        registreraNylienButton = new javax.swing.JButton();
+        avbrytButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
         setSize(new java.awt.Dimension(540, 475));
 
-        jPanel2.setBackground(new java.awt.Color(40, 40, 40));
+        sidPanel.setBackground(new java.awt.Color(40, 40, 40));
 
-        header5.setBackground(new java.awt.Color(80, 80, 80));
-        header5.setPreferredSize(new java.awt.Dimension(1095, 100));
+        headerPanel.setBackground(new java.awt.Color(80, 80, 80));
+        headerPanel.setPreferredSize(new java.awt.Dimension(1095, 100));
 
-        headerLbl5.setBackground(new java.awt.Color(120, 120, 120));
-        headerLbl5.setFont(new java.awt.Font("Lucida Grande", 0, 28)); // NOI18N
-        headerLbl5.setForeground(new java.awt.Color(200, 200, 200));
-        headerLbl5.setText("Men in Black - Sektor Skandinavien");
+        headerLabel.setBackground(new java.awt.Color(120, 120, 120));
+        headerLabel.setFont(new java.awt.Font("Lucida Grande", 0, 28)); // NOI18N
+        headerLabel.setForeground(new java.awt.Color(200, 200, 200));
+        headerLabel.setText("Men in Black - Sektor Skandinavien");
 
-        mibpLbl5.setBackground(new java.awt.Color(120, 120, 120));
-        mibpLbl5.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
-        mibpLbl5.setForeground(new java.awt.Color(200, 200, 200));
-        mibpLbl5.setText("MiB-Portalen");
+        mibPortalLabel.setBackground(new java.awt.Color(120, 120, 120));
+        mibPortalLabel.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
+        mibPortalLabel.setForeground(new java.awt.Color(200, 200, 200));
+        mibPortalLabel.setText("MiB-Portalen");
 
-        sidLbl5.setBackground(new java.awt.Color(120, 120, 120));
-        sidLbl5.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
-        sidLbl5.setForeground(new java.awt.Color(200, 200, 200));
-        sidLbl5.setText("Nyregistrera Alien");
+        sidLabel.setBackground(new java.awt.Color(120, 120, 120));
+        sidLabel.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
+        sidLabel.setForeground(new java.awt.Color(200, 200, 200));
+        sidLabel.setText("Nyregistrera Alien");
 
-        skiljestreck5.setForeground(new java.awt.Color(200, 200, 200));
+        skiljeStreck1.setForeground(new java.awt.Color(200, 200, 200));
 
-        javax.swing.GroupLayout header5Layout = new javax.swing.GroupLayout(header5);
-        header5.setLayout(header5Layout);
-        header5Layout.setHorizontalGroup(
-            header5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(header5Layout.createSequentialGroup()
+        javax.swing.GroupLayout headerPanelLayout = new javax.swing.GroupLayout(headerPanel);
+        headerPanel.setLayout(headerPanelLayout);
+        headerPanelLayout.setHorizontalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerPanelLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addGroup(header5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(header5Layout.createSequentialGroup()
+                .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(headerPanelLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(mibpLbl5)
+                        .addComponent(mibPortalLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(sidLbl5)
+                        .addComponent(sidLabel)
                         .addGap(39, 39, 39))
-                    .addGroup(header5Layout.createSequentialGroup()
-                        .addGroup(header5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(skiljestreck5, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(headerLbl5))
+                    .addGroup(headerPanelLayout.createSequentialGroup()
+                        .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(skiljeStreck1, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(headerLabel))
                         .addContainerGap(33, Short.MAX_VALUE))))
         );
-        header5Layout.setVerticalGroup(
-            header5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(header5Layout.createSequentialGroup()
+        headerPanelLayout.setVerticalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerPanelLayout.createSequentialGroup()
                 .addContainerGap(13, Short.MAX_VALUE)
-                .addComponent(headerLbl5)
+                .addComponent(headerLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(skiljestreck5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(skiljeStreck1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(header5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(mibpLbl5)
-                    .addComponent(sidLbl5))
+                .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(mibPortalLabel)
+                    .addComponent(sidLabel))
                 .addContainerGap())
         );
 
-        jSeparator5.setBackground(new java.awt.Color(0, 0, 0));
-        jSeparator5.setForeground(new java.awt.Color(255, 255, 255));
+        skiljeStreck2.setBackground(new java.awt.Color(0, 0, 0));
+        skiljeStreck2.setForeground(new java.awt.Color(255, 255, 255));
 
-        jPanel3.setBackground(new java.awt.Color(170, 170, 170));
-        jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        bodyPanel.setBackground(new java.awt.Color(170, 170, 170));
+        bodyPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Namn:");
-        jLabel1.setPreferredSize(new java.awt.Dimension(110, 16));
+        nyAlienNamnLabel.setForeground(new java.awt.Color(0, 0, 0));
+        nyAlienNamnLabel.setText("Namn:");
+        nyAlienNamnLabel.setPreferredSize(new java.awt.Dimension(110, 16));
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Telefon:");
-        jLabel2.setPreferredSize(new java.awt.Dimension(110, 16));
+        nyAlienTelefonLabel.setForeground(new java.awt.Color(0, 0, 0));
+        nyAlienTelefonLabel.setText("Telefon:");
+        nyAlienTelefonLabel.setPreferredSize(new java.awt.Dimension(110, 16));
 
-        jTextField2.setPreferredSize(new java.awt.Dimension(110, 24));
+        nyAlienRasLabel.setForeground(new java.awt.Color(0, 0, 0));
+        nyAlienRasLabel.setText("Ras:");
+        nyAlienRasLabel.setPreferredSize(new java.awt.Dimension(110, 16));
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Ras:");
-        jLabel3.setPreferredSize(new java.awt.Dimension(110, 16));
+        nyAlienExtraAttributLabel.setForeground(new java.awt.Color(0, 0, 0));
+        nyAlienExtraAttributLabel.setText("---");
+        nyAlienExtraAttributLabel.setPreferredSize(new java.awt.Dimension(110, 16));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Worm", "Squid", "Boglodite" }));
-        jComboBox1.setPreferredSize(new java.awt.Dimension(110, 26));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        nyAlienTelefonTextField.setPreferredSize(new java.awt.Dimension(110, 24));
+
+        nyAlienExtraAttributTextField.setPreferredSize(new java.awt.Dimension(110, 24));
+
+        nyAlienRasBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Worm", "Squid", "Boglodite" }));
+        nyAlienRasBox.setPreferredSize(new java.awt.Dimension(110, 26));
+        nyAlienRasBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                nyAlienRasBoxActionPerformed(evt);
             }
         });
 
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("---");
-        jLabel4.setPreferredSize(new java.awt.Dimension(110, 16));
-
-        jTextField3.setPreferredSize(new java.awt.Dimension(110, 24));
-
-        jButton1.setText("Nyregistrera Alien");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        registreraNylienButton.setText("Nyregistrera Alien");
+        registreraNylienButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                registreraNylienButtonActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Avbryt");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        avbrytButton.setText("Avbryt");
+        avbrytButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                avbrytButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout bodyPanelLayout = new javax.swing.GroupLayout(bodyPanel);
+        bodyPanel.setLayout(bodyPanelLayout);
+        bodyPanelLayout.setHorizontalGroup(
+            bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bodyPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(skiljeStreck3, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(skiljeStreck4, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(bodyPanelLayout.createSequentialGroup()
+                        .addComponent(registreraNylienButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(avbrytButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(bodyPanelLayout.createSequentialGroup()
+                        .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nyAlienTelefonLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nyAlienTelefonTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nyAlienRasLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nyAlienRasBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nyAlienExtraAttributLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nyAlienExtraAttributTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nyAlienNamnTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nyAlienNamnLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        bodyPanelLayout.setVerticalGroup(
+            bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bodyPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nyAlienNamnLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nyAlienNamnTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nyAlienTelefonLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nyAlienTelefonTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nyAlienRasLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nyAlienRasBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(skiljeStreck3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nyAlienExtraAttributLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nyAlienExtraAttributTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(skiljeStreck4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton3))
+                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(registreraNylienButton)
+                    .addComponent(avbrytButton))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(header5, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout sidPanelLayout = new javax.swing.GroupLayout(sidPanel);
+        sidPanel.setLayout(sidPanelLayout);
+        sidPanelLayout.setHorizontalGroup(
+            sidPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sidPanelLayout.createSequentialGroup()
+                .addComponent(headerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(jSeparator5)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addComponent(skiljeStreck2)
+            .addGroup(sidPanelLayout.createSequentialGroup()
                 .addGap(117, 117, 117)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bodyPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(117, 117, 117))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(header5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        sidPanelLayout.setVerticalGroup(
+            sidPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sidPanelLayout.createSequentialGroup()
+                .addComponent(headerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(skiljeStreck2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bodyPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43))
         );
 
@@ -252,41 +252,41 @@ public class RegistreraAlien extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 533, Short.MAX_VALUE)
+            .addComponent(sidPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 533, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(sidPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setBounds(0, 0, 533, 522);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        if(jComboBox1.getSelectedItem().toString().equals("Squid")){
-            jTextField3.setEnabled(true);
-            jLabel4.setEnabled(true);
-            jLabel4.setText("Antal armar:");
+    private void nyAlienRasBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nyAlienRasBoxActionPerformed
+        if(nyAlienRasBox.getSelectedItem().toString().equals("Squid")){
+            nyAlienExtraAttributTextField.setEnabled(true);
+            nyAlienExtraAttributLabel.setEnabled(true);
+            nyAlienExtraAttributLabel.setText("Antal armar:");
             
         }
-        else if(jComboBox1.getSelectedItem().toString().equals("Boglodite")){
-            jTextField3.setEnabled(true);
-            jLabel4.setEnabled(true);
-            jLabel4.setText("Antal boogies:");
+        else if(nyAlienRasBox.getSelectedItem().toString().equals("Boglodite")){
+            nyAlienExtraAttributTextField.setEnabled(true);
+            nyAlienExtraAttributLabel.setEnabled(true);
+            nyAlienExtraAttributLabel.setText("Antal boogies:");
         }
         else{
-            jTextField3.setEnabled(false);
-            jLabel4.setEnabled(false);
-            jLabel4.setText("---");
+            nyAlienExtraAttributTextField.setEnabled(false);
+            nyAlienExtraAttributLabel.setEnabled(false);
+            nyAlienExtraAttributLabel.setText("---");
 
         }
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (Validering.textNotEmpty(jTextField1) && Validering.textNotEmpty(jTextField2)){                
+    }//GEN-LAST:event_nyAlienRasBoxActionPerformed
+    private void registreraNylienButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registreraNylienButtonActionPerformed
+        if (Validering.textNotEmpty(nyAlienNamnTextField) && Validering.textNotEmpty(nyAlienTelefonTextField)){                
             
-            if (jComboBox1.getSelectedItem().toString().equals("Worm")
-                    || jComboBox1.getSelectedItem().toString().equals("Squid") && Validering.textNotEmpty(jTextField3)
-                    || jComboBox1.getSelectedItem().toString().equals("Boglodite") && Validering.textNotEmpty(jTextField3)){
+            if (nyAlienRasBox.getSelectedItem().toString().equals("Worm")
+                    || nyAlienRasBox.getSelectedItem().toString().equals("Squid") && Validering.textNotEmpty(nyAlienExtraAttributTextField)
+                    || nyAlienRasBox.getSelectedItem().toString().equals("Boglodite") && Validering.textNotEmpty(nyAlienExtraAttributTextField)){
                 
                 int nyAlienID = 0;
                 String namn = "";
@@ -309,8 +309,8 @@ public class RegistreraAlien extends javax.swing.JFrame {
                     registreringsdatum = dateFormat.format(nyttDatum);
                     
                     lösenord = "" + randGenerator.nextInt(10) + randGenerator.nextInt(10) + randGenerator.nextInt(10) +randGenerator.nextInt(10) +randGenerator.nextInt(10) + randGenerator.nextInt(10);
-                    namn = jTextField1.getText();
-                    telefon = jTextField2.getText();
+                    namn = nyAlienNamnTextField.getText();
+                    telefon = nyAlienTelefonTextField.getText();
 
                     plats = randGenerator.nextInt(Integer.parseInt(db.fetchSingle("SELECT COUNT(PLATS_ID) FROM PLATS"))) + 1;                   
                     platsnamn = db.fetchSingle("SELECT BENAMNING FROM PLATS WHERE PLATS_ID = " + plats);
@@ -320,17 +320,17 @@ public class RegistreraAlien extends javax.swing.JFrame {
                     ansvarig_agentID = Integer.parseInt(db.fetchSingle("SELECT FIRST 1 AGENT_ID, COUNT(ANSVARIG_AGENT) FROM AGENT LEFT JOIN ALIEN ON ANSVARIG_AGENT = AGENT_ID WHERE OMRADE = " + omrade + " GROUP BY AGENT_ID ORDER BY COUNT(*) ASC"));
                     ansvarig_agent = db.fetchSingle("SELECT NAMN FROM AGENT WHERE AGENT_ID = " + ansvarig_agentID);
                     
-                    if (jComboBox1.getSelectedItem().toString().equals("Worm")){
+                    if (nyAlienRasBox.getSelectedItem().toString().equals("Worm")){
                         rasFraga = "INSERT INTO WORM VALUES (" + nyAlienID + ")";
                         rasInfo = "\nRas: Worm";
                     }
-                    else if (jComboBox1.getSelectedItem().toString().equals("Squid")){
-                        rasFraga = "INSERT INTO SQUID VALUES (" + nyAlienID + ", " + Integer.parseInt(jTextField3.getText()) + ")";
-                        rasInfo = "\nRas: Squid\nArmar: " + jTextField3.getText().toString();
+                    else if (nyAlienRasBox.getSelectedItem().toString().equals("Squid")){
+                        rasFraga = "INSERT INTO SQUID VALUES (" + nyAlienID + ", " + Integer.parseInt(nyAlienExtraAttributTextField.getText()) + ")";
+                        rasInfo = "\nRas: Squid\nArmar: " + nyAlienExtraAttributTextField.getText().toString();
                     }
-                    else if (jComboBox1.getSelectedItem().toString().equals("Boglodite")){
-                        rasFraga = "INSERT INTO BOGLODITE VALUES (" + nyAlienID + ", " + Integer.parseInt(jTextField3.getText()) + ")";
-                        rasInfo = "\nRas: Boglodite\nBoogies: " + jTextField3.getText().toString();
+                    else if (nyAlienRasBox.getSelectedItem().toString().equals("Boglodite")){
+                        rasFraga = "INSERT INTO BOGLODITE VALUES (" + nyAlienID + ", " + Integer.parseInt(nyAlienExtraAttributTextField.getText()) + ")";
+                        rasInfo = "\nRas: Boglodite\nBoogies: " + nyAlienExtraAttributTextField.getText().toString();
                     }
                     db.insert("INSERT INTO ALIEN VALUES("+ nyAlienID + ", \'" + registreringsdatum + "\' , \'" + lösenord + "\', \'" + namn +"\', \'" + telefon + "\', " + plats + ", " + ansvarig_agentID + ")");
                     db.insert(rasFraga);
@@ -353,42 +353,35 @@ public class RegistreraAlien extends javax.swing.JFrame {
             } 
             else{
                 JOptionPane.showMessageDialog(null, "");
-            }
-            
-            
-            
-            
-            
-            
-            
+            } 
             
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_registreraNylienButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void avbrytButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avbrytButtonActionPerformed
         RegistreraAlien.this.dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_avbrytButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel header5;
-    private javax.swing.JLabel headerLbl5;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JLabel mibpLbl5;
-    private javax.swing.JLabel sidLbl5;
-    private javax.swing.JSeparator skiljestreck5;
+    private javax.swing.JButton avbrytButton;
+    private javax.swing.JPanel bodyPanel;
+    private javax.swing.JLabel headerLabel;
+    private javax.swing.JPanel headerPanel;
+    private javax.swing.JLabel mibPortalLabel;
+    private javax.swing.JLabel nyAlienExtraAttributLabel;
+    private javax.swing.JTextField nyAlienExtraAttributTextField;
+    private javax.swing.JLabel nyAlienNamnLabel;
+    private javax.swing.JTextField nyAlienNamnTextField;
+    private javax.swing.JComboBox<String> nyAlienRasBox;
+    private javax.swing.JLabel nyAlienRasLabel;
+    private javax.swing.JLabel nyAlienTelefonLabel;
+    private javax.swing.JTextField nyAlienTelefonTextField;
+    private javax.swing.JButton registreraNylienButton;
+    private javax.swing.JLabel sidLabel;
+    private javax.swing.JPanel sidPanel;
+    private javax.swing.JSeparator skiljeStreck1;
+    private javax.swing.JSeparator skiljeStreck2;
+    private javax.swing.JSeparator skiljeStreck3;
+    private javax.swing.JSeparator skiljeStreck4;
     // End of variables declaration//GEN-END:variables
 }

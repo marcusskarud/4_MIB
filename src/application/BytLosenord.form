@@ -24,22 +24,22 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="header" alignment="0" pref="540" max="32767" attributes="0"/>
-          <Component id="body" alignment="0" max="32767" attributes="0"/>
+          <Component id="headerPanel" alignment="0" pref="540" max="32767" attributes="0"/>
+          <Component id="bodyPanel" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="header" min="-2" max="-2" attributes="0"/>
+              <Component id="headerPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-              <Component id="body" max="32767" attributes="0"/>
+              <Component id="bodyPanel" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="header">
+    <Container class="javax.swing.JPanel" name="headerPanel">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="50" green="50" red="50" type="rgb"/>
@@ -57,15 +57,15 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                          <Component id="mibpLbl" min="-2" max="-2" attributes="0"/>
+                          <Component id="mibPortalLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="sidLbl" min="-2" max="-2" attributes="0"/>
+                          <Component id="sidLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="skiljestreck" alignment="0" min="-2" pref="473" max="-2" attributes="0"/>
-                              <Component id="headerLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="skiljeStreck1" alignment="0" min="-2" pref="473" max="-2" attributes="0"/>
+                              <Component id="headerLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="34" max="32767" attributes="0"/>
                       </Group>
@@ -77,13 +77,13 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace pref="13" max="32767" attributes="0"/>
-                  <Component id="headerLbl" min="-2" max="-2" attributes="0"/>
+                  <Component id="headerLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="skiljestreck" min="-2" pref="10" max="-2" attributes="0"/>
+                  <Component id="skiljeStreck1" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="mibpLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="sidLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="mibPortalLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="sidLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -91,7 +91,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="headerLbl">
+        <Component class="javax.swing.JLabel" name="headerLabel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="78" green="78" red="78" type="rgb"/>
@@ -105,7 +105,7 @@
             <Property name="text" type="java.lang.String" value="Men in Black - Sektor Skandinavien"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="mibpLbl">
+        <Component class="javax.swing.JLabel" name="mibPortalLabel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="78" green="78" red="78" type="rgb"/>
@@ -119,7 +119,7 @@
             <Property name="text" type="java.lang.String" value="MiB-Portalen"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="sidLbl">
+        <Component class="javax.swing.JLabel" name="sidLabel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="78" green="78" red="78" type="rgb"/>
@@ -133,7 +133,7 @@
             <Property name="text" type="java.lang.String" value="Byt L&#xf6;senord"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JSeparator" name="skiljestreck">
+        <Component class="javax.swing.JSeparator" name="skiljeStreck1">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="c8" green="c8" red="c8" type="rgb"/>
@@ -142,7 +142,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="body">
+    <Container class="javax.swing.JPanel" name="bodyPanel">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="28" green="28" red="28" type="rgb"/>
@@ -155,10 +155,10 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jSeparator1" alignment="0" pref="540" max="32767" attributes="0"/>
+              <Component id="skiljeStreck4" alignment="0" pref="540" max="32767" attributes="0"/>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="bytLosenPanel" min="-2" pref="370" max="-2" attributes="0"/>
+                  <Component id="bytLosenordPanel" min="-2" pref="370" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -166,16 +166,16 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="jSeparator1" min="-2" max="-2" attributes="0"/>
+                  <Component id="skiljeStreck4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                  <Component id="bytLosenPanel" min="-2" max="-2" attributes="0"/>
+                  <Component id="bytLosenordPanel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="60" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="bytLosenPanel">
+        <Container class="javax.swing.JPanel" name="bytLosenordPanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="a0" green="a0" red="a0" type="rgb"/>
@@ -196,32 +196,32 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="skiljestreck1" max="32767" attributes="0"/>
+                          <Component id="skiljeStreck2" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="gammaltLosenLbl" min="-2" max="-2" attributes="0"/>
-                                          <Component id="nyLosenLbl1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="nyLosenLbl2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="gammaltLosenordLabel" min="-2" max="-2" attributes="0"/>
+                                          <Component id="nyttLosenord1Label" min="-2" max="-2" attributes="0"/>
+                                          <Component id="nyttLosenord2Label" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="nyLosen2" pref="210" max="32767" attributes="0"/>
-                                          <Component id="nyLosen" max="32767" attributes="0"/>
-                                          <Component id="gammaltLosen" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="nyttLosenord2PasswordField" pref="210" max="32767" attributes="0"/>
+                                          <Component id="nyttLosenord1PasswordField" max="32767" attributes="0"/>
+                                          <Component id="gammaltLosenordPasswordField" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Component id="skiljestreck2" max="32767" attributes="0"/>
+                                  <Component id="skiljeStreck3" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="bytLosen" min="-2" pref="122" max="-2" attributes="0"/>
+                              <Component id="bytLosenordButton" min="-2" pref="122" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="avbryt" min="-2" pref="122" max="-2" attributes="0"/>
+                              <Component id="avbrytButton" min="-2" pref="122" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -234,27 +234,27 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="gammaltLosenLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="gammaltLosen" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="gammaltLosenordLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="gammaltLosenordPasswordField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="skiljestreck1" min="-2" pref="10" max="-2" attributes="0"/>
+                      <Component id="skiljeStreck2" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="nyLosen" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="nyLosenLbl1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="nyttLosenord1PasswordField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="nyttLosenord1Label" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="nyLosenLbl2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="nyLosen2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="nyttLosenord2Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="nyttLosenord2PasswordField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="skiljestreck2" min="-2" pref="10" max="-2" attributes="0"/>
+                      <Component id="skiljeStreck3" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="bytLosen" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="avbryt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bytLosenordButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="avbrytButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="11" max="32767" attributes="0"/>
                   </Group>
@@ -262,7 +262,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="gammaltLosenLbl">
+            <Component class="javax.swing.JLabel" name="gammaltLosenordLabel">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
@@ -270,7 +270,7 @@
                 <Property name="text" type="java.lang.String" value="Gammalt l&#xf6;senord:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="nyLosenLbl1">
+            <Component class="javax.swing.JLabel" name="nyttLosenord1Label">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
@@ -278,7 +278,7 @@
                 <Property name="text" type="java.lang.String" value="Nytt l&#xf6;senord:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="nyLosenLbl2">
+            <Component class="javax.swing.JLabel" name="nyttLosenord2Label">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
@@ -286,48 +286,48 @@
                 <Property name="text" type="java.lang.String" value="L&#xf6;senord:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JPasswordField" name="gammaltLosen">
+            <Component class="javax.swing.JPasswordField" name="gammaltLosenordPasswordField">
               <Properties>
                 <Property name="text" type="java.lang.String" value="123"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JPasswordField" name="nyLosen">
+            <Component class="javax.swing.JPasswordField" name="nyttLosenord1PasswordField">
               <Properties>
                 <Property name="text" type="java.lang.String" value="123"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JPasswordField" name="nyLosen2">
+            <Component class="javax.swing.JPasswordField" name="nyttLosenord2PasswordField">
               <Properties>
                 <Property name="text" type="java.lang.String" value="123"/>
               </Properties>
               <Events>
-                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nyLosen2KeyPressed"/>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nyttLosenord2PasswordFieldKeyPressed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="bytLosen">
+            <Component class="javax.swing.JButton" name="bytLosenordButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Byt l&#xf6;senord"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bytLosenActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bytLosenordButtonActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="avbryt">
+            <Component class="javax.swing.JButton" name="avbrytButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Avbryt"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="avbrytActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="avbrytButtonActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JSeparator" name="skiljestreck1">
+            <Component class="javax.swing.JSeparator" name="skiljeStreck2">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="b4" green="b4" red="b4" type="rgb"/>
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JSeparator" name="skiljestreck2">
+            <Component class="javax.swing.JSeparator" name="skiljeStreck3">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="b4" green="b4" red="b4" type="rgb"/>
@@ -336,7 +336,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JSeparator" name="jSeparator1">
+        <Component class="javax.swing.JSeparator" name="skiljeStreck4">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>

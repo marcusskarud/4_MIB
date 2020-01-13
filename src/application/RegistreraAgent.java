@@ -42,207 +42,197 @@ public class RegistreraAgent extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        header5 = new javax.swing.JPanel();
-        headerLbl5 = new javax.swing.JLabel();
-        mibpLbl5 = new javax.swing.JLabel();
-        sidLbl5 = new javax.swing.JLabel();
-        skiljestreck5 = new javax.swing.JSeparator();
-        jSeparator5 = new javax.swing.JSeparator();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        omradesBox = new javax.swing.JComboBox<>();
-        jSeparator4 = new javax.swing.JSeparator();
-        jSeparator6 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        sidPanel = new javax.swing.JPanel();
+        headerPanel = new javax.swing.JPanel();
+        headerLabel = new javax.swing.JLabel();
+        mibPortalLabel = new javax.swing.JLabel();
+        sidLabel = new javax.swing.JLabel();
+        skiljeStreck1 = new javax.swing.JSeparator();
+        skiljeStreck2 = new javax.swing.JSeparator();
+        bodyPanel = new javax.swing.JPanel();
+        nyAgentNamnLabel = new javax.swing.JLabel();
+        nyAgentTelefonLabel = new javax.swing.JLabel();
+        nyAgentOmradeLabel = new javax.swing.JLabel();
+        nyAgentNamnTextField = new javax.swing.JTextField();
+        nyAgentTelefonTextField = new javax.swing.JTextField();
+        nyAgentOmradesBox = new javax.swing.JComboBox<>();
+        nyAgentAdminCheckBox = new javax.swing.JCheckBox();
+        skiljeStreck3 = new javax.swing.JSeparator();
+        skiljeStreck4 = new javax.swing.JSeparator();
+        registreraNyAgentButton = new javax.swing.JButton();
+        avbrytButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
         setSize(new java.awt.Dimension(540, 475));
 
-        jPanel2.setBackground(new java.awt.Color(40, 40, 40));
+        sidPanel.setBackground(new java.awt.Color(40, 40, 40));
 
-        header5.setBackground(new java.awt.Color(80, 80, 80));
-        header5.setPreferredSize(new java.awt.Dimension(1095, 100));
+        headerPanel.setBackground(new java.awt.Color(80, 80, 80));
+        headerPanel.setPreferredSize(new java.awt.Dimension(1095, 100));
 
-        headerLbl5.setBackground(new java.awt.Color(120, 120, 120));
-        headerLbl5.setFont(new java.awt.Font("Lucida Grande", 0, 28)); // NOI18N
-        headerLbl5.setForeground(new java.awt.Color(200, 200, 200));
-        headerLbl5.setText("Men in Black - Sektor Skandinavien");
+        headerLabel.setBackground(new java.awt.Color(120, 120, 120));
+        headerLabel.setFont(new java.awt.Font("Lucida Grande", 0, 28)); // NOI18N
+        headerLabel.setForeground(new java.awt.Color(200, 200, 200));
+        headerLabel.setText("Men in Black - Sektor Skandinavien");
 
-        mibpLbl5.setBackground(new java.awt.Color(120, 120, 120));
-        mibpLbl5.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
-        mibpLbl5.setForeground(new java.awt.Color(200, 200, 200));
-        mibpLbl5.setText("MiB-Portalen");
+        mibPortalLabel.setBackground(new java.awt.Color(120, 120, 120));
+        mibPortalLabel.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
+        mibPortalLabel.setForeground(new java.awt.Color(200, 200, 200));
+        mibPortalLabel.setText("MiB-Portalen");
 
-        sidLbl5.setBackground(new java.awt.Color(120, 120, 120));
-        sidLbl5.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
-        sidLbl5.setForeground(new java.awt.Color(200, 200, 200));
-        sidLbl5.setText("Nyregistrera Agent");
+        sidLabel.setBackground(new java.awt.Color(120, 120, 120));
+        sidLabel.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
+        sidLabel.setForeground(new java.awt.Color(200, 200, 200));
+        sidLabel.setText("Nyregistrera Agent");
 
-        skiljestreck5.setForeground(new java.awt.Color(200, 200, 200));
+        skiljeStreck1.setForeground(new java.awt.Color(200, 200, 200));
 
-        javax.swing.GroupLayout header5Layout = new javax.swing.GroupLayout(header5);
-        header5.setLayout(header5Layout);
-        header5Layout.setHorizontalGroup(
-            header5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(header5Layout.createSequentialGroup()
+        javax.swing.GroupLayout headerPanelLayout = new javax.swing.GroupLayout(headerPanel);
+        headerPanel.setLayout(headerPanelLayout);
+        headerPanelLayout.setHorizontalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerPanelLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addGroup(header5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(header5Layout.createSequentialGroup()
+                .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(headerPanelLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(mibpLbl5)
+                        .addComponent(mibPortalLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(sidLbl5)
+                        .addComponent(sidLabel)
                         .addGap(39, 39, 39))
-                    .addGroup(header5Layout.createSequentialGroup()
-                        .addGroup(header5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(skiljestreck5, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(headerLbl5))
+                    .addGroup(headerPanelLayout.createSequentialGroup()
+                        .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(skiljeStreck1, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(headerLabel))
                         .addContainerGap(33, Short.MAX_VALUE))))
         );
-        header5Layout.setVerticalGroup(
-            header5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(header5Layout.createSequentialGroup()
+        headerPanelLayout.setVerticalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerPanelLayout.createSequentialGroup()
                 .addContainerGap(13, Short.MAX_VALUE)
-                .addComponent(headerLbl5)
+                .addComponent(headerLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(skiljestreck5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(skiljeStreck1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(header5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(mibpLbl5)
-                    .addComponent(sidLbl5))
+                .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(mibPortalLabel)
+                    .addComponent(sidLabel))
                 .addContainerGap())
         );
 
-        jSeparator5.setBackground(new java.awt.Color(0, 0, 0));
-        jSeparator5.setForeground(new java.awt.Color(255, 255, 255));
+        skiljeStreck2.setBackground(new java.awt.Color(0, 0, 0));
+        skiljeStreck2.setForeground(new java.awt.Color(255, 255, 255));
 
-        jPanel3.setBackground(new java.awt.Color(170, 170, 170));
-        jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        bodyPanel.setBackground(new java.awt.Color(170, 170, 170));
+        bodyPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Namn:");
-        jLabel1.setPreferredSize(new java.awt.Dimension(110, 16));
+        nyAgentNamnLabel.setForeground(new java.awt.Color(0, 0, 0));
+        nyAgentNamnLabel.setText("Namn:");
+        nyAgentNamnLabel.setPreferredSize(new java.awt.Dimension(110, 16));
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Telefon:");
-        jLabel2.setPreferredSize(new java.awt.Dimension(110, 16));
+        nyAgentTelefonLabel.setForeground(new java.awt.Color(0, 0, 0));
+        nyAgentTelefonLabel.setText("Telefon:");
+        nyAgentTelefonLabel.setPreferredSize(new java.awt.Dimension(110, 16));
 
-        jTextField2.setPreferredSize(new java.awt.Dimension(110, 24));
+        nyAgentOmradeLabel.setForeground(new java.awt.Color(0, 0, 0));
+        nyAgentOmradeLabel.setText("Område:");
+        nyAgentOmradeLabel.setPreferredSize(new java.awt.Dimension(110, 16));
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Område:");
-        jLabel3.setPreferredSize(new java.awt.Dimension(110, 16));
+        nyAgentTelefonTextField.setPreferredSize(new java.awt.Dimension(110, 24));
 
-        omradesBox.setPreferredSize(new java.awt.Dimension(110, 26));
-        omradesBox.addActionListener(new java.awt.event.ActionListener() {
+        nyAgentOmradesBox.setPreferredSize(new java.awt.Dimension(110, 26));
+
+        nyAgentAdminCheckBox.setBackground(new java.awt.Color(170, 170, 170));
+        nyAgentAdminCheckBox.setForeground(new java.awt.Color(0, 0, 0));
+        nyAgentAdminCheckBox.setText("Administratör");
+
+        registreraNyAgentButton.setText("Nyregistrera Agent");
+        registreraNyAgentButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                omradesBoxActionPerformed(evt);
+                registreraNyAgentButtonActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Nyregistrera Agent");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        avbrytButton.setText("Avbryt");
+        avbrytButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                avbrytButtonActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Avbryt");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
-        jCheckBox1.setBackground(new java.awt.Color(170, 170, 170));
-        jCheckBox1.setForeground(new java.awt.Color(0, 0, 0));
-        jCheckBox1.setText("Administratör");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout bodyPanelLayout = new javax.swing.GroupLayout(bodyPanel);
+        bodyPanel.setLayout(bodyPanelLayout);
+        bodyPanelLayout.setHorizontalGroup(
+            bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bodyPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(omradesBox, javax.swing.GroupLayout.Alignment.LEADING, 0, 200, Short.MAX_VALUE)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING))
-                    .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(skiljeStreck3, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(skiljeStreck4, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(nyAgentTelefonLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nyAgentOmradeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nyAgentNamnLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(nyAgentOmradesBox, javax.swing.GroupLayout.Alignment.LEADING, 0, 200, Short.MAX_VALUE)
+                        .addComponent(nyAgentTelefonTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(nyAgentNamnTextField, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(nyAgentAdminCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(bodyPanelLayout.createSequentialGroup()
+                        .addComponent(registreraNyAgentButton, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(avbrytButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        bodyPanelLayout.setVerticalGroup(
+            bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bodyPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nyAgentNamnLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nyAgentNamnTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nyAgentTelefonLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nyAgentTelefonTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nyAgentOmradeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(omradesBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nyAgentOmradesBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(skiljeStreck3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox1)
+                .addComponent(nyAgentAdminCheckBox)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(skiljeStreck4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton3))
+                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(registreraNyAgentButton)
+                    .addComponent(avbrytButton))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(header5, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout sidPanelLayout = new javax.swing.GroupLayout(sidPanel);
+        sidPanel.setLayout(sidPanelLayout);
+        sidPanelLayout.setHorizontalGroup(
+            sidPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sidPanelLayout.createSequentialGroup()
+                .addComponent(headerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(jSeparator5)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addComponent(skiljeStreck2)
+            .addGroup(sidPanelLayout.createSequentialGroup()
                 .addGap(142, 142, 142)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bodyPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(header5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        sidPanelLayout.setVerticalGroup(
+            sidPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sidPanelLayout.createSequentialGroup()
+                .addComponent(headerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(skiljeStreck2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bodyPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(42, Short.MAX_VALUE))
         );
 
@@ -250,21 +240,18 @@ public class RegistreraAgent extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 533, Short.MAX_VALUE)
+            .addComponent(sidPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 533, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(sidPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         setBounds(0, 0, 533, 484);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void omradesBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_omradesBoxActionPerformed
-        
-    }//GEN-LAST:event_omradesBoxActionPerformed
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (Validering.textNotEmpty(jTextField1) && Validering.textNotEmpty(jTextField2)){                
+    private void registreraNyAgentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registreraNyAgentButtonActionPerformed
+        if (Validering.textNotEmpty(nyAgentNamnTextField) && Validering.textNotEmpty(nyAgentTelefonTextField)){                
             
             
             int nyAgentID = 0;
@@ -273,10 +260,10 @@ public class RegistreraAgent extends javax.swing.JFrame {
             String anstallningsdatum = "";
             String lösenord = "";
             String telefon = "";
-            String omrade = omradesBox.getSelectedItem().toString();
+            String omrade = nyAgentOmradesBox.getSelectedItem().toString();
             String administratör = "";
             String ärAdmin = "";
-            if (jCheckBox1.getSelectedObjects() == null){
+            if (nyAgentAdminCheckBox.getSelectedObjects() == null){
                 administratör = "N";
                 ärAdmin = "Nej";
             }
@@ -294,10 +281,10 @@ public class RegistreraAgent extends javax.swing.JFrame {
                 anstallningsdatum = dateFormat.format(nyttDatum);
 
                 lösenord = "" + randGenerator.nextInt(10) + randGenerator.nextInt(10) + randGenerator.nextInt(10) +randGenerator.nextInt(10) +randGenerator.nextInt(10) + randGenerator.nextInt(10);
-                namn = jTextField1.getText();
-                telefon = jTextField2.getText();
+                namn = nyAgentNamnTextField.getText();
+                telefon = nyAgentTelefonTextField.getText();
 
-                omradesID = Integer.parseInt(db.fetchSingle("SELECT OMRADES_ID FROM OMRADE WHERE BENAMNING = '" + omradesBox.getSelectedItem().toString() + "'"));
+                omradesID = Integer.parseInt(db.fetchSingle("SELECT OMRADES_ID FROM OMRADE WHERE BENAMNING = '" + nyAgentOmradesBox.getSelectedItem().toString() + "'"));
                 omrade = db.fetchSingle("SELECT BENAMNING FROM OMRADE WHERE OMRADES_ID = " + omradesID);
                 System.out.println(2);
                 
@@ -321,15 +308,11 @@ public class RegistreraAgent extends javax.swing.JFrame {
             }
                 
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_registreraNyAgentButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void avbrytButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avbrytButtonActionPerformed
         RegistreraAgent.this.dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_avbrytButtonActionPerformed
 
     @SuppressWarnings("unchecked")    
     private void setOmradesBox(){
@@ -339,8 +322,8 @@ public class RegistreraAgent extends javax.swing.JFrame {
             for (String omrade : omradesLista){
                 omraden.addElement(omrade);
             }
-            omradesBox.setModel(omraden);
-            omradesBox.setSelectedIndex(1);
+            nyAgentOmradesBox.setModel(omraden);
+            nyAgentOmradesBox.setSelectedIndex(1);
         }
         catch(InfException undantag){
             System.out.println(undantag);
@@ -348,24 +331,24 @@ public class RegistreraAgent extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel header5;
-    private javax.swing.JLabel headerLbl5;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JLabel mibpLbl5;
-    private javax.swing.JComboBox<String> omradesBox;
-    private javax.swing.JLabel sidLbl5;
-    private javax.swing.JSeparator skiljestreck5;
+    private javax.swing.JButton avbrytButton;
+    private javax.swing.JPanel bodyPanel;
+    private javax.swing.JLabel headerLabel;
+    private javax.swing.JPanel headerPanel;
+    private javax.swing.JLabel mibPortalLabel;
+    private javax.swing.JCheckBox nyAgentAdminCheckBox;
+    private javax.swing.JLabel nyAgentNamnLabel;
+    private javax.swing.JTextField nyAgentNamnTextField;
+    private javax.swing.JLabel nyAgentOmradeLabel;
+    private javax.swing.JComboBox<String> nyAgentOmradesBox;
+    private javax.swing.JLabel nyAgentTelefonLabel;
+    private javax.swing.JTextField nyAgentTelefonTextField;
+    private javax.swing.JButton registreraNyAgentButton;
+    private javax.swing.JLabel sidLabel;
+    private javax.swing.JPanel sidPanel;
+    private javax.swing.JSeparator skiljeStreck1;
+    private javax.swing.JSeparator skiljeStreck2;
+    private javax.swing.JSeparator skiljeStreck3;
+    private javax.swing.JSeparator skiljeStreck4;
     // End of variables declaration//GEN-END:variables
 }

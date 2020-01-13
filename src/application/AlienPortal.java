@@ -29,15 +29,15 @@ public class AlienPortal extends javax.swing.JFrame {
         
         try {
             
-            alienIDLbl.setText(alienID);
-            namnLbl.setText(db.fetchSingle("SELECT NAMN FROM ALIEN WHERE ALIEN_ID = " + alienID));
-            platsLbl.setText(db.fetchSingle("SELECT BENAMNING FROM PLATS WHERE PLATS_ID = (SELECT PLATS FROM ALIEN WHERE ALIEN_ID = " + alienID + ")"));            
-            telefonLbl.setText(db.fetchSingle("SELECT TELEFON FROM ALIEN WHERE ALIEN_ID = " + alienID));
+            alienIDLabel.setText(alienID);
+            alienNamnLabel.setText(db.fetchSingle("SELECT NAMN FROM ALIEN WHERE ALIEN_ID = " + alienID));
+            alienPlatsLabel.setText(db.fetchSingle("SELECT BENAMNING FROM PLATS WHERE PLATS_ID = (SELECT PLATS FROM ALIEN WHERE ALIEN_ID = " + alienID + ")"));            
+            alienTelefonLabel.setText(db.fetchSingle("SELECT TELEFON FROM ALIEN WHERE ALIEN_ID = " + alienID));
             
             HashMap<String,String> omradesChefen = db.fetchRow(("SELECT * FROM AGENT WHERE AGENT_ID = (SELECT AGENT_ID FROM OMRADESCHEF WHERE OMRADE = (SELECT FINNS_I FROM PLATS JOIN ALIEN ON PLATS.PLATS_ID=ALIEN.PLATS WHERE ALIEN_ID = " + alienID + "))"));
-            chefID.setText(omradesChefen.get("AGENT_ID"));
-            chefNamn.setText(omradesChefen.get("NAMN"));
-            chefTelefon.setText(omradesChefen.get("TELEFON"));            
+            ocIDLabel.setText(omradesChefen.get("AGENT_ID"));
+            ocNamnLabel.setText(omradesChefen.get("NAMN"));
+            ocTelefonLabel.setText(omradesChefen.get("TELEFON"));            
             
             ArrayList<String> resultat = db.fetchColumn("SELECT NAMN FROM ALIEN JOIN PLATS ON PLATS.PLATS_ID=ALIEN.PLATS WHERE PLATS_ID IN (SELECT PLATS_ID FROM PLATS WHERE FINNS_I = (SELECT FINNS_I FROM PLATS JOIN ALIEN ON ALIEN.PLATS=PLATS.PLATS_ID WHERE ALIEN_ID = " + alienID + "))");
             
@@ -45,7 +45,7 @@ public class AlienPortal extends javax.swing.JFrame {
             for(String namn : resultat){
                tillText += namn+"\n"; 
             }
-            områdetsAliens.setText(tillText);
+            aliensIOmradeTextArea.setText(tillText);
         
         }
         catch (InfException undantag){
@@ -63,127 +63,126 @@ public class AlienPortal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jSeparator2 = new javax.swing.JSeparator();
-        jPanel1 = new javax.swing.JPanel();
-        header = new javax.swing.JPanel();
-        headerLbl = new javax.swing.JLabel();
-        mibpLbl = new javax.swing.JLabel();
-        skiljestreck = new javax.swing.JSeparator();
-        sidLbl = new javax.swing.JLabel();
-        body = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        alienIDLbl = new javax.swing.JLabel();
-        namnLbl = new javax.swing.JLabel();
-        telefonLbl = new javax.swing.JLabel();
-        platsLbl = new javax.swing.JLabel();
+        sidPanel = new javax.swing.JPanel();
+        headerPanel = new javax.swing.JPanel();
+        headerLabel = new javax.swing.JLabel();
+        mibPortalLbl = new javax.swing.JLabel();
+        skiljeStreck1 = new javax.swing.JSeparator();
+        sidLabel = new javax.swing.JLabel();
+        bodyPanel = new javax.swing.JPanel();
+        inloggadAlienPanel = new javax.swing.JPanel();
+        inloggadAlienIDLabel = new javax.swing.JLabel();
+        inloggadAlienNamnLabel = new javax.swing.JLabel();
+        inloggadAlienTelefonLabel = new javax.swing.JLabel();
+        inloggadAlienPlatsLabel = new javax.swing.JLabel();
+        alienIDLabel = new javax.swing.JLabel();
+        alienNamnLabel = new javax.swing.JLabel();
+        alienTelefonLabel = new javax.swing.JLabel();
+        alienPlatsLabel = new javax.swing.JLabel();
         bytLosenord = new javax.swing.JButton();
-        jSeparator3 = new javax.swing.JSeparator();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        områdetsAliens = new javax.swing.JTextArea();
-        jPanel5 = new javax.swing.JPanel();
-        omradesChefIDLbl = new javax.swing.JLabel();
-        omradesChefNamnLbl = new javax.swing.JLabel();
-        omradesChefTelefonLbl = new javax.swing.JLabel();
-        chefID = new javax.swing.JLabel();
-        chefNamn = new javax.swing.JLabel();
-        chefTelefon = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
+        skiljeStreck3 = new javax.swing.JSeparator();
+        alienPortalInfoPanel = new javax.swing.JPanel();
+        allaAliensIOmradeLabel = new javax.swing.JLabel();
+        aliensIOmradePanel = new javax.swing.JPanel();
+        aliensIOmradeScrollPane = new javax.swing.JScrollPane();
+        aliensIOmradeTextArea = new javax.swing.JTextArea();
+        omradeschefPanel = new javax.swing.JPanel();
+        omradesChefIDLabel = new javax.swing.JLabel();
+        omradesChefNamnLabel = new javax.swing.JLabel();
+        omradesChefTelefonLabel = new javax.swing.JLabel();
+        ocIDLabel = new javax.swing.JLabel();
+        ocNamnLabel = new javax.swing.JLabel();
+        ocTelefonLabel = new javax.swing.JLabel();
+        omradeschefLabel = new javax.swing.JLabel();
+        skiljeStreck2 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
         setSize(new java.awt.Dimension(800, 600));
 
-        jPanel1.setBackground(new java.awt.Color(120, 120, 120));
-        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.setPreferredSize(new java.awt.Dimension(800, 600));
+        sidPanel.setBackground(new java.awt.Color(120, 120, 120));
+        sidPanel.setForeground(new java.awt.Color(255, 255, 255));
+        sidPanel.setPreferredSize(new java.awt.Dimension(800, 600));
 
-        header.setBackground(new java.awt.Color(40, 40, 40));
-        header.setPreferredSize(new java.awt.Dimension(1095, 100));
+        headerPanel.setBackground(new java.awt.Color(40, 40, 40));
+        headerPanel.setPreferredSize(new java.awt.Dimension(1095, 100));
 
-        headerLbl.setBackground(new java.awt.Color(120, 120, 120));
-        headerLbl.setFont(new java.awt.Font("Lucida Grande", 0, 28)); // NOI18N
-        headerLbl.setForeground(new java.awt.Color(180, 180, 180));
-        headerLbl.setText("Men in Black - Sektor Skandinavien");
+        headerLabel.setBackground(new java.awt.Color(120, 120, 120));
+        headerLabel.setFont(new java.awt.Font("Lucida Grande", 0, 28)); // NOI18N
+        headerLabel.setForeground(new java.awt.Color(180, 180, 180));
+        headerLabel.setText("Men in Black - Sektor Skandinavien");
 
-        mibpLbl.setBackground(new java.awt.Color(120, 120, 120));
-        mibpLbl.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
-        mibpLbl.setForeground(new java.awt.Color(180, 180, 180));
-        mibpLbl.setText("MiB-Portalen");
+        mibPortalLbl.setBackground(new java.awt.Color(120, 120, 120));
+        mibPortalLbl.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
+        mibPortalLbl.setForeground(new java.awt.Color(180, 180, 180));
+        mibPortalLbl.setText("MiB-Portalen");
 
-        skiljestreck.setForeground(new java.awt.Color(80, 80, 80));
+        skiljeStreck1.setForeground(new java.awt.Color(80, 80, 80));
 
-        sidLbl.setBackground(new java.awt.Color(120, 120, 120));
-        sidLbl.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
-        sidLbl.setForeground(new java.awt.Color(180, 180, 180));
-        sidLbl.setText("AlienPortalen");
+        sidLabel.setBackground(new java.awt.Color(120, 120, 120));
+        sidLabel.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
+        sidLabel.setForeground(new java.awt.Color(180, 180, 180));
+        sidLabel.setText("AlienPortalen");
 
-        javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
-        header.setLayout(headerLayout);
-        headerLayout.setHorizontalGroup(
-            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(headerLayout.createSequentialGroup()
-                .addGroup(headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(headerLayout.createSequentialGroup()
+        javax.swing.GroupLayout headerPanelLayout = new javax.swing.GroupLayout(headerPanel);
+        headerPanel.setLayout(headerPanelLayout);
+        headerPanelLayout.setHorizontalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerPanelLayout.createSequentialGroup()
+                .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(headerPanelLayout.createSequentialGroup()
                         .addGap(33, 33, 33)
-                        .addComponent(headerLbl))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerLayout.createSequentialGroup()
+                        .addComponent(headerLabel))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(headerLayout.createSequentialGroup()
+                        .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(headerPanelLayout.createSequentialGroup()
                                 .addGap(6, 6, 6)
-                                .addComponent(mibpLbl))
-                            .addComponent(skiljestreck, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(mibPortalLbl))
+                            .addComponent(skiljeStreck1, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
-                .addComponent(sidLbl)
+                .addComponent(sidLabel)
                 .addGap(39, 39, 39))
         );
-        headerLayout.setVerticalGroup(
-            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(headerLayout.createSequentialGroup()
+        headerPanelLayout.setVerticalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerPanelLayout.createSequentialGroup()
                 .addContainerGap(13, Short.MAX_VALUE)
-                .addComponent(headerLbl)
+                .addComponent(headerLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(skiljestreck, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(skiljeStreck1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(mibpLbl)
-                    .addComponent(sidLbl))
+                .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(mibPortalLbl)
+                    .addComponent(sidLabel))
                 .addContainerGap())
         );
 
-        body.setBackground(new java.awt.Color(120, 120, 120));
-        body.setForeground(new java.awt.Color(100, 100, 100));
+        bodyPanel.setBackground(new java.awt.Color(120, 120, 120));
+        bodyPanel.setForeground(new java.awt.Color(100, 100, 100));
 
-        jPanel3.setBackground(new java.awt.Color(60, 60, 60));
-        jPanel3.setPreferredSize(new java.awt.Dimension(210, 166));
+        inloggadAlienPanel.setBackground(new java.awt.Color(60, 60, 60));
+        inloggadAlienPanel.setPreferredSize(new java.awt.Dimension(210, 166));
 
-        jLabel1.setForeground(new java.awt.Color(220, 220, 220));
-        jLabel1.setText("AlienID:");
+        inloggadAlienIDLabel.setForeground(new java.awt.Color(220, 220, 220));
+        inloggadAlienIDLabel.setText("AlienID:");
 
-        jLabel2.setForeground(new java.awt.Color(220, 220, 220));
-        jLabel2.setText("Namn:");
+        inloggadAlienNamnLabel.setForeground(new java.awt.Color(220, 220, 220));
+        inloggadAlienNamnLabel.setText("Namn:");
 
-        jLabel3.setForeground(new java.awt.Color(220, 220, 220));
-        jLabel3.setText("Telefon:");
+        inloggadAlienTelefonLabel.setForeground(new java.awt.Color(220, 220, 220));
+        inloggadAlienTelefonLabel.setText("Telefon:");
 
-        jLabel5.setForeground(new java.awt.Color(220, 220, 220));
-        jLabel5.setText("Plats:");
+        inloggadAlienPlatsLabel.setForeground(new java.awt.Color(220, 220, 220));
+        inloggadAlienPlatsLabel.setText("Plats:");
 
-        alienIDLbl.setForeground(new java.awt.Color(220, 220, 220));
+        alienIDLabel.setForeground(new java.awt.Color(220, 220, 220));
 
-        namnLbl.setForeground(new java.awt.Color(220, 220, 220));
+        alienNamnLabel.setForeground(new java.awt.Color(220, 220, 220));
 
-        telefonLbl.setForeground(new java.awt.Color(220, 220, 220));
+        alienTelefonLabel.setForeground(new java.awt.Color(220, 220, 220));
 
-        platsLbl.setForeground(new java.awt.Color(220, 220, 220));
+        alienPlatsLabel.setForeground(new java.awt.Color(220, 220, 220));
 
         bytLosenord.setText("Byt lösenord");
         bytLosenord.addActionListener(new java.awt.event.ActionListener() {
@@ -192,222 +191,222 @@ public class AlienPortal extends javax.swing.JFrame {
             }
         });
 
-        jSeparator3.setForeground(new java.awt.Color(255, 255, 255));
+        skiljeStreck3.setForeground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout inloggadAlienPanelLayout = new javax.swing.GroupLayout(inloggadAlienPanel);
+        inloggadAlienPanel.setLayout(inloggadAlienPanelLayout);
+        inloggadAlienPanelLayout.setHorizontalGroup(
+            inloggadAlienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(inloggadAlienPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(inloggadAlienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(bytLosenord, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(inloggadAlienPanelLayout.createSequentialGroup()
+                        .addGroup(inloggadAlienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(inloggadAlienPlatsLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(inloggadAlienNamnLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(inloggadAlienTelefonLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(namnLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(telefonLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(platsLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                        .addGroup(inloggadAlienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(alienNamnLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(alienTelefonLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(alienPlatsLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(inloggadAlienPanelLayout.createSequentialGroup()
+                        .addComponent(inloggadAlienIDLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(alienIDLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(alienIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
-            .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(skiljeStreck3, javax.swing.GroupLayout.Alignment.TRAILING)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        inloggadAlienPanelLayout.setVerticalGroup(
+            inloggadAlienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(inloggadAlienPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(alienIDLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(inloggadAlienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(inloggadAlienIDLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(alienIDLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(skiljeStreck3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(namnLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                .addGroup(inloggadAlienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(alienNamnLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inloggadAlienNamnLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(telefonLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
+                .addGroup(inloggadAlienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(alienTelefonLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inloggadAlienTelefonLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(platsLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(inloggadAlienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(alienPlatsLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(inloggadAlienPlatsLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(bytLosenord)
                 .addContainerGap())
         );
 
-        jPanel4.setBackground(new java.awt.Color(150, 150, 150));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        alienPortalInfoPanel.setBackground(new java.awt.Color(150, 150, 150));
+        alienPortalInfoPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel4.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Alla aliens i området");
+        allaAliensIOmradeLabel.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        allaAliensIOmradeLabel.setForeground(new java.awt.Color(0, 0, 0));
+        allaAliensIOmradeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        allaAliensIOmradeLabel.setText("Alla aliens i området");
 
-        jScrollPane1.setPreferredSize(new java.awt.Dimension(259, 22));
+        aliensIOmradeScrollPane.setPreferredSize(new java.awt.Dimension(259, 22));
 
-        områdetsAliens.setEditable(false);
-        områdetsAliens.setBackground(new java.awt.Color(250, 250, 250));
-        områdetsAliens.setColumns(20);
-        områdetsAliens.setLineWrap(true);
-        områdetsAliens.setRows(1);
-        områdetsAliens.setTabSize(1);
-        områdetsAliens.setToolTipText("");
-        områdetsAliens.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        områdetsAliens.setMinimumSize(new java.awt.Dimension(240, 407));
-        områdetsAliens.setPreferredSize(new java.awt.Dimension(240, 18));
-        jScrollPane1.setViewportView(områdetsAliens);
+        aliensIOmradeTextArea.setEditable(false);
+        aliensIOmradeTextArea.setBackground(new java.awt.Color(250, 250, 250));
+        aliensIOmradeTextArea.setColumns(20);
+        aliensIOmradeTextArea.setLineWrap(true);
+        aliensIOmradeTextArea.setRows(1);
+        aliensIOmradeTextArea.setTabSize(1);
+        aliensIOmradeTextArea.setToolTipText("");
+        aliensIOmradeTextArea.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        aliensIOmradeTextArea.setMinimumSize(new java.awt.Dimension(240, 407));
+        aliensIOmradeTextArea.setPreferredSize(new java.awt.Dimension(240, 18));
+        aliensIOmradeScrollPane.setViewportView(aliensIOmradeTextArea);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+        javax.swing.GroupLayout aliensIOmradePanelLayout = new javax.swing.GroupLayout(aliensIOmradePanel);
+        aliensIOmradePanel.setLayout(aliensIOmradePanelLayout);
+        aliensIOmradePanelLayout.setHorizontalGroup(
+            aliensIOmradePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(aliensIOmradeScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+        aliensIOmradePanelLayout.setVerticalGroup(
+            aliensIOmradePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(aliensIOmradeScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        jPanel5.setBackground(new java.awt.Color(200, 200, 200));
-        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        omradeschefPanel.setBackground(new java.awt.Color(200, 200, 200));
+        omradeschefPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        omradesChefIDLbl.setForeground(new java.awt.Color(0, 0, 0));
-        omradesChefIDLbl.setText("AgentID:");
+        omradesChefIDLabel.setForeground(new java.awt.Color(0, 0, 0));
+        omradesChefIDLabel.setText("AgentID:");
 
-        omradesChefNamnLbl.setForeground(new java.awt.Color(0, 0, 0));
-        omradesChefNamnLbl.setText("Namn:");
+        omradesChefNamnLabel.setForeground(new java.awt.Color(0, 0, 0));
+        omradesChefNamnLabel.setText("Namn:");
 
-        omradesChefTelefonLbl.setForeground(new java.awt.Color(0, 0, 0));
-        omradesChefTelefonLbl.setText("Telefon:");
+        omradesChefTelefonLabel.setForeground(new java.awt.Color(0, 0, 0));
+        omradesChefTelefonLabel.setText("Telefon:");
 
-        chefID.setForeground(new java.awt.Color(0, 0, 0));
+        ocIDLabel.setForeground(new java.awt.Color(0, 0, 0));
 
-        chefNamn.setForeground(new java.awt.Color(0, 0, 0));
+        ocNamnLabel.setForeground(new java.awt.Color(0, 0, 0));
 
-        chefTelefon.setForeground(new java.awt.Color(0, 0, 0));
+        ocTelefonLabel.setForeground(new java.awt.Color(0, 0, 0));
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        javax.swing.GroupLayout omradeschefPanelLayout = new javax.swing.GroupLayout(omradeschefPanel);
+        omradeschefPanel.setLayout(omradeschefPanelLayout);
+        omradeschefPanelLayout.setHorizontalGroup(
+            omradeschefPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(omradeschefPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(omradesChefIDLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-                    .addComponent(omradesChefNamnLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(omradesChefTelefonLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(omradeschefPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(omradesChefIDLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                    .addComponent(omradesChefNamnLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(omradesChefTelefonLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(chefTelefon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(chefNamn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(chefID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(omradeschefPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ocTelefonLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ocNamnLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ocIDLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        omradeschefPanelLayout.setVerticalGroup(
+            omradeschefPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(omradeschefPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(omradesChefIDLbl)
-                    .addComponent(chefID))
+                .addGroup(omradeschefPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(omradesChefIDLabel)
+                    .addComponent(ocIDLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(omradesChefNamnLbl)
-                    .addComponent(chefNamn))
+                .addGroup(omradeschefPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(omradesChefNamnLabel)
+                    .addComponent(ocNamnLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(omradesChefTelefonLbl)
-                    .addComponent(chefTelefon))
+                .addGroup(omradeschefPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(omradesChefTelefonLabel)
+                    .addComponent(ocTelefonLabel))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel6.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Ditt områdes områdeschef");
+        omradeschefLabel.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        omradeschefLabel.setForeground(new java.awt.Color(0, 0, 0));
+        omradeschefLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        omradeschefLabel.setText("Ditt områdes områdeschef");
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout alienPortalInfoPanelLayout = new javax.swing.GroupLayout(alienPortalInfoPanel);
+        alienPortalInfoPanel.setLayout(alienPortalInfoPanelLayout);
+        alienPortalInfoPanelLayout.setHorizontalGroup(
+            alienPortalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, alienPortalInfoPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 351, Short.MAX_VALUE))
+                .addGroup(alienPortalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(omradeschefPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(omradeschefLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 351, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(alienPortalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(allaAliensIOmradeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                    .addComponent(aliensIOmradePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+        alienPortalInfoPanelLayout.setVerticalGroup(
+            alienPortalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, alienPortalInfoPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel6))
+                .addGroup(alienPortalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(allaAliensIOmradeLabel)
+                    .addComponent(omradeschefLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(alienPortalInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(aliensIOmradePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(omradeschefPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(63, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout bodyLayout = new javax.swing.GroupLayout(body);
-        body.setLayout(bodyLayout);
-        bodyLayout.setHorizontalGroup(
-            bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bodyLayout.createSequentialGroup()
+        javax.swing.GroupLayout bodyPanelLayout = new javax.swing.GroupLayout(bodyPanel);
+        bodyPanel.setLayout(bodyPanelLayout);
+        bodyPanelLayout.setHorizontalGroup(
+            bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bodyPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(inloggadAlienPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(alienPortalInfoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        bodyLayout.setVerticalGroup(
-            bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bodyLayout.createSequentialGroup()
-                .addGroup(bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        bodyPanelLayout.setVerticalGroup(
+            bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bodyPanelLayout.createSequentialGroup()
+                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(alienPortalInfoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inloggadAlienPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
 
-        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
-        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
-        jSeparator1.setToolTipText("");
+        skiljeStreck2.setBackground(new java.awt.Color(0, 0, 0));
+        skiljeStreck2.setForeground(new java.awt.Color(255, 255, 255));
+        skiljeStreck2.setToolTipText("");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(body, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(header, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE))
+        javax.swing.GroupLayout sidPanelLayout = new javax.swing.GroupLayout(sidPanel);
+        sidPanel.setLayout(sidPanelLayout);
+        sidPanelLayout.setHorizontalGroup(
+            sidPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sidPanelLayout.createSequentialGroup()
+                .addGroup(sidPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(bodyPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(skiljeStreck2, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(headerPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        sidPanelLayout.setVerticalGroup(
+            sidPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sidPanelLayout.createSequentialGroup()
+                .addComponent(headerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(skiljeStreck2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(body, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bodyPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -415,11 +414,11 @@ public class AlienPortal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(sidPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(sidPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -431,38 +430,37 @@ public class AlienPortal extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel alienIDLbl;
-    private javax.swing.JPanel body;
+    private javax.swing.JLabel alienIDLabel;
+    private javax.swing.JLabel alienNamnLabel;
+    private javax.swing.JLabel alienPlatsLabel;
+    private javax.swing.JPanel alienPortalInfoPanel;
+    private javax.swing.JLabel alienTelefonLabel;
+    private javax.swing.JPanel aliensIOmradePanel;
+    private javax.swing.JScrollPane aliensIOmradeScrollPane;
+    private javax.swing.JTextArea aliensIOmradeTextArea;
+    private javax.swing.JLabel allaAliensIOmradeLabel;
+    private javax.swing.JPanel bodyPanel;
     private javax.swing.JButton bytLosenord;
-    private javax.swing.JLabel chefID;
-    private javax.swing.JLabel chefNamn;
-    private javax.swing.JLabel chefTelefon;
-    private javax.swing.JPanel header;
-    private javax.swing.JLabel headerLbl;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JLabel mibpLbl;
-    private javax.swing.JLabel namnLbl;
-    private javax.swing.JLabel omradesChefIDLbl;
-    private javax.swing.JLabel omradesChefNamnLbl;
-    private javax.swing.JLabel omradesChefTelefonLbl;
-    private javax.swing.JTextArea områdetsAliens;
-    private javax.swing.JLabel platsLbl;
-    private javax.swing.JLabel sidLbl;
-    private javax.swing.JSeparator skiljestreck;
-    private javax.swing.JLabel telefonLbl;
+    private javax.swing.JLabel headerLabel;
+    private javax.swing.JPanel headerPanel;
+    private javax.swing.JLabel inloggadAlienIDLabel;
+    private javax.swing.JLabel inloggadAlienNamnLabel;
+    private javax.swing.JPanel inloggadAlienPanel;
+    private javax.swing.JLabel inloggadAlienPlatsLabel;
+    private javax.swing.JLabel inloggadAlienTelefonLabel;
+    private javax.swing.JLabel mibPortalLbl;
+    private javax.swing.JLabel ocIDLabel;
+    private javax.swing.JLabel ocNamnLabel;
+    private javax.swing.JLabel ocTelefonLabel;
+    private javax.swing.JLabel omradesChefIDLabel;
+    private javax.swing.JLabel omradesChefNamnLabel;
+    private javax.swing.JLabel omradesChefTelefonLabel;
+    private javax.swing.JLabel omradeschefLabel;
+    private javax.swing.JPanel omradeschefPanel;
+    private javax.swing.JLabel sidLabel;
+    private javax.swing.JPanel sidPanel;
+    private javax.swing.JSeparator skiljeStreck1;
+    private javax.swing.JSeparator skiljeStreck2;
+    private javax.swing.JSeparator skiljeStreck3;
     // End of variables declaration//GEN-END:variables
 }

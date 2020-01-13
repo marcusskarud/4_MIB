@@ -44,203 +44,203 @@ public class LanaUtrustning extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        jPanel1 = new javax.swing.JPanel();
-        header = new javax.swing.JPanel();
-        headerLbl = new javax.swing.JLabel();
-        mibpLbl = new javax.swing.JLabel();
-        sidLbl = new javax.swing.JLabel();
-        skiljestreck = new javax.swing.JSeparator();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
+        utrustningsButtonGroup = new javax.swing.ButtonGroup();
+        sidPanel = new javax.swing.JPanel();
+        headerPanel = new javax.swing.JPanel();
+        headerLabel = new javax.swing.JLabel();
+        mibPortalLabel = new javax.swing.JLabel();
+        sidLabel = new javax.swing.JLabel();
+        skiljeStreck1 = new javax.swing.JSeparator();
+        bodyPanel = new javax.swing.JPanel();
+        onskadUtrustningLabel = new javax.swing.JLabel();
+        vapenRadioButton = new javax.swing.JRadioButton();
+        kommunikationRadioButton = new javax.swing.JRadioButton();
+        teknikRadioButton = new javax.swing.JRadioButton();
+        ledigUtrustningLabel = new javax.swing.JLabel();
+        ledigUtrustningBox = new javax.swing.JComboBox<>();
+        lanaUtrustningButton = new javax.swing.JButton();
+        avbrytButton = new javax.swing.JButton();
+        skiljeStreck2 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(40, 40, 40));
+        sidPanel.setBackground(new java.awt.Color(40, 40, 40));
 
-        header.setBackground(new java.awt.Color(80, 80, 80));
-        header.setPreferredSize(new java.awt.Dimension(1095, 100));
+        headerPanel.setBackground(new java.awt.Color(80, 80, 80));
+        headerPanel.setPreferredSize(new java.awt.Dimension(1095, 100));
 
-        headerLbl.setBackground(new java.awt.Color(120, 120, 120));
-        headerLbl.setFont(new java.awt.Font("Lucida Grande", 0, 28)); // NOI18N
-        headerLbl.setForeground(new java.awt.Color(200, 200, 200));
-        headerLbl.setText("Men in Black - Sektor Skandinavien");
+        headerLabel.setBackground(new java.awt.Color(120, 120, 120));
+        headerLabel.setFont(new java.awt.Font("Lucida Grande", 0, 28)); // NOI18N
+        headerLabel.setForeground(new java.awt.Color(200, 200, 200));
+        headerLabel.setText("Men in Black - Sektor Skandinavien");
 
-        mibpLbl.setBackground(new java.awt.Color(120, 120, 120));
-        mibpLbl.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
-        mibpLbl.setForeground(new java.awt.Color(200, 200, 200));
-        mibpLbl.setText("MiB-Portalen");
+        mibPortalLabel.setBackground(new java.awt.Color(120, 120, 120));
+        mibPortalLabel.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
+        mibPortalLabel.setForeground(new java.awt.Color(200, 200, 200));
+        mibPortalLabel.setText("MiB-Portalen");
 
-        sidLbl.setBackground(new java.awt.Color(120, 120, 120));
-        sidLbl.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
-        sidLbl.setForeground(new java.awt.Color(200, 200, 200));
-        sidLbl.setText("Låna utrustning");
+        sidLabel.setBackground(new java.awt.Color(120, 120, 120));
+        sidLabel.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
+        sidLabel.setForeground(new java.awt.Color(200, 200, 200));
+        sidLabel.setText("Låna utrustning");
 
-        skiljestreck.setForeground(new java.awt.Color(200, 200, 200));
+        skiljeStreck1.setForeground(new java.awt.Color(200, 200, 200));
 
-        javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
-        header.setLayout(headerLayout);
-        headerLayout.setHorizontalGroup(
-            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(headerLayout.createSequentialGroup()
+        javax.swing.GroupLayout headerPanelLayout = new javax.swing.GroupLayout(headerPanel);
+        headerPanel.setLayout(headerPanelLayout);
+        headerPanelLayout.setHorizontalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerPanelLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addGroup(headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(headerLayout.createSequentialGroup()
+                .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(headerPanelLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(mibpLbl)
+                        .addComponent(mibPortalLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(sidLbl)
+                        .addComponent(sidLabel)
                         .addGap(39, 39, 39))
-                    .addGroup(headerLayout.createSequentialGroup()
-                        .addGroup(headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(skiljestreck, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(headerLbl))
+                    .addGroup(headerPanelLayout.createSequentialGroup()
+                        .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(skiljeStreck1, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(headerLabel))
                         .addContainerGap(33, Short.MAX_VALUE))))
         );
-        headerLayout.setVerticalGroup(
-            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(headerLayout.createSequentialGroup()
+        headerPanelLayout.setVerticalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(headerLbl)
+                .addComponent(headerLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(skiljestreck, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(skiljeStreck1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(mibpLbl)
-                    .addComponent(sidLbl))
+                .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(mibPortalLabel)
+                    .addComponent(sidLabel))
                 .addContainerGap())
         );
 
-        jPanel2.setBackground(new java.awt.Color(180, 180, 180));
-        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        bodyPanel.setBackground(new java.awt.Color(180, 180, 180));
+        bodyPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Önskad utrustning:");
+        onskadUtrustningLabel.setForeground(new java.awt.Color(0, 0, 0));
+        onskadUtrustningLabel.setText("Önskad utrustning:");
 
-        jRadioButton1.setBackground(new java.awt.Color(180, 180, 180));
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jRadioButton1.setText("Vapen");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        vapenRadioButton.setBackground(new java.awt.Color(180, 180, 180));
+        utrustningsButtonGroup.add(vapenRadioButton);
+        vapenRadioButton.setForeground(new java.awt.Color(0, 0, 0));
+        vapenRadioButton.setText("Vapen");
+        vapenRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                vapenRadioButtonActionPerformed(evt);
             }
         });
 
-        jRadioButton2.setBackground(new java.awt.Color(180, 180, 180));
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jRadioButton2.setText("Kommunikation");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        kommunikationRadioButton.setBackground(new java.awt.Color(180, 180, 180));
+        utrustningsButtonGroup.add(kommunikationRadioButton);
+        kommunikationRadioButton.setForeground(new java.awt.Color(0, 0, 0));
+        kommunikationRadioButton.setText("Kommunikation");
+        kommunikationRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                kommunikationRadioButtonActionPerformed(evt);
             }
         });
 
-        jRadioButton3.setBackground(new java.awt.Color(180, 180, 180));
-        buttonGroup1.add(jRadioButton3);
-        jRadioButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jRadioButton3.setText("Teknik");
-        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+        teknikRadioButton.setBackground(new java.awt.Color(180, 180, 180));
+        utrustningsButtonGroup.add(teknikRadioButton);
+        teknikRadioButton.setForeground(new java.awt.Color(0, 0, 0));
+        teknikRadioButton.setText("Teknik");
+        teknikRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton3ActionPerformed(evt);
+                teknikRadioButtonActionPerformed(evt);
             }
         });
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Ledig utrustning:");
+        ledigUtrustningLabel.setForeground(new java.awt.Color(0, 0, 0));
+        ledigUtrustningLabel.setText("Ledig utrustning:");
 
-        jButton1.setText("Låna utrustning");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        lanaUtrustningButton.setText("Låna utrustning");
+        lanaUtrustningButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                lanaUtrustningButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Avbryt");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        avbrytButton.setText("Avbryt");
+        avbrytButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                avbrytButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout bodyPanelLayout = new javax.swing.GroupLayout(bodyPanel);
+        bodyPanel.setLayout(bodyPanelLayout);
+        bodyPanelLayout.setHorizontalGroup(
+            bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bodyPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(bodyPanelLayout.createSequentialGroup()
                         .addGap(42, 42, 42)
-                        .addComponent(jButton1)
+                        .addComponent(lanaUtrustningButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2)
+                        .addComponent(avbrytButton)
                         .addGap(48, 48, 48))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jRadioButton1)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bodyPanelLayout.createSequentialGroup()
+                        .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(skiljeStreck2, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ledigUtrustningBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, bodyPanelLayout.createSequentialGroup()
+                                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(onskadUtrustningLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(bodyPanelLayout.createSequentialGroup()
+                                        .addComponent(vapenRadioButton)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jRadioButton2)
+                                        .addComponent(kommunikationRadioButton)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jRadioButton3))
-                                    .addComponent(jLabel2))
+                                        .addComponent(teknikRadioButton))
+                                    .addComponent(ledigUtrustningLabel))
                                 .addGap(0, 162, Short.MAX_VALUE)))
                         .addContainerGap())))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        bodyPanelLayout.setVerticalGroup(
+            bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bodyPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(onskadUtrustningLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton3))
+                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(vapenRadioButton)
+                    .addComponent(kommunikationRadioButton)
+                    .addComponent(teknikRadioButton))
                 .addGap(4, 4, 4)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(skiljeStreck2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
-                .addComponent(jLabel2)
+                .addComponent(ledigUtrustningLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ledigUtrustningBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lanaUtrustningButton)
+                    .addComponent(avbrytButton))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(header, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 539, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout sidPanelLayout = new javax.swing.GroupLayout(sidPanel);
+        sidPanel.setLayout(sidPanelLayout);
+        sidPanelLayout.setHorizontalGroup(
+            sidPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(headerPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 539, Short.MAX_VALUE)
+            .addGroup(sidPanelLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bodyPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+        sidPanelLayout.setVerticalGroup(
+            sidPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sidPanelLayout.createSequentialGroup()
+                .addComponent(headerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bodyPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 18, Short.MAX_VALUE))
         );
 
@@ -248,18 +248,18 @@ public class LanaUtrustning extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(sidPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(sidPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     @SuppressWarnings("unchecked")    
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void vapenRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vapenRadioButtonActionPerformed
         DefaultComboBoxModel utrustningTillComboBox = new DefaultComboBoxModel();
     
         try{
@@ -274,11 +274,11 @@ public class LanaUtrustning extends javax.swing.JFrame {
         
         }
         
-        jComboBox1.setModel(utrustningTillComboBox);
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+        ledigUtrustningBox.setModel(utrustningTillComboBox);
+    }//GEN-LAST:event_vapenRadioButtonActionPerformed
 
     @SuppressWarnings("unchecked")    
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+    private void kommunikationRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kommunikationRadioButtonActionPerformed
         DefaultComboBoxModel utrustningTillComboBox = new DefaultComboBoxModel();
         
         try{
@@ -293,11 +293,11 @@ public class LanaUtrustning extends javax.swing.JFrame {
         
         }
         
-        jComboBox1.setModel(utrustningTillComboBox);                                            
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+        ledigUtrustningBox.setModel(utrustningTillComboBox);                                            
+    }//GEN-LAST:event_kommunikationRadioButtonActionPerformed
 
     @SuppressWarnings("unchecked")    
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+    private void teknikRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teknikRadioButtonActionPerformed
         DefaultComboBoxModel utrustningTillComboBox = new DefaultComboBoxModel();
 
         try{
@@ -312,15 +312,15 @@ public class LanaUtrustning extends javax.swing.JFrame {
         
         }
         
-        jComboBox1.setModel(utrustningTillComboBox);
-    }//GEN-LAST:event_jRadioButton3ActionPerformed
+        ledigUtrustningBox.setModel(utrustningTillComboBox);
+    }//GEN-LAST:event_teknikRadioButtonActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void avbrytButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avbrytButtonActionPerformed
         LanaUtrustning.this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_avbrytButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String[] valdUtrustning = jComboBox1.getSelectedItem().toString().split(" ");
+    private void lanaUtrustningButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lanaUtrustningButtonActionPerformed
+        String[] valdUtrustning = ledigUtrustningBox.getSelectedItem().toString().split(" ");
         int utrustningsID = Integer.parseInt(valdUtrustning[1]);
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
         Date nyttDatum = new Date();
@@ -334,27 +334,27 @@ public class LanaUtrustning extends javax.swing.JFrame {
         
         }
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_lanaUtrustningButtonActionPerformed
 
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JPanel header;
-    private javax.swing.JLabel headerLbl;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel mibpLbl;
-    private javax.swing.JLabel sidLbl;
-    private javax.swing.JSeparator skiljestreck;
+    private javax.swing.JButton avbrytButton;
+    private javax.swing.JPanel bodyPanel;
+    private javax.swing.JLabel headerLabel;
+    private javax.swing.JPanel headerPanel;
+    private javax.swing.JRadioButton kommunikationRadioButton;
+    private javax.swing.JButton lanaUtrustningButton;
+    private javax.swing.JComboBox<String> ledigUtrustningBox;
+    private javax.swing.JLabel ledigUtrustningLabel;
+    private javax.swing.JLabel mibPortalLabel;
+    private javax.swing.JLabel onskadUtrustningLabel;
+    private javax.swing.JLabel sidLabel;
+    private javax.swing.JPanel sidPanel;
+    private javax.swing.JSeparator skiljeStreck1;
+    private javax.swing.JSeparator skiljeStreck2;
+    private javax.swing.JRadioButton teknikRadioButton;
+    private javax.swing.ButtonGroup utrustningsButtonGroup;
+    private javax.swing.JRadioButton vapenRadioButton;
     // End of variables declaration//GEN-END:variables
 }

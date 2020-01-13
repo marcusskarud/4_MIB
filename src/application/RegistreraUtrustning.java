@@ -33,176 +33,176 @@ public class RegistreraUtrustning extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        header5 = new javax.swing.JPanel();
-        headerLbl5 = new javax.swing.JLabel();
-        mibpLbl5 = new javax.swing.JLabel();
-        sidLbl5 = new javax.swing.JLabel();
-        skiljestreck5 = new javax.swing.JSeparator();
-        jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        sidPanel = new javax.swing.JPanel();
+        headerPanel = new javax.swing.JPanel();
+        headerLabel = new javax.swing.JLabel();
+        mibPortalLabel = new javax.swing.JLabel();
+        sidLabel = new javax.swing.JLabel();
+        skiljeStreck1 = new javax.swing.JSeparator();
+        bodyPanel = new javax.swing.JPanel();
+        nyUtrustningNamnLabel = new javax.swing.JLabel();
+        nyUtrustningTypLabel = new javax.swing.JLabel();
+        nyUtrustningKaliberLabel = new javax.swing.JLabel();
+        nyUtrustningNamnTextField = new javax.swing.JTextField();
+        nyUtrustningKaliberTextField = new javax.swing.JTextField();
+        nyUtrustningTypBox = new javax.swing.JComboBox<>();
+        registreraNyUtrustningButton = new javax.swing.JButton();
+        avbrytButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(40, 40, 40));
+        sidPanel.setBackground(new java.awt.Color(40, 40, 40));
 
-        header5.setBackground(new java.awt.Color(80, 80, 80));
-        header5.setPreferredSize(new java.awt.Dimension(1095, 100));
+        headerPanel.setBackground(new java.awt.Color(80, 80, 80));
+        headerPanel.setPreferredSize(new java.awt.Dimension(1095, 100));
 
-        headerLbl5.setBackground(new java.awt.Color(120, 120, 120));
-        headerLbl5.setFont(new java.awt.Font("Lucida Grande", 0, 28)); // NOI18N
-        headerLbl5.setForeground(new java.awt.Color(200, 200, 200));
-        headerLbl5.setText("Men in Black - Sektor Skandinavien");
+        headerLabel.setBackground(new java.awt.Color(120, 120, 120));
+        headerLabel.setFont(new java.awt.Font("Lucida Grande", 0, 28)); // NOI18N
+        headerLabel.setForeground(new java.awt.Color(200, 200, 200));
+        headerLabel.setText("Men in Black - Sektor Skandinavien");
 
-        mibpLbl5.setBackground(new java.awt.Color(120, 120, 120));
-        mibpLbl5.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
-        mibpLbl5.setForeground(new java.awt.Color(200, 200, 200));
-        mibpLbl5.setText("MiB-Portalen");
+        mibPortalLabel.setBackground(new java.awt.Color(120, 120, 120));
+        mibPortalLabel.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
+        mibPortalLabel.setForeground(new java.awt.Color(200, 200, 200));
+        mibPortalLabel.setText("MiB-Portalen");
 
-        sidLbl5.setBackground(new java.awt.Color(120, 120, 120));
-        sidLbl5.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
-        sidLbl5.setForeground(new java.awt.Color(200, 200, 200));
-        sidLbl5.setText("Registrera utrustning");
+        sidLabel.setBackground(new java.awt.Color(120, 120, 120));
+        sidLabel.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
+        sidLabel.setForeground(new java.awt.Color(200, 200, 200));
+        sidLabel.setText("Registrera utrustning");
 
-        skiljestreck5.setForeground(new java.awt.Color(200, 200, 200));
+        skiljeStreck1.setForeground(new java.awt.Color(200, 200, 200));
 
-        javax.swing.GroupLayout header5Layout = new javax.swing.GroupLayout(header5);
-        header5.setLayout(header5Layout);
-        header5Layout.setHorizontalGroup(
-            header5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(header5Layout.createSequentialGroup()
+        javax.swing.GroupLayout headerPanelLayout = new javax.swing.GroupLayout(headerPanel);
+        headerPanel.setLayout(headerPanelLayout);
+        headerPanelLayout.setHorizontalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerPanelLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addGroup(header5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(header5Layout.createSequentialGroup()
+                .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(headerPanelLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(mibpLbl5)
+                        .addComponent(mibPortalLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(sidLbl5)
+                        .addComponent(sidLabel)
                         .addGap(39, 39, 39))
-                    .addGroup(header5Layout.createSequentialGroup()
-                        .addGroup(header5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(skiljestreck5, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(headerLbl5))
+                    .addGroup(headerPanelLayout.createSequentialGroup()
+                        .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(skiljeStreck1, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(headerLabel))
                         .addContainerGap(33, Short.MAX_VALUE))))
         );
-        header5Layout.setVerticalGroup(
-            header5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(header5Layout.createSequentialGroup()
+        headerPanelLayout.setVerticalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerPanelLayout.createSequentialGroup()
                 .addContainerGap(13, Short.MAX_VALUE)
-                .addComponent(headerLbl5)
+                .addComponent(headerLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(skiljestreck5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(skiljeStreck1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(header5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(mibpLbl5)
-                    .addComponent(sidLbl5))
+                .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(mibPortalLabel)
+                    .addComponent(sidLabel))
                 .addContainerGap())
         );
 
-        jPanel2.setBackground(new java.awt.Color(180, 180, 180));
-        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        bodyPanel.setBackground(new java.awt.Color(180, 180, 180));
+        bodyPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jButton1.setText("Registrera utrustning");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        nyUtrustningNamnLabel.setForeground(new java.awt.Color(0, 0, 0));
+        nyUtrustningNamnLabel.setText("Utrustningsnamn:");
+
+        nyUtrustningTypLabel.setForeground(new java.awt.Color(0, 0, 0));
+        nyUtrustningTypLabel.setText("Utrustningstyp:");
+
+        nyUtrustningKaliberLabel.setForeground(new java.awt.Color(0, 0, 0));
+        nyUtrustningKaliberLabel.setText("Kaliber:");
+
+        nyUtrustningTypBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Vapen", "Kommunikation", "Teknik" }));
+        nyUtrustningTypBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                nyUtrustningTypBoxActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Avbryt");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        registreraNyUtrustningButton.setText("Registrera utrustning");
+        registreraNyUtrustningButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                registreraNyUtrustningButtonActionPerformed(evt);
             }
         });
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Utrustningsnamn:");
-
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Utrustningstyp:");
-
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Kaliber:");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Vapen", "Kommunikation", "Teknik" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        avbrytButton.setText("Avbryt");
+        avbrytButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                avbrytButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout bodyPanelLayout = new javax.swing.GroupLayout(bodyPanel);
+        bodyPanel.setLayout(bodyPanelLayout);
+        bodyPanelLayout.setHorizontalGroup(
+            bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bodyPanelLayout.createSequentialGroup()
+                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(bodyPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(registreraNyUtrustningButton, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(avbrytButton, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(bodyPanelLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nyUtrustningTypLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(nyUtrustningNamnLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(nyUtrustningKaliberLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, 0, 200, Short.MAX_VALUE)
-                            .addComponent(jTextField2))))
+                        .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(nyUtrustningNamnTextField, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(nyUtrustningTypBox, javax.swing.GroupLayout.Alignment.TRAILING, 0, 200, Short.MAX_VALUE)
+                            .addComponent(nyUtrustningKaliberTextField))))
                 .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        bodyPanelLayout.setVerticalGroup(
+            bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bodyPanelLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nyUtrustningNamnLabel)
+                    .addComponent(nyUtrustningNamnTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nyUtrustningTypLabel)
+                    .addComponent(nyUtrustningTypBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nyUtrustningKaliberLabel)
+                    .addComponent(nyUtrustningKaliberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(registreraNyUtrustningButton)
+                    .addComponent(avbrytButton))
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout sidPanelLayout = new javax.swing.GroupLayout(sidPanel);
+        sidPanel.setLayout(sidPanelLayout);
+        sidPanelLayout.setHorizontalGroup(
+            sidPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sidPanelLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(header5, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(headerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(sidPanelLayout.createSequentialGroup()
                 .addGap(86, 86, 86)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bodyPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(header5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        sidPanelLayout.setVerticalGroup(
+            sidPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sidPanelLayout.createSequentialGroup()
+                .addComponent(headerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bodyPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(54, Short.MAX_VALUE))
         );
 
@@ -210,27 +210,27 @@ public class RegistreraUtrustning extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(sidPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(sidPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (Validering.textNotEmpty(jTextField1) && Validering.textNotEmpty(jTextField2)){
+    private void registreraNyUtrustningButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registreraNyUtrustningButtonActionPerformed
+        if (Validering.textNotEmpty(nyUtrustningNamnTextField) && Validering.textNotEmpty(nyUtrustningKaliberTextField)){
             try{
                 int utrustningsID = 0;
                 utrustningsID = Integer.parseInt(db.getAutoIncrement("UTRUSTNING", "UTRUSTNINGS_ID"));
-                db.insert("INSERT INTO UTRUSTNING VALUES ( " + utrustningsID + " , \'" + jTextField1.getText() + "\' )");
-                if (jComboBox1.getSelectedItem().toString().equals("Vapen")){
-                    db.insert("INSERT INTO " + jComboBox1.getSelectedItem().toString().toUpperCase() + " VALUES ( " + utrustningsID + " , " + jTextField2.getText() + " ) ");                    
+                db.insert("INSERT INTO UTRUSTNING VALUES ( " + utrustningsID + " , \'" + nyUtrustningNamnTextField.getText() + "\' )");
+                if (nyUtrustningTypBox.getSelectedItem().toString().equals("Vapen")){
+                    db.insert("INSERT INTO " + nyUtrustningTypBox.getSelectedItem().toString().toUpperCase() + " VALUES ( " + utrustningsID + " , " + nyUtrustningKaliberTextField.getText() + " ) ");                    
                 }
                 else{
-                    db.insert("INSERT INTO " + jComboBox1.getSelectedItem().toString().toUpperCase() + " VALUES ( " + utrustningsID + " , \'" + jTextField2.getText() + "\' ) ");
+                    db.insert("INSERT INTO " + nyUtrustningTypBox.getSelectedItem().toString().toUpperCase() + " VALUES ( " + utrustningsID + " , \'" + nyUtrustningKaliberTextField.getText() + "\' ) ");
                 }
             }
             catch(InfException undantag){
@@ -240,39 +240,39 @@ public class RegistreraUtrustning extends javax.swing.JFrame {
             RegistreraUtrustning.this.dispose();
         }
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_registreraNyUtrustningButtonActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void avbrytButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avbrytButtonActionPerformed
         RegistreraUtrustning.this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_avbrytButtonActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        if (jComboBox1.getSelectedItem().toString().equals("Kommunikation")){
-            jLabel3.setText("Överföringsteknik:");
+    private void nyUtrustningTypBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nyUtrustningTypBoxActionPerformed
+        if (nyUtrustningTypBox.getSelectedItem().toString().equals("Kommunikation")){
+            nyUtrustningKaliberLabel.setText("Överföringsteknik:");
         }
-        else if(jComboBox1.getSelectedItem().toString().equals("Teknik")){
-            jLabel3.setText("Kraftkälla:");
+        else if(nyUtrustningTypBox.getSelectedItem().toString().equals("Teknik")){
+            nyUtrustningKaliberLabel.setText("Kraftkälla:");
         }
         else{
-            jLabel3.setText("Kaliber:");
+            nyUtrustningKaliberLabel.setText("Kaliber:");
         }
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_nyUtrustningTypBoxActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel header5;
-    private javax.swing.JLabel headerLbl5;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JLabel mibpLbl5;
-    private javax.swing.JLabel sidLbl5;
-    private javax.swing.JSeparator skiljestreck5;
+    private javax.swing.JButton avbrytButton;
+    private javax.swing.JPanel bodyPanel;
+    private javax.swing.JLabel headerLabel;
+    private javax.swing.JPanel headerPanel;
+    private javax.swing.JLabel mibPortalLabel;
+    private javax.swing.JLabel nyUtrustningKaliberLabel;
+    private javax.swing.JTextField nyUtrustningKaliberTextField;
+    private javax.swing.JLabel nyUtrustningNamnLabel;
+    private javax.swing.JTextField nyUtrustningNamnTextField;
+    private javax.swing.JComboBox<String> nyUtrustningTypBox;
+    private javax.swing.JLabel nyUtrustningTypLabel;
+    private javax.swing.JButton registreraNyUtrustningButton;
+    private javax.swing.JLabel sidLabel;
+    private javax.swing.JPanel sidPanel;
+    private javax.swing.JSeparator skiljeStreck1;
     // End of variables declaration//GEN-END:variables
 }

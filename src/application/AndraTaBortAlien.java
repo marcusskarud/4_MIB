@@ -43,416 +43,401 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jButton2 = new javax.swing.JButton();
-        jSeparator3 = new javax.swing.JSeparator();
-        jPanel1 = new javax.swing.JPanel();
-        header = new javax.swing.JPanel();
-        headerLbl = new javax.swing.JLabel();
-        mibpLbl = new javax.swing.JLabel();
-        sidLbl = new javax.swing.JLabel();
-        skiljestreck = new javax.swing.JSeparator();
-        jSeparator2 = new javax.swing.JSeparator();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jTextField8 = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        valjAlienComboBox = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
-        jSeparator1 = new javax.swing.JSeparator();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        rasBoxen = new javax.swing.JComboBox<>();
-        sparaUppdateradInfo = new javax.swing.JButton();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        platsBoxen = new javax.swing.JComboBox<>();
-        jTextField4 = new javax.swing.JTextField();
-        omradesBoxen = new javax.swing.JComboBox<>();
-        jLabel3 = new javax.swing.JLabel();
-        jSeparator4 = new javax.swing.JSeparator();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        ansvarigAgentBoxen = new javax.swing.JComboBox<>();
-
-        jTextField1.setText("jTextField1");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jButton2.setText("ACCEPTERA ÄNDRINGAR");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
+        sidPanel = new javax.swing.JPanel();
+        headerPanel = new javax.swing.JPanel();
+        headerLabel = new javax.swing.JLabel();
+        mibPortalLabel = new javax.swing.JLabel();
+        sidLabel = new javax.swing.JLabel();
+        skiljeStreck2 = new javax.swing.JSeparator();
+        skiljeStreck1 = new javax.swing.JSeparator();
+        bodyPanel = new javax.swing.JPanel();
+        soktAlienLabel = new javax.swing.JLabel();
+        valjAlienLabel = new javax.swing.JLabel();
+        angeInfoLabel = new javax.swing.JLabel();
+        nyAlienIDLabel = new javax.swing.JLabel();
+        nyAlienNamnLabel = new javax.swing.JLabel();
+        nyAlienLosenordLabel = new javax.swing.JLabel();
+        nyAlienTelefonLabel = new javax.swing.JLabel();
+        nyAlienOmradeLabel = new javax.swing.JLabel();
+        nyAlienPlatsLabel = new javax.swing.JLabel();
+        nyAlienRegistreringsdatumLabel = new javax.swing.JLabel();
+        nyAlienRasLabel = new javax.swing.JLabel();
+        nyAlienExtraAttributLabel = new javax.swing.JLabel();
+        nyAnsvarigAgentLabel = new javax.swing.JLabel();
+        sokAlienTextField = new javax.swing.JTextField();
+        nyAlienIDTextField = new javax.swing.JTextField();
+        nyAlienNamnTextField = new javax.swing.JTextField();
+        nyAlienLosenordTextField = new javax.swing.JTextField();
+        nyAlienTelefonTextField = new javax.swing.JTextField();
+        nyAlienRegistreringsdatumTextField = new javax.swing.JTextField();
+        nyAlienExtraAttributTextField = new javax.swing.JTextField();
+        valjSoktAlienBox = new javax.swing.JComboBox<>();
+        nyAlienOmradesBox = new javax.swing.JComboBox<>();
+        nyAlienPlatsBox = new javax.swing.JComboBox<>();
+        nyAlienRasBox = new javax.swing.JComboBox<>();
+        nyAlienAnsvarigAgentBox = new javax.swing.JComboBox<>();
+        sokAlienButton = new javax.swing.JButton();
+        sparaUppdateradInfoButton = new javax.swing.JButton();
+        taBortAlienButton = new javax.swing.JButton();
+        avbrytButton = new javax.swing.JButton();
+        skiljeStreck3 = new javax.swing.JSeparator();
+        skiljeStreck4 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(40, 40, 40));
+        sidPanel.setBackground(new java.awt.Color(40, 40, 40));
 
-        header.setBackground(new java.awt.Color(80, 80, 80));
-        header.setPreferredSize(new java.awt.Dimension(1095, 100));
+        headerPanel.setBackground(new java.awt.Color(80, 80, 80));
+        headerPanel.setPreferredSize(new java.awt.Dimension(1095, 100));
 
-        headerLbl.setBackground(new java.awt.Color(120, 120, 120));
-        headerLbl.setFont(new java.awt.Font("Lucida Grande", 0, 28)); // NOI18N
-        headerLbl.setForeground(new java.awt.Color(200, 200, 200));
-        headerLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        headerLbl.setText("Men in Black - Sektor Skandinavien");
+        headerLabel.setBackground(new java.awt.Color(120, 120, 120));
+        headerLabel.setFont(new java.awt.Font("Lucida Grande", 0, 28)); // NOI18N
+        headerLabel.setForeground(new java.awt.Color(200, 200, 200));
+        headerLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        headerLabel.setText("Men in Black - Sektor Skandinavien");
 
-        mibpLbl.setBackground(new java.awt.Color(120, 120, 120));
-        mibpLbl.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
-        mibpLbl.setForeground(new java.awt.Color(200, 200, 200));
-        mibpLbl.setText("MiB-Portalen");
+        mibPortalLabel.setBackground(new java.awt.Color(120, 120, 120));
+        mibPortalLabel.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
+        mibPortalLabel.setForeground(new java.awt.Color(200, 200, 200));
+        mibPortalLabel.setText("MiB-Portalen");
 
-        sidLbl.setBackground(new java.awt.Color(120, 120, 120));
-        sidLbl.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
-        sidLbl.setForeground(new java.awt.Color(200, 200, 200));
-        sidLbl.setText("Ändra/ta bort alieninfo");
+        sidLabel.setBackground(new java.awt.Color(120, 120, 120));
+        sidLabel.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
+        sidLabel.setForeground(new java.awt.Color(200, 200, 200));
+        sidLabel.setText("Ändra/ta bort alieninfo");
 
-        skiljestreck.setForeground(new java.awt.Color(200, 200, 200));
+        skiljeStreck2.setForeground(new java.awt.Color(200, 200, 200));
 
-        javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
-        header.setLayout(headerLayout);
-        headerLayout.setHorizontalGroup(
-            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(headerLayout.createSequentialGroup()
+        javax.swing.GroupLayout headerPanelLayout = new javax.swing.GroupLayout(headerPanel);
+        headerPanel.setLayout(headerPanelLayout);
+        headerPanelLayout.setHorizontalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerPanelLayout.createSequentialGroup()
                 .addGap(39, 39, 39)
-                .addComponent(mibpLbl)
+                .addComponent(mibPortalLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(sidLbl)
+                .addComponent(sidLabel)
                 .addGap(39, 39, 39))
-            .addComponent(headerLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(headerLayout.createSequentialGroup()
+            .addComponent(headerLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(headerPanelLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addComponent(skiljestreck, javax.swing.GroupLayout.PREFERRED_SIZE, 646, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(skiljeStreck2, javax.swing.GroupLayout.PREFERRED_SIZE, 646, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        headerLayout.setVerticalGroup(
-            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(headerLayout.createSequentialGroup()
+        headerPanelLayout.setVerticalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerPanelLayout.createSequentialGroup()
                 .addContainerGap(13, Short.MAX_VALUE)
-                .addComponent(headerLbl)
+                .addComponent(headerLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(skiljestreck, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(skiljeStreck2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(mibpLbl)
-                    .addComponent(sidLbl))
+                .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(mibPortalLabel)
+                    .addComponent(sidLabel))
                 .addContainerGap())
         );
 
-        jSeparator2.setForeground(new java.awt.Color(250, 250, 250));
+        skiljeStreck1.setForeground(new java.awt.Color(250, 250, 250));
 
-        jPanel2.setBackground(new java.awt.Color(170, 170, 170));
-        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        bodyPanel.setBackground(new java.awt.Color(170, 170, 170));
+        bodyPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("Namn:");
+        soktAlienLabel.setForeground(new java.awt.Color(0, 0, 0));
+        soktAlienLabel.setText("Sök alien med namn:");
 
-        jButton3.setText("Sök alien");
-        jButton3.setPreferredSize(new java.awt.Dimension(83, 33));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        valjAlienLabel.setBackground(new java.awt.Color(250, 250, 250));
+        valjAlienLabel.setForeground(new java.awt.Color(0, 0, 0));
+        valjAlienLabel.setText("Välj alien att ändra:");
+
+        angeInfoLabel.setBackground(new java.awt.Color(100, 100, 100));
+        angeInfoLabel.setForeground(new java.awt.Color(250, 250, 250));
+        angeInfoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        angeInfoLabel.setText("Ange uppdaterad information:");
+        angeInfoLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        angeInfoLabel.setOpaque(true);
+
+        nyAlienIDLabel.setForeground(new java.awt.Color(0, 0, 0));
+        nyAlienIDLabel.setText("AlienID:");
+
+        nyAlienNamnLabel.setForeground(new java.awt.Color(0, 0, 0));
+        nyAlienNamnLabel.setText("Namn:");
+
+        nyAlienLosenordLabel.setForeground(new java.awt.Color(0, 0, 0));
+        nyAlienLosenordLabel.setText("Lösenord:");
+
+        nyAlienTelefonLabel.setForeground(new java.awt.Color(0, 0, 0));
+        nyAlienTelefonLabel.setText("Telefon:");
+
+        nyAlienOmradeLabel.setForeground(new java.awt.Color(0, 0, 0));
+        nyAlienOmradeLabel.setText("Område:");
+
+        nyAlienPlatsLabel.setForeground(new java.awt.Color(0, 0, 0));
+        nyAlienPlatsLabel.setText("Plats:");
+
+        nyAlienRegistreringsdatumLabel.setForeground(new java.awt.Color(0, 0, 0));
+        nyAlienRegistreringsdatumLabel.setText("Registreringsdatum:");
+
+        nyAlienRasLabel.setForeground(new java.awt.Color(0, 0, 0));
+        nyAlienRasLabel.setText("Ras:");
+        nyAlienRasLabel.setPreferredSize(new java.awt.Dimension(91, 16));
+        nyAlienRasLabel.setSize(new java.awt.Dimension(91, 16));
+
+        nyAlienExtraAttributLabel.setForeground(new java.awt.Color(0, 0, 0));
+        nyAlienExtraAttributLabel.setText("Antal boogies:");
+        nyAlienExtraAttributLabel.setSize(new java.awt.Dimension(91, 16));
+
+        nyAnsvarigAgentLabel.setForeground(new java.awt.Color(0, 0, 0));
+        nyAnsvarigAgentLabel.setText("Ansvarig agent:");
+
+        sokAlienTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                sokAlienTextFieldActionPerformed(evt);
             }
         });
 
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+        nyAlienIDTextField.setEditable(false);
+
+        nyAlienNamnTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+                nyAlienNamnTextFieldActionPerformed(evt);
             }
         });
 
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel10.setText("Sök alien med namn:");
-
-        valjAlienComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---" }));
-        valjAlienComboBox.addActionListener(new java.awt.event.ActionListener() {
+        nyAlienLosenordTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                valjAlienComboBoxActionPerformed(evt);
+                nyAlienLosenordTextFieldActionPerformed(evt);
             }
         });
 
-        jLabel1.setBackground(new java.awt.Color(250, 250, 250));
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Välj alien att ändra:");
-
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("Registreringsdatum:");
-
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel8.setText("Plats:");
-
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("Telefon:");
-
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("Lösenord:");
-
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("AlienID:");
-
-        jTextField9.setPreferredSize(new java.awt.Dimension(140, 24));
-
-        jSeparator1.setBackground(new java.awt.Color(250, 250, 250));
-        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
-
-        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel12.setText("Antal boogies:");
-        jLabel12.setSize(new java.awt.Dimension(91, 16));
-
-        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel11.setText("Område:");
-
-        rasBoxen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---" }));
-        rasBoxen.setPreferredSize(new java.awt.Dimension(140, 26));
-        rasBoxen.addActionListener(new java.awt.event.ActionListener() {
+        nyAlienTelefonTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rasBoxenActionPerformed(evt);
+                nyAlienTelefonTextFieldActionPerformed(evt);
             }
         });
 
-        sparaUppdateradInfo.setText("Spara ändringar");
-        sparaUppdateradInfo.addActionListener(new java.awt.event.ActionListener() {
+        nyAlienRegistreringsdatumTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sparaUppdateradInfoActionPerformed(evt);
+                nyAlienRegistreringsdatumTextFieldActionPerformed(evt);
             }
         });
 
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        nyAlienExtraAttributTextField.setPreferredSize(new java.awt.Dimension(140, 24));
+
+        valjSoktAlienBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---" }));
+        valjSoktAlienBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                valjSoktAlienBoxActionPerformed(evt);
             }
         });
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        nyAlienOmradesBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---" }));
+        nyAlienOmradesBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                nyAlienOmradesBoxActionPerformed(evt);
             }
         });
 
-        platsBoxen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---" }));
+        nyAlienPlatsBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---" }));
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        nyAlienRasBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---" }));
+        nyAlienRasBox.setPreferredSize(new java.awt.Dimension(140, 26));
+        nyAlienRasBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                nyAlienRasBoxActionPerformed(evt);
             }
         });
 
-        omradesBoxen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---" }));
-        omradesBoxen.addActionListener(new java.awt.event.ActionListener() {
+        nyAlienAnsvarigAgentBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---" }));
+
+        sokAlienButton.setText("Sök alien");
+        sokAlienButton.setPreferredSize(new java.awt.Dimension(83, 33));
+        sokAlienButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                omradesBoxenActionPerformed(evt);
+                sokAlienButtonActionPerformed(evt);
             }
         });
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Ras:");
-        jLabel3.setPreferredSize(new java.awt.Dimension(91, 16));
-        jLabel3.setSize(new java.awt.Dimension(91, 16));
-
-        jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
-        jSeparator4.setForeground(new java.awt.Color(250, 250, 250));
-
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        sparaUppdateradInfoButton.setText("Spara ändringar");
+        sparaUppdateradInfoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                sparaUppdateradInfoButtonActionPerformed(evt);
             }
         });
 
-        jLabel2.setBackground(new java.awt.Color(100, 100, 100));
-        jLabel2.setForeground(new java.awt.Color(250, 250, 250));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Ange uppdaterad information:");
-        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel2.setOpaque(true);
-
-        jButton4.setText("Avbryt");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        taBortAlienButton.setText("Ta bort alien");
+        taBortAlienButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                taBortAlienButtonActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Ta bort alien");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        avbrytButton.setText("Avbryt");
+        avbrytButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                avbrytButtonActionPerformed(evt);
             }
         });
 
-        jTextField2.setEditable(false);
+        skiljeStreck3.setBackground(new java.awt.Color(250, 250, 250));
+        skiljeStreck3.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel13.setText("Ansvarig agent:");
+        skiljeStreck4.setBackground(new java.awt.Color(0, 0, 0));
+        skiljeStreck4.setForeground(new java.awt.Color(250, 250, 250));
 
-        ansvarigAgentBoxen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---" }));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout bodyPanelLayout = new javax.swing.GroupLayout(bodyPanel);
+        bodyPanel.setLayout(bodyPanelLayout);
+        bodyPanelLayout.setHorizontalGroup(
+            bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bodyPanelLayout.createSequentialGroup()
+                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, bodyPanelLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator1)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(skiljeStreck3)
+                            .addGroup(bodyPanelLayout.createSequentialGroup()
+                                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(bodyPanelLayout.createSequentialGroup()
+                                        .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(nyAlienRegistreringsdatumLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(nyAlienNamnLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(nyAlienLosenordLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(nyAlienIDLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(nyAlienTelefonLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(nyAlienPlatsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jTextField7, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jTextField4)
-                                            .addComponent(jTextField5)
-                                            .addComponent(platsBoxen, 0, 140, Short.MAX_VALUE)
-                                            .addComponent(jTextField2)
-                                            .addComponent(jTextField3)))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(nyAlienRegistreringsdatumTextField, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(nyAlienLosenordTextField)
+                                            .addComponent(nyAlienTelefonTextField)
+                                            .addComponent(nyAlienPlatsBox, 0, 140, Short.MAX_VALUE)
+                                            .addComponent(nyAlienIDTextField)
+                                            .addComponent(nyAlienNamnTextField)))
+                                    .addGroup(bodyPanelLayout.createSequentialGroup()
+                                        .addComponent(nyAlienOmradeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(omradesBoxen, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(nyAlienOmradesBox, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
+                                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(nyAlienExtraAttributLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(nyAlienRasLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(nyAnsvarigAgentLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(rasBoxen, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(ansvarigAgentBoxen, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(nyAlienExtraAttributTextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(nyAlienRasBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(nyAlienAnsvarigAgentBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, bodyPanelLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(jSeparator4))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(skiljeStreck4))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, bodyPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(sparaUppdateradInfo)
+                        .addComponent(sparaUppdateradInfoButton)
                         .addGap(126, 126, 126)
-                        .addComponent(jButton5)
+                        .addComponent(taBortAlienButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(avbrytButton))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, bodyPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(soktAlienLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(valjAlienLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(valjAlienComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(valjSoktAlienBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(bodyPanelLayout.createSequentialGroup()
+                                .addComponent(sokAlienTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(sokAlienButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(42, 42, 42)))))
                 .addContainerGap())
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(angeInfoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        bodyPanelLayout.setVerticalGroup(
+            bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bodyPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(soktAlienLabel)
+                    .addComponent(sokAlienTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sokAlienButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(valjAlienComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(valjAlienLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(valjSoktAlienBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(skiljeStreck3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(angeInfoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(bodyPanelLayout.createSequentialGroup()
+                        .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nyAlienIDLabel)
+                            .addComponent(nyAlienIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel12)
-                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(rasBoxen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nyAlienNamnTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nyAlienNamnLabel)
+                            .addComponent(nyAlienExtraAttributLabel)
+                            .addComponent(nyAlienExtraAttributTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(nyAlienRasLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nyAlienRasBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel6))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel13)
-                        .addComponent(ansvarigAgentBoxen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(nyAlienLosenordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nyAlienLosenordLabel))
+                    .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(nyAnsvarigAgentLabel)
+                        .addComponent(nyAlienAnsvarigAgentBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
+                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nyAlienTelefonTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nyAlienTelefonLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(omradesBoxen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nyAlienOmradeLabel)
+                    .addComponent(nyAlienOmradesBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(platsBoxen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nyAlienPlatsLabel)
+                    .addComponent(nyAlienPlatsBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
+                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nyAlienRegistreringsdatumTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nyAlienRegistreringsdatumLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(skiljeStreck4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(sparaUppdateradInfo)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5))
+                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(sparaUppdateradInfoButton)
+                    .addComponent(avbrytButton)
+                    .addComponent(taBortAlienButton))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(header, javax.swing.GroupLayout.DEFAULT_SIZE, 708, Short.MAX_VALUE)
-            .addComponent(jSeparator2)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout sidPanelLayout = new javax.swing.GroupLayout(sidPanel);
+        sidPanel.setLayout(sidPanelLayout);
+        sidPanelLayout.setHorizontalGroup(
+            sidPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(headerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 708, Short.MAX_VALUE)
+            .addComponent(skiljeStreck1)
+            .addGroup(sidPanelLayout.createSequentialGroup()
                 .addGap(54, 54, 54)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bodyPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(54, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        sidPanelLayout.setVerticalGroup(
+            sidPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sidPanelLayout.createSequentialGroup()
+                .addComponent(headerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(skiljeStreck1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bodyPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -460,40 +445,40 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(sidPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(sidPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     @SuppressWarnings("unchecked")    
-    private void valjAlienComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valjAlienComboBoxActionPerformed
+    private void valjSoktAlienBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valjSoktAlienBoxActionPerformed
 
-        if (valjAlienComboBox.getSelectedItem().equals("---")){
+        if (valjSoktAlienBox.getSelectedItem().equals("---")){
             DefaultComboBoxModel tomBox = new DefaultComboBoxModel();
             tomBox.addElement("---");
-            jTextField2.setText("");
-            jTextField3.setText("");
-            jTextField4.setText("");
-            jTextField5.setText("");
-            jTextField7.setText("");
-            jLabel12.setVisible(false);
-            jTextField9.setVisible(false);
-            omradesBoxen.setModel(tomBox);
-            platsBoxen.setModel(tomBox);
-            rasBoxen.setModel(tomBox);
-            ansvarigAgentBoxen.setModel(tomBox);
+            nyAlienIDTextField.setText("");
+            nyAlienNamnTextField.setText("");
+            nyAlienLosenordTextField.setText("");
+            nyAlienTelefonTextField.setText("");
+            nyAlienRegistreringsdatumTextField.setText("");
+            nyAlienExtraAttributLabel.setVisible(false);
+            nyAlienExtraAttributTextField.setVisible(false);
+            nyAlienOmradesBox.setModel(tomBox);
+            nyAlienPlatsBox.setModel(tomBox);
+            nyAlienRasBox.setModel(tomBox);
+            nyAlienAnsvarigAgentBox.setModel(tomBox);
 
             
         }
         else{
 
             try{
-                String[] alienSök = valjAlienComboBox.getSelectedItem().toString().split(" ");
+                String[] alienSök = valjSoktAlienBox.getSelectedItem().toString().split(" ");
                 int alienID = Integer.parseInt(alienSök[1]);
                 String ras = alienSök[7];
                 
@@ -511,17 +496,17 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
                 setPlatsBoxen(plats, finnsI);
                 setAnsvarigAgentBoxen(alienID, finnsI);
                 
-                jTextField2.setText(valdAlien.get("ALIEN_ID"));
-                jTextField3.setText(valdAlien.get("NAMN"));
-                jTextField4.setText(valdAlien.get("LOSENORD"));
-                jTextField5.setText(valdAlien.get("TELEFON"));
-                jTextField7.setText(valdAlien.get("REGISTRERINGSDATUM"));
+                nyAlienIDTextField.setText(valdAlien.get("ALIEN_ID"));
+                nyAlienNamnTextField.setText(valdAlien.get("NAMN"));
+                nyAlienLosenordTextField.setText(valdAlien.get("LOSENORD"));
+                nyAlienTelefonTextField.setText(valdAlien.get("TELEFON"));
+                nyAlienRegistreringsdatumTextField.setText(valdAlien.get("REGISTRERINGSDATUM"));
             }
             catch(InfException e){
                 System.out.println(e);
             }
         }
-    }//GEN-LAST:event_valjAlienComboBoxActionPerformed
+    }//GEN-LAST:event_valjSoktAlienBoxActionPerformed
 
     @SuppressWarnings("unchecked")    
     private void setRasBoxen(String ras, int alienID){
@@ -529,26 +514,26 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
         rasBox.addElement("Worm");
         rasBox.addElement("Boglodite");
         rasBox.addElement("Squid");
-        rasBoxen.setModel(rasBox);
-        rasBoxen.setSelectedItem(ras);
+        nyAlienRasBox.setModel(rasBox);
+        nyAlienRasBox.setSelectedItem(ras);
         
         try{
         if (ras.equals("Boglodite")){
-        jLabel12.setText("Antal boogies:");
-        jLabel12.setVisible(true);
-        jTextField9.setText(db.fetchSingle("SELECT ANTAL_BOOGIES FROM BOGLODITE WHERE ALIEN_ID =" + alienID));
-        jTextField9.setVisible(true);
+        nyAlienExtraAttributLabel.setText("Antal boogies:");
+        nyAlienExtraAttributLabel.setVisible(true);
+        nyAlienExtraAttributTextField.setText(db.fetchSingle("SELECT ANTAL_BOOGIES FROM BOGLODITE WHERE ALIEN_ID =" + alienID));
+        nyAlienExtraAttributTextField.setVisible(true);
         
         }
         else if (ras.equals("Squid")){
-        jLabel12.setText("Antal armar:");
-        jLabel12.setVisible(true);
-        jTextField9.setText(db.fetchSingle("SELECT ANTAL_ARMAR FROM SQUID WHERE ALIEN_ID =" + alienID));
-        jTextField9.setVisible(true);
+        nyAlienExtraAttributLabel.setText("Antal armar:");
+        nyAlienExtraAttributLabel.setVisible(true);
+        nyAlienExtraAttributTextField.setText(db.fetchSingle("SELECT ANTAL_ARMAR FROM SQUID WHERE ALIEN_ID =" + alienID));
+        nyAlienExtraAttributTextField.setVisible(true);
         }
         else{
-        jLabel12.setVisible(false);
-        jTextField9.setVisible(false);
+        nyAlienExtraAttributLabel.setVisible(false);
+        nyAlienExtraAttributTextField.setVisible(false);
         }
         }
         catch(InfException undantag){
@@ -565,8 +550,8 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
             omradesBox.addElement(omradet);
         }
         
-        omradesBoxen.setModel(omradesBox);
-        omradesBoxen.setSelectedItem(omradesBenamning);
+        nyAlienOmradesBox.setModel(omradesBox);
+        nyAlienOmradesBox.setSelectedItem(omradesBenamning);
         }
         catch(InfException undantag){
             System.out.println(undantag);
@@ -584,8 +569,8 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
             platsBox.addElement(platsen);
         }
         
-        platsBoxen.setModel(platsBox);
-        platsBoxen.setSelectedItem(platsBenamning);
+        nyAlienPlatsBox.setModel(platsBox);
+        nyAlienPlatsBox.setSelectedItem(platsBenamning);
         }
         catch(InfException undantag){
             System.out.println(undantag);
@@ -604,8 +589,8 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
                 agentBox.addElement(agent);
             }
         
-            ansvarigAgentBoxen.setModel(agentBox);
-            ansvarigAgentBoxen.setSelectedItem(agentNamn);
+            nyAlienAnsvarigAgentBox.setModel(agentBox);
+            nyAlienAnsvarigAgentBox.setSelectedItem(agentNamn);
         }
             catch(InfException undantag){
             System.out.println(undantag);
@@ -614,37 +599,37 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
     
     
     private void initAndraAlien(boolean admin){
-        jLabel12.setVisible(false);
-        jTextField9.setVisible(false);
+        nyAlienExtraAttributLabel.setVisible(false);
+        nyAlienExtraAttributTextField.setVisible(false);
         if(!admin){
-            jButton5.setVisible(false);
-            sidLbl.setText("Ändra alieninfo");
+            taBortAlienButton.setVisible(false);
+            sidLabel.setText("Ändra alieninfo");
         } 
     
     }
     
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void nyAlienNamnTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nyAlienNamnTextFieldActionPerformed
         
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_nyAlienNamnTextFieldActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void nyAlienLosenordTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nyAlienLosenordTextFieldActionPerformed
         
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_nyAlienLosenordTextFieldActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void nyAlienTelefonTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nyAlienTelefonTextFieldActionPerformed
         
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_nyAlienTelefonTextFieldActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void nyAlienRegistreringsdatumTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nyAlienRegistreringsdatumTextFieldActionPerformed
         
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_nyAlienRegistreringsdatumTextFieldActionPerformed
 
-    private void sparaUppdateradInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sparaUppdateradInfoActionPerformed
-        if (Validering.textNotEmpty(jTextField3) && Validering.textNotEmpty(jTextField4) &&
-            Validering.textNotEmpty(jTextField5) && Validering.textNotEmpty(jTextField7) && 
-            Validering.textNotEmpty(jTextField9)){
+    private void sparaUppdateradInfoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sparaUppdateradInfoButtonActionPerformed
+        if (Validering.textNotEmpty(nyAlienNamnTextField) && Validering.textNotEmpty(nyAlienLosenordTextField) &&
+            Validering.textNotEmpty(nyAlienTelefonTextField) && Validering.textNotEmpty(nyAlienRegistreringsdatumTextField) && 
+            Validering.textNotEmpty(nyAlienExtraAttributTextField)){
             
-            String[] alienSök = valjAlienComboBox.getSelectedItem().toString().split(" ");
+            String[] alienSök = valjSoktAlienBox.getSelectedItem().toString().split(" ");
             int alienID = Integer.parseInt(alienSök[1]);
             String gammalRas = alienSök[7];
             
@@ -652,16 +637,16 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
             try{
                 
                 deleteAlien(alienID, gammalRas);
-                String ansvarigAgent = db.fetchSingle("SELECT AGENT_ID FROM AGENT WHERE NAMN = '" + ansvarigAgentBoxen.getSelectedItem().toString() + "'");               
-                String platsID = db.fetchSingle("SELECT PLATS_ID FROM PLATS WHERE BENAMNING = '" + platsBoxen.getSelectedItem().toString() + "'");
+                String ansvarigAgent = db.fetchSingle("SELECT AGENT_ID FROM AGENT WHERE NAMN = '" + nyAlienAnsvarigAgentBox.getSelectedItem().toString() + "'");               
+                String platsID = db.fetchSingle("SELECT PLATS_ID FROM PLATS WHERE BENAMNING = '" + nyAlienPlatsBox.getSelectedItem().toString() + "'");
                 System.out.println(platsID);
-                db.insert("INSERT INTO ALIEN VALUES ( " + alienID + " , '" + jTextField7.getText().toString() + "' , '" + jTextField4.getText().toString() + "' , '" + jTextField3.getText().toString() + "' , '" + jTextField5.getText().toString() + "' , " + platsID + " , " + ansvarigAgent + ")");
+                db.insert("INSERT INTO ALIEN VALUES ( " + alienID + " , '" + nyAlienRegistreringsdatumTextField.getText().toString() + "' , '" + nyAlienLosenordTextField.getText().toString() + "' , '" + nyAlienNamnTextField.getText().toString() + "' , '" + nyAlienTelefonTextField.getText().toString() + "' , " + platsID + " , " + ansvarigAgent + ")");
                 System.out.println("Gick också!");    
-                if (rasBoxen.getSelectedItem().toString().equals("Squid") || rasBoxen.getSelectedItem().toString().equals("Boglodite")){
-                    db.insert("INSERT INTO " + rasBoxen.getSelectedItem().toString() + " VALUES ( " + alienID + " , " + jTextField9.getText().toString() + ")");
+                if (nyAlienRasBox.getSelectedItem().toString().equals("Squid") || nyAlienRasBox.getSelectedItem().toString().equals("Boglodite")){
+                    db.insert("INSERT INTO " + nyAlienRasBox.getSelectedItem().toString() + " VALUES ( " + alienID + " , " + nyAlienExtraAttributTextField.getText().toString() + ")");
                 }
                 else{
-                    db.insert("INSERT INTO " + rasBoxen.getSelectedItem().toString() + " VALUES ( " + alienID + ")");
+                    db.insert("INSERT INTO " + nyAlienRasBox.getSelectedItem().toString() + " VALUES ( " + alienID + ")");
                 }
                 
                 JOptionPane.showMessageDialog(null, "Ändringarna sparade!");
@@ -672,74 +657,70 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
                 System.out.println(e);
             }
         }
-    }//GEN-LAST:event_sparaUppdateradInfoActionPerformed
+    }//GEN-LAST:event_sparaUppdateradInfoButtonActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void avbrytButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avbrytButtonActionPerformed
         AndraTaBortAlien.this.dispose();
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_avbrytButtonActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
-        setJComboBox(jTextField8.getText().toString());
-    }//GEN-LAST:event_jTextField8ActionPerformed
+    private void sokAlienTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sokAlienTextFieldActionPerformed
+        setJComboBox(sokAlienTextField.getText().toString());
+    }//GEN-LAST:event_sokAlienTextFieldActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        jTextField8ActionPerformed(evt);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void sokAlienButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sokAlienButtonActionPerformed
+        sokAlienTextFieldActionPerformed(evt);
+    }//GEN-LAST:event_sokAlienButtonActionPerformed
 
     @SuppressWarnings("unchecked")    
-    private void rasBoxenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rasBoxenActionPerformed
-        if(rasBoxen.getSelectedItem().equals("Squid")){
-            jLabel12.setText("Antal armar:");
-            jLabel12.setVisible(true);
-            jTextField9.setVisible(true);
+    private void nyAlienRasBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nyAlienRasBoxActionPerformed
+        if(nyAlienRasBox.getSelectedItem().equals("Squid")){
+            nyAlienExtraAttributLabel.setText("Antal armar:");
+            nyAlienExtraAttributLabel.setVisible(true);
+            nyAlienExtraAttributTextField.setVisible(true);
         }
-        else if(rasBoxen.getSelectedItem().equals("Boglodite")){
-            jLabel12.setText("Antal boogies:");
-            jLabel12.setVisible(true);
-            jTextField9.setVisible(true);
+        else if(nyAlienRasBox.getSelectedItem().equals("Boglodite")){
+            nyAlienExtraAttributLabel.setText("Antal boogies:");
+            nyAlienExtraAttributLabel.setVisible(true);
+            nyAlienExtraAttributTextField.setVisible(true);
         }
         else{
-            jLabel12.setVisible(false);
-            jTextField9.setText("1");
-            jTextField9.setVisible(false);
+            nyAlienExtraAttributLabel.setVisible(false);
+            nyAlienExtraAttributTextField.setText("1");
+            nyAlienExtraAttributTextField.setVisible(false);
         }
-    }//GEN-LAST:event_rasBoxenActionPerformed
+    }//GEN-LAST:event_nyAlienRasBoxActionPerformed
     @SuppressWarnings("unchecked")    
-    private void omradesBoxenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_omradesBoxenActionPerformed
+    private void nyAlienOmradesBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nyAlienOmradesBoxActionPerformed
         DefaultComboBoxModel platsBox = new DefaultComboBoxModel();
         
         try{
-            ArrayList<String> platser = db.fetchColumn("SELECT BENAMNING FROM PLATS WHERE FINNS_I = (SELECT OMRADES_ID FROM OMRADE WHERE BENAMNING = '" + omradesBoxen.getSelectedItem().toString() + "')" );
-            String[] alienSök = valjAlienComboBox.getSelectedItem().toString().split(" ");
+            ArrayList<String> platser = db.fetchColumn("SELECT BENAMNING FROM PLATS WHERE FINNS_I = (SELECT OMRADES_ID FROM OMRADE WHERE BENAMNING = '" + nyAlienOmradesBox.getSelectedItem().toString() + "')" );
+            String[] alienSök = valjSoktAlienBox.getSelectedItem().toString().split(" ");
             int alienID = Integer.parseInt(alienSök[1]);
-            int nyFinnsI = Integer.parseInt(db.fetchSingle("SELECT OMRADES_ID FROM OMRADE WHERE BENAMNING = '" + omradesBoxen.getSelectedItem().toString() + "'"));
+            int nyFinnsI = Integer.parseInt(db.fetchSingle("SELECT OMRADES_ID FROM OMRADE WHERE BENAMNING = '" + nyAlienOmradesBox.getSelectedItem().toString() + "'"));
             setAnsvarigAgentBoxen(alienID, nyFinnsI);
             for(String platsen : platser ){
                 platsBox.addElement(platsen);
             }
-            platsBoxen.setModel(platsBox);
+            nyAlienPlatsBox.setModel(platsBox);
         }
         catch (InfException undantag){
         
         }
-    }//GEN-LAST:event_omradesBoxenActionPerformed
+    }//GEN-LAST:event_nyAlienOmradesBoxActionPerformed
 
         @SuppressWarnings("unchecked")
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        String[] alienSök = valjAlienComboBox.getSelectedItem().toString().split(" ");
+    private void taBortAlienButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_taBortAlienButtonActionPerformed
+        String[] alienSök = valjSoktAlienBox.getSelectedItem().toString().split(" ");
         int alienID = Integer.parseInt(alienSök[1]);
         String gammalRas = alienSök[7];
 
         deleteAlien(alienID, gammalRas);
         JOptionPane.showMessageDialog(null, "Alien har raderats!");
-        jTextField8.setText("");
-        jTextField8ActionPerformed(evt);
-        valjAlienComboBoxActionPerformed(evt);
-    }//GEN-LAST:event_jButton5ActionPerformed
+        sokAlienTextField.setText("");
+        sokAlienTextFieldActionPerformed(evt);
+        valjSoktAlienBoxActionPerformed(evt);
+    }//GEN-LAST:event_taBortAlienButtonActionPerformed
 
     @SuppressWarnings("unchecked")
     private void setJComboBox(String söktNamn){
@@ -771,7 +752,7 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
                 söktaAlienTillComboBox.addElement(varjeAlien);
             }
         }
-        valjAlienComboBox.setModel(söktaAlienTillComboBox);
+        valjSoktAlienBox.setModel(söktaAlienTillComboBox);
         }
         catch(InfException undantag){
             System.out.println("Fel med databasen!" + undantag);
@@ -790,48 +771,44 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> ansvarigAgentBoxen;
-    private javax.swing.JPanel header;
-    private javax.swing.JLabel headerLbl;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
-    private javax.swing.JLabel mibpLbl;
-    private javax.swing.JComboBox<String> omradesBoxen;
-    private javax.swing.JComboBox<String> platsBoxen;
-    private javax.swing.JComboBox<String> rasBoxen;
-    private javax.swing.JLabel sidLbl;
-    private javax.swing.JSeparator skiljestreck;
-    private javax.swing.JButton sparaUppdateradInfo;
-    private javax.swing.JComboBox<String> valjAlienComboBox;
+    private javax.swing.JLabel angeInfoLabel;
+    private javax.swing.JButton avbrytButton;
+    private javax.swing.JPanel bodyPanel;
+    private javax.swing.JLabel headerLabel;
+    private javax.swing.JPanel headerPanel;
+    private javax.swing.JLabel mibPortalLabel;
+    private javax.swing.JComboBox<String> nyAlienAnsvarigAgentBox;
+    private javax.swing.JLabel nyAlienExtraAttributLabel;
+    private javax.swing.JTextField nyAlienExtraAttributTextField;
+    private javax.swing.JLabel nyAlienIDLabel;
+    private javax.swing.JTextField nyAlienIDTextField;
+    private javax.swing.JLabel nyAlienLosenordLabel;
+    private javax.swing.JTextField nyAlienLosenordTextField;
+    private javax.swing.JLabel nyAlienNamnLabel;
+    private javax.swing.JTextField nyAlienNamnTextField;
+    private javax.swing.JLabel nyAlienOmradeLabel;
+    private javax.swing.JComboBox<String> nyAlienOmradesBox;
+    private javax.swing.JComboBox<String> nyAlienPlatsBox;
+    private javax.swing.JLabel nyAlienPlatsLabel;
+    private javax.swing.JComboBox<String> nyAlienRasBox;
+    private javax.swing.JLabel nyAlienRasLabel;
+    private javax.swing.JLabel nyAlienRegistreringsdatumLabel;
+    private javax.swing.JTextField nyAlienRegistreringsdatumTextField;
+    private javax.swing.JLabel nyAlienTelefonLabel;
+    private javax.swing.JTextField nyAlienTelefonTextField;
+    private javax.swing.JLabel nyAnsvarigAgentLabel;
+    private javax.swing.JLabel sidLabel;
+    private javax.swing.JPanel sidPanel;
+    private javax.swing.JSeparator skiljeStreck1;
+    private javax.swing.JSeparator skiljeStreck2;
+    private javax.swing.JSeparator skiljeStreck3;
+    private javax.swing.JSeparator skiljeStreck4;
+    private javax.swing.JButton sokAlienButton;
+    private javax.swing.JTextField sokAlienTextField;
+    private javax.swing.JLabel soktAlienLabel;
+    private javax.swing.JButton sparaUppdateradInfoButton;
+    private javax.swing.JButton taBortAlienButton;
+    private javax.swing.JLabel valjAlienLabel;
+    private javax.swing.JComboBox<String> valjSoktAlienBox;
     // End of variables declaration//GEN-END:variables
 }

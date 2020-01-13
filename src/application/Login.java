@@ -37,108 +37,103 @@ public class Login extends javax.swing.JFrame  {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        header = new javax.swing.JPanel();
-        headerLbl = new javax.swing.JLabel();
-        mibpLbl = new javax.swing.JLabel();
-        sidLbl = new javax.swing.JLabel();
-        skiljestreck = new javax.swing.JSeparator();
-        body = new javax.swing.JPanel();
+        headerPanel = new javax.swing.JPanel();
+        headerLabel = new javax.swing.JLabel();
+        mibPortalLabel = new javax.swing.JLabel();
+        sidLabel = new javax.swing.JLabel();
+        skiljeStreck1 = new javax.swing.JSeparator();
+        bodyPanel = new javax.swing.JPanel();
         loginPanel = new javax.swing.JPanel();
-        iDLbl = new javax.swing.JLabel();
-        iD = new javax.swing.JTextField();
-        lösenLbl = new javax.swing.JLabel();
-        lösenord = new javax.swing.JPasswordField();
-        loginBtn = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
+        iDLabel = new javax.swing.JLabel();
+        iDTextField = new javax.swing.JTextField();
+        losenordLabel = new javax.swing.JLabel();
+        losenordPasswordField = new javax.swing.JPasswordField();
+        loginButton = new javax.swing.JButton();
+        skiljeStreck2 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setResizable(false);
         setSize(new java.awt.Dimension(800, 600));
 
-        header.setBackground(new java.awt.Color(80, 80, 80));
-        header.setPreferredSize(new java.awt.Dimension(1095, 100));
+        headerPanel.setBackground(new java.awt.Color(80, 80, 80));
+        headerPanel.setPreferredSize(new java.awt.Dimension(1095, 100));
 
-        headerLbl.setBackground(new java.awt.Color(120, 120, 120));
-        headerLbl.setFont(new java.awt.Font("Lucida Grande", 0, 28)); // NOI18N
-        headerLbl.setForeground(new java.awt.Color(200, 200, 200));
-        headerLbl.setText("Men in Black - Sektor Skandinavien");
+        headerLabel.setBackground(new java.awt.Color(120, 120, 120));
+        headerLabel.setFont(new java.awt.Font("Lucida Grande", 0, 28)); // NOI18N
+        headerLabel.setForeground(new java.awt.Color(200, 200, 200));
+        headerLabel.setText("Men in Black - Sektor Skandinavien");
 
-        mibpLbl.setBackground(new java.awt.Color(120, 120, 120));
-        mibpLbl.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
-        mibpLbl.setForeground(new java.awt.Color(200, 200, 200));
-        mibpLbl.setText("MiB-Portalen");
+        mibPortalLabel.setBackground(new java.awt.Color(120, 120, 120));
+        mibPortalLabel.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
+        mibPortalLabel.setForeground(new java.awt.Color(200, 200, 200));
+        mibPortalLabel.setText("MiB-Portalen");
 
-        sidLbl.setBackground(new java.awt.Color(120, 120, 120));
-        sidLbl.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
-        sidLbl.setForeground(new java.awt.Color(200, 200, 200));
-        sidLbl.setText("AgentLogin");
+        sidLabel.setBackground(new java.awt.Color(120, 120, 120));
+        sidLabel.setFont(new java.awt.Font("Lucida Grande", 0, 20)); // NOI18N
+        sidLabel.setForeground(new java.awt.Color(200, 200, 200));
+        sidLabel.setText("AgentLogin");
 
-        skiljestreck.setForeground(new java.awt.Color(200, 200, 200));
+        skiljeStreck1.setForeground(new java.awt.Color(200, 200, 200));
 
-        javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
-        header.setLayout(headerLayout);
-        headerLayout.setHorizontalGroup(
-            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(headerLayout.createSequentialGroup()
+        javax.swing.GroupLayout headerPanelLayout = new javax.swing.GroupLayout(headerPanel);
+        headerPanel.setLayout(headerPanelLayout);
+        headerPanelLayout.setHorizontalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerPanelLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addGroup(headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(headerLayout.createSequentialGroup()
+                .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(headerPanelLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(mibpLbl)
+                        .addComponent(mibPortalLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(sidLbl)
+                        .addComponent(sidLabel)
                         .addGap(39, 39, 39))
-                    .addGroup(headerLayout.createSequentialGroup()
-                        .addGroup(headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(skiljestreck, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(headerLbl))
+                    .addGroup(headerPanelLayout.createSequentialGroup()
+                        .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(skiljeStreck1, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(headerLabel))
                         .addContainerGap(34, Short.MAX_VALUE))))
         );
-        headerLayout.setVerticalGroup(
-            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(headerLayout.createSequentialGroup()
+        headerPanelLayout.setVerticalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerPanelLayout.createSequentialGroup()
                 .addContainerGap(13, Short.MAX_VALUE)
-                .addComponent(headerLbl)
+                .addComponent(headerLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(skiljestreck, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(skiljeStreck1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(mibpLbl)
-                    .addComponent(sidLbl))
+                .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(mibPortalLabel)
+                    .addComponent(sidLabel))
                 .addContainerGap())
         );
 
-        body.setBackground(new java.awt.Color(40, 40, 40));
-        body.setForeground(new java.awt.Color(100, 100, 100));
+        bodyPanel.setBackground(new java.awt.Color(40, 40, 40));
+        bodyPanel.setForeground(new java.awt.Color(100, 100, 100));
 
         loginPanel.setBackground(new java.awt.Color(160, 160, 160));
         loginPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        iDLbl.setForeground(new java.awt.Color(0, 0, 0));
-        iDLbl.setText("AgentID:");
+        iDLabel.setForeground(new java.awt.Color(0, 0, 0));
+        iDLabel.setText("AgentID:");
 
-        iD.setText("AgentID");
+        iDTextField.setText("AgentID");
 
-        lösenLbl.setForeground(new java.awt.Color(0, 0, 0));
-        lösenLbl.setText("Lösenord:");
+        losenordLabel.setForeground(new java.awt.Color(0, 0, 0));
+        losenordLabel.setText("Lösenord:");
 
-        lösenord.setText("12345");
-        lösenord.addActionListener(new java.awt.event.ActionListener() {
+        losenordPasswordField.setText("12345");
+        losenordPasswordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lösenordActionPerformed(evt);
-            }
-        });
-        lösenord.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                lösenordKeyPressed(evt);
+                losenordPasswordFieldActionPerformed(evt);
             }
         });
 
-        loginBtn.setText("Login");
-        loginBtn.addActionListener(new java.awt.event.ActionListener() {
+        loginButton.setText("Login");
+        loginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginBtnActionPerformed(evt);
+                loginButtonActionPerformed(evt);
             }
         });
 
@@ -151,15 +146,15 @@ public class Login extends javax.swing.JFrame  {
                     .addGroup(loginPanelLayout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lösenLbl)
-                            .addComponent(iDLbl))
+                            .addComponent(losenordLabel)
+                            .addComponent(iDLabel))
                         .addGap(58, 58, 58)
                         .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(iD, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
-                            .addComponent(lösenord)))
+                            .addComponent(iDTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                            .addComponent(losenordPasswordField)))
                     .addGroup(loginPanelLayout.createSequentialGroup()
                         .addGap(138, 138, 138)
-                        .addComponent(loginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
         loginPanelLayout.setVerticalGroup(
@@ -167,35 +162,35 @@ public class Login extends javax.swing.JFrame  {
             .addGroup(loginPanelLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(iDLbl)
-                    .addComponent(iD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(iDLabel)
+                    .addComponent(iDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lösenLbl)
-                    .addComponent(lösenord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(losenordLabel)
+                    .addComponent(losenordPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(loginBtn)
+                .addComponent(loginButton)
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
-        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
-        jSeparator1.setToolTipText("");
+        skiljeStreck2.setBackground(new java.awt.Color(0, 0, 0));
+        skiljeStreck2.setForeground(new java.awt.Color(255, 255, 255));
+        skiljeStreck2.setToolTipText("");
 
-        javax.swing.GroupLayout bodyLayout = new javax.swing.GroupLayout(body);
-        body.setLayout(bodyLayout);
-        bodyLayout.setHorizontalGroup(
-            bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bodyLayout.createSequentialGroup()
+        javax.swing.GroupLayout bodyPanelLayout = new javax.swing.GroupLayout(bodyPanel);
+        bodyPanel.setLayout(bodyPanelLayout);
+        bodyPanelLayout.setHorizontalGroup(
+            bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bodyPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(loginPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(70, 70, 70))
-            .addComponent(jSeparator1)
+            .addComponent(skiljeStreck2)
         );
-        bodyLayout.setVerticalGroup(
-            bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bodyLayout.createSequentialGroup()
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        bodyPanelLayout.setVerticalGroup(
+            bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bodyPanelLayout.createSequentialGroup()
+                .addComponent(skiljeStreck2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addComponent(loginPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(70, 70, 70))
@@ -205,46 +200,46 @@ public class Login extends javax.swing.JFrame  {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(header, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
-            .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(headerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
+            .addComponent(bodyPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(headerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(bodyPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
+    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         // TODO add your handling code here:
         boolean found = false;
         boolean admin = false;
         try {
-            Integer.parseInt(iD.getText());
+            Integer.parseInt(iDTextField.getText());
         }
         catch (NumberFormatException undantag){
             JOptionPane.showMessageDialog(null, "Ett giltigt ID består av endast heltal!");
-            iD.requestFocus();
+            iDTextField.requestFocus();
         }
         try {
             
-            if (entitetstyp && new String(lösenord.getPassword()).equals(db.fetchSingle("SELECT LOSENORD FROM AGENT WHERE AGENT_ID = " + iD.getText()))){
+            if (entitetstyp && new String(losenordPasswordField.getPassword()).equals(db.fetchSingle("SELECT LOSENORD FROM AGENT WHERE AGENT_ID = " + iDTextField.getText()))){
                 found = true;
-                if (db.fetchSingle("SELECT ADMINISTRATOR FROM AGENT WHERE AGENT_ID =" + iD.getText()).equals("J")){
+                if (db.fetchSingle("SELECT ADMINISTRATOR FROM AGENT WHERE AGENT_ID =" + iDTextField.getText()).equals("J")){
                     admin = true;
                 }    
             }
              
             if (entitetstyp && found && admin){
-                new AgentPortal(db, iD.getText(), admin).setVisible(true);
+                new AgentPortal(db, iDTextField.getText(), admin).setVisible(true);
                     Login.this.dispose();
             }
             else if (entitetstyp && found && !admin){
-                new AgentPortal(db, iD.getText(), admin).setVisible(true);
+                new AgentPortal(db, iDTextField.getText(), admin).setVisible(true);
                     Login.this.dispose();;             
             }
             else if (entitetstyp && !found){
@@ -252,11 +247,11 @@ public class Login extends javax.swing.JFrame  {
             }
             
             
-            else if (!entitetstyp && new String(lösenord.getPassword()).equals(db.fetchSingle("SELECT LOSENORD FROM ALIEN WHERE ALIEN_ID = " + iD.getText()))){
-                new AlienPortal(db, iD.getText()).setVisible(true);
+            else if (!entitetstyp && new String(losenordPasswordField.getPassword()).equals(db.fetchSingle("SELECT LOSENORD FROM ALIEN WHERE ALIEN_ID = " + iDTextField.getText()))){
+                new AlienPortal(db, iDTextField.getText()).setVisible(true);
                     Login.this.dispose();
             }
-            else if (!entitetstyp && !new String(lösenord.getPassword()).equals(db.fetchSingle("SELECT LOSENORD FROM ALIEN WHERE ALIEN_ID = " + iD.getText()))){
+            else if (!entitetstyp && !new String(losenordPasswordField.getPassword()).equals(db.fetchSingle("SELECT LOSENORD FROM ALIEN WHERE ALIEN_ID = " + iDTextField.getText()))){
                 JOptionPane.showMessageDialog(null, "Ogiltigt "+ checktyp +" och/eller lösenord!");                         
             }
             
@@ -267,25 +262,22 @@ public class Login extends javax.swing.JFrame  {
 
         }
         
-    }//GEN-LAST:event_loginBtnActionPerformed
-    private void lösenordKeyPressed(java.awt.event.KeyEvent evt){ /*
+    }//GEN-LAST:event_loginButtonActionPerformed
+/*
     private void lÃ¶senordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lÃ¶senordKeyPressed
-        // TODO add your handling code here:*/
-        if (evt.getKeyCode() == evt.VK_ENTER){
-        loginBtn.doClick();
-        }
-    }//GEN-LAST:event_lÃ¶senordKeyPressed
 
-    private void lösenordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lösenordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lösenordActionPerformed
+    }//GEN-LAST:event_lÃ¶senordKeyPressed
+*/
+    private void losenordPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_losenordPasswordFieldActionPerformed
+        loginButton.doClick();
+    }//GEN-LAST:event_losenordPasswordFieldActionPerformed
 
     private void checkEntitetstyp(boolean status){
         if (!status){
             checktyp = "alienID";
-            iDLbl.setText("AlienID:");
-            iD.setText("AlienID");
-            sidLbl.setText("AlienLogin");
+            iDLabel.setText("AlienID:");
+            iDTextField.setText("AlienID");
+            sidLabel.setText("AlienLogin");
         }
     }
     /**
@@ -294,18 +286,18 @@ public class Login extends javax.swing.JFrame  {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel body;
-    private javax.swing.JPanel header;
-    private javax.swing.JLabel headerLbl;
-    private javax.swing.JTextField iD;
-    private javax.swing.JLabel iDLbl;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JButton loginBtn;
+    private javax.swing.JPanel bodyPanel;
+    private javax.swing.JLabel headerLabel;
+    private javax.swing.JPanel headerPanel;
+    private javax.swing.JLabel iDLabel;
+    private javax.swing.JTextField iDTextField;
+    private javax.swing.JButton loginButton;
     private javax.swing.JPanel loginPanel;
-    private javax.swing.JLabel lösenLbl;
-    private javax.swing.JPasswordField lösenord;
-    private javax.swing.JLabel mibpLbl;
-    private javax.swing.JLabel sidLbl;
-    private javax.swing.JSeparator skiljestreck;
+    private javax.swing.JLabel losenordLabel;
+    private javax.swing.JPasswordField losenordPasswordField;
+    private javax.swing.JLabel mibPortalLabel;
+    private javax.swing.JLabel sidLabel;
+    private javax.swing.JSeparator skiljeStreck1;
+    private javax.swing.JSeparator skiljeStreck2;
     // End of variables declaration//GEN-END:variables
 }
