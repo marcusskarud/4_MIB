@@ -20,13 +20,29 @@ public class Start {
 
         try {
             String aktuellMap = System.getProperty("user.dir");
-            String sokVag = aktuellMap + ("\\MIBDB.FDB");
+            String sokVag = aktuellMap + ("\\db\\MIBDB.FDB");
             
             db = new InfDB(sokVag);
         }
-        catch (InfException ettUndantag) {
-            JOptionPane.showMessageDialog(null, "Något gick fel med uppkopplingen!");
-            System.out.println(ettUndantag);
+        catch (InfException undantag1) {
+            try {
+                String aktuellMap = System.getProperty("user.dir");
+                String sokVag = aktuellMap + ("/db/MIBDB.FDB");
+            
+                db = new InfDB(sokVag);
+            }
+            catch (InfException undantag2) {
+                try {
+                    String aktuellMap = "/Applications";
+                    String sokVag = aktuellMap + ("/db/MIBDB.FDB");
+            
+                    db = new InfDB(sokVag);
+                }
+                catch (InfException undantag3) {
+                    JOptionPane.showMessageDialog(null, "Något gick fel med uppkopplingen!");
+                    System.out.println(undantag3);
+                }
+            }
         }
     
         /* Create and display the form */

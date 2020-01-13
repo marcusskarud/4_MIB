@@ -45,7 +45,7 @@ public class AlienPortal extends javax.swing.JFrame {
             for(String namn : resultat){
                tillText += namn+"\n"; 
             }
-            omrÃ¥detsAliens.setText(tillText);
+            områdetsAliens.setText(tillText);
         
         }
         catch (InfException undantag){
@@ -86,7 +86,7 @@ public class AlienPortal extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        omrÃ¥detsAliens = new javax.swing.JTextArea();
+        områdetsAliens = new javax.swing.JTextArea();
         jPanel5 = new javax.swing.JPanel();
         omradesChefIDLbl = new javax.swing.JLabel();
         omradesChefNamnLbl = new javax.swing.JLabel();
@@ -185,7 +185,7 @@ public class AlienPortal extends javax.swing.JFrame {
 
         platsLbl.setForeground(new java.awt.Color(220, 220, 220));
 
-        bytLosenord.setText("Byt lÃ¶senord");
+        bytLosenord.setText("Byt lösenord");
         bytLosenord.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bytLosenordActionPerformed(evt);
@@ -251,21 +251,21 @@ public class AlienPortal extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Alla aliens i omrÃ¥det");
+        jLabel4.setText("Alla aliens i området");
 
         jScrollPane1.setPreferredSize(new java.awt.Dimension(259, 22));
 
-        omrÃ¥detsAliens.setEditable(false);
-        omrÃ¥detsAliens.setBackground(new java.awt.Color(250, 250, 250));
-        omrÃ¥detsAliens.setColumns(20);
-        omrÃ¥detsAliens.setLineWrap(true);
-        omrÃ¥detsAliens.setRows(1);
-        omrÃ¥detsAliens.setTabSize(1);
-        omrÃ¥detsAliens.setToolTipText("");
-        omrÃ¥detsAliens.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        omrÃ¥detsAliens.setMinimumSize(new java.awt.Dimension(240, 407));
-        omrÃ¥detsAliens.setPreferredSize(new java.awt.Dimension(240, 18));
-        jScrollPane1.setViewportView(omrÃ¥detsAliens);
+        områdetsAliens.setEditable(false);
+        områdetsAliens.setBackground(new java.awt.Color(250, 250, 250));
+        områdetsAliens.setColumns(20);
+        områdetsAliens.setLineWrap(true);
+        områdetsAliens.setRows(1);
+        områdetsAliens.setTabSize(1);
+        områdetsAliens.setToolTipText("");
+        områdetsAliens.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        områdetsAliens.setMinimumSize(new java.awt.Dimension(240, 407));
+        områdetsAliens.setPreferredSize(new java.awt.Dimension(240, 18));
+        jScrollPane1.setViewportView(områdetsAliens);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -334,7 +334,7 @@ public class AlienPortal extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Ditt omrÃ¥des omrÃ¥deschef");
+        jLabel6.setText("Ditt områdes områdeschef");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -459,7 +459,7 @@ public class AlienPortal extends javax.swing.JFrame {
     private javax.swing.JLabel omradesChefIDLbl;
     private javax.swing.JLabel omradesChefNamnLbl;
     private javax.swing.JLabel omradesChefTelefonLbl;
-    private javax.swing.JTextArea omrÃ¥detsAliens;
+    private javax.swing.JTextArea områdetsAliens;
     private javax.swing.JLabel platsLbl;
     private javax.swing.JLabel sidLbl;
     private javax.swing.JSeparator skiljestreck;
