@@ -55,7 +55,7 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
         nyAgentLosenordLabel = new javax.swing.JLabel();
         nyAgentTelefonLabel = new javax.swing.JLabel();
         nyAgentOmradeLabel = new javax.swing.JLabel();
-        nyAgentAnställningsdatumLabel = new javax.swing.JLabel();
+        nyAgentAnstallningsdatumLabel = new javax.swing.JLabel();
         sokAgentButton = new javax.swing.JButton();
         sokAgentTextField = new javax.swing.JTextField();
         valjSoktAgentBox = new javax.swing.JComboBox<>();
@@ -65,7 +65,7 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
         nyAgentNamnTextField = new javax.swing.JTextField();
         nyAgentLosenordTextField = new javax.swing.JTextField();
         nyAgentTelefonTextField = new javax.swing.JTextField();
-        nyAgentAnställningsdatumTextField = new javax.swing.JTextField();
+        nyAgentAnstallningsdatumTextField = new javax.swing.JTextField();
         nyAgentOmradeBox = new javax.swing.JComboBox<>();
         skiljeStreck4 = new javax.swing.JSeparator();
         avbrytButton = new javax.swing.JButton();
@@ -162,8 +162,8 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
         nyAgentOmradeLabel.setForeground(new java.awt.Color(0, 0, 0));
         nyAgentOmradeLabel.setText("Område:");
 
-        nyAgentAnställningsdatumLabel.setForeground(new java.awt.Color(0, 0, 0));
-        nyAgentAnställningsdatumLabel.setText("Anställningsdatum:");
+        nyAgentAnstallningsdatumLabel.setForeground(new java.awt.Color(0, 0, 0));
+        nyAgentAnstallningsdatumLabel.setText("Anställningsdatum:");
 
         sokAgentButton.setText("Sök agent");
         sokAgentButton.setPreferredSize(new java.awt.Dimension(83, 33));
@@ -198,36 +198,7 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
 
         nyAgentIDTextField.setEditable(false);
 
-        nyAgentNamnTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nyAgentNamnTextFieldActionPerformed(evt);
-            }
-        });
-
-        nyAgentLosenordTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nyAgentLosenordTextFieldActionPerformed(evt);
-            }
-        });
-
-        nyAgentTelefonTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nyAgentTelefonTextFieldActionPerformed(evt);
-            }
-        });
-
-        nyAgentAnställningsdatumTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nyAgentAnställningsdatumTextFieldActionPerformed(evt);
-            }
-        });
-
         nyAgentOmradeBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---" }));
-        nyAgentOmradeBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nyAgentOmradeBoxActionPerformed(evt);
-            }
-        });
 
         skiljeStreck4.setBackground(new java.awt.Color(0, 0, 0));
         skiljeStreck4.setForeground(new java.awt.Color(250, 250, 250));
@@ -275,7 +246,7 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
                                     .addComponent(nyAgentNamnTextField))
                                 .addGap(18, 18, 18)
                                 .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(nyAgentAnställningsdatumLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(nyAgentAnstallningsdatumLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(nyAgentTelefonLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(nyAgentOmradeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -283,7 +254,7 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(nyAgentTelefonTextField)
                                         .addComponent(nyAgentOmradeBox, 0, 140, Short.MAX_VALUE))
-                                    .addComponent(nyAgentAnställningsdatumTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(nyAgentAnstallningsdatumTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(bodyPanelLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(skiljeStreck4))
@@ -351,8 +322,8 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
                             .addComponent(nyAgentOmradeBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(nyAgentAnställningsdatumTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nyAgentAnställningsdatumLabel))))
+                            .addComponent(nyAgentAnstallningsdatumTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nyAgentAnstallningsdatumLabel))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(adminCheckBox)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -421,43 +392,32 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
     
         
     private void taBortAgentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_taBortAgentButtonActionPerformed
-        String[] agentSök = valjSoktAgentBox.getSelectedItem().toString().split(" ");
-        int agentID = Integer.parseInt(agentSök[1]);
+        if (Validering.iDIfyllt(nyAgentIDTextField, valjSoktAgentBox)){
+        }
+        else{
+            
+            String[] agentSök = valjSoktAgentBox.getSelectedItem().toString().split(" ");
+            int agentID = Integer.parseInt(agentSök[1]);
 
-        deleteAgent(agentID);
-        sokAgentTextField.setText("");
-        sokAgentTextFieldActionPerformed(evt);
-        valjSoktAgentBoxActionPerformed(evt);
+            deleteAgent(agentID);
+            sokAgentTextField.setText("");
+            sokAgentTextFieldActionPerformed(evt);
+            valjSoktAgentBoxActionPerformed(evt);
+            
+        }
+        
     }//GEN-LAST:event_taBortAgentButtonActionPerformed
 
     private void avbrytButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avbrytButtonActionPerformed
         AndraTaBortAgent.this.dispose();
     }//GEN-LAST:event_avbrytButtonActionPerformed
 
-    private void nyAgentNamnTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nyAgentNamnTextFieldActionPerformed
-
-    }//GEN-LAST:event_nyAgentNamnTextFieldActionPerformed
-
-   @SuppressWarnings("unchecked")    
-    private void nyAgentOmradeBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nyAgentOmradeBoxActionPerformed
-        
-    }//GEN-LAST:event_nyAgentOmradeBoxActionPerformed
-
-    private void nyAgentLosenordTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nyAgentLosenordTextFieldActionPerformed
-
-    }//GEN-LAST:event_nyAgentLosenordTextFieldActionPerformed
-
-    private void nyAgentTelefonTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nyAgentTelefonTextFieldActionPerformed
-
-    }//GEN-LAST:event_nyAgentTelefonTextFieldActionPerformed
-
-    private void nyAgentAnställningsdatumTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nyAgentAnställningsdatumTextFieldActionPerformed
-
-    }//GEN-LAST:event_nyAgentAnställningsdatumTextFieldActionPerformed
-
     private void sparaUppdateradInfoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sparaUppdateradInfoButtonActionPerformed
-        if (Validering.textNotEmpty(nyAgentNamnTextField) && Validering.textNotEmpty(nyAgentLosenordTextField) &&
-            Validering.textNotEmpty(nyAgentTelefonTextField) && Validering.textNotEmpty(nyAgentAnställningsdatumTextField))
+        if (Validering.iDIfyllt(nyAgentIDTextField, valjSoktAgentBox) && Validering.checkDatumFormat(nyAgentAnstallningsdatumTextField) &&
+            Validering.textNotEmpty(nyAgentNamnTextField) && Validering.textNotEmpty(nyAgentLosenordTextField) &&
+            Validering.textNotEmpty(nyAgentTelefonTextField) && Validering.textNotEmpty(nyAgentAnstallningsdatumTextField) &&
+            Validering.checkPhoneLength(nyAgentTelefonTextField) && Validering.nameTextFieldLengthCheck(nyAgentNamnTextField) &&
+            Validering.passwordTextFieldLengthCheck(nyAgentLosenordTextField))
             {
 
             String[] agentSök = valjSoktAgentBox.getSelectedItem().toString().split(" ");
@@ -473,7 +433,7 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
                 String omrade = db.fetchSingle("SELECT OMRADES_ID FROM OMRADE WHERE BENAMNING = '" + nyAgentOmradeBox.getSelectedItem().toString() + "'");
                 
                 deleteAgent(agentID);
-                db.insert("INSERT INTO AGENT VALUES ( " + agentID + " , '" + nyAgentNamnTextField.getText().toString() + "' , '" + nyAgentTelefonTextField.getText().toString() + "' , '" + nyAgentAnställningsdatumTextField.getText().toString() + "' , '" + adminStatus + "' , '" + nyAgentLosenordTextField.getText().toString() + "' , " + omrade + ")");
+                db.insert("INSERT INTO AGENT VALUES ( " + agentID + " , '" + nyAgentNamnTextField.getText().toString() + "' , '" + nyAgentTelefonTextField.getText().toString() + "' , '" + nyAgentAnstallningsdatumTextField.getText().toString() + "' , '" + adminStatus + "' , '" + nyAgentLosenordTextField.getText().toString() + "' , " + omrade + ")");
                 
 
                 JOptionPane.showMessageDialog(null, "Ändringarna sparade!");
@@ -509,7 +469,7 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
                 nyAgentNamnTextField.setText(valdAgent.get("NAMN"));
                 nyAgentLosenordTextField.setText(valdAgent.get("LOSENORD"));
                 nyAgentTelefonTextField.setText(valdAgent.get("TELEFON"));
-                nyAgentAnställningsdatumTextField.setText(valdAgent.get("ANSTALLNINGSDATUM"));
+                nyAgentAnstallningsdatumTextField.setText(valdAgent.get("ANSTALLNINGSDATUM"));
                 if(new String(db.fetchSingle("SELECT ADMINISTRATOR FROM AGENT WHERE AGENT_ID =" + agentID)).equals("J")){
                     adminCheckBox.setSelected(true);
                 }
@@ -584,7 +544,7 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
         nyAgentNamnTextField.setText("");
         nyAgentLosenordTextField.setText("");
         nyAgentTelefonTextField.setText("");
-        nyAgentAnställningsdatumTextField.setText("");
+        nyAgentAnstallningsdatumTextField.setText("");
         adminCheckBox.setSelected(false);
         nyAgentOmradeBox.setModel(tomBox);
     }
@@ -597,8 +557,8 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
     private javax.swing.JLabel headerLabel;
     private javax.swing.JPanel headerPanel;
     private javax.swing.JLabel mibPortalLabel;
-    private javax.swing.JLabel nyAgentAnställningsdatumLabel;
-    private javax.swing.JTextField nyAgentAnställningsdatumTextField;
+    private javax.swing.JLabel nyAgentAnstallningsdatumLabel;
+    private javax.swing.JTextField nyAgentAnstallningsdatumTextField;
     private javax.swing.JLabel nyAgentIDLabel;
     private javax.swing.JTextField nyAgentIDTextField;
     private javax.swing.JLabel nyAgentLosenordLabel;

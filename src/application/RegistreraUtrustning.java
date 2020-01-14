@@ -42,9 +42,9 @@ public class RegistreraUtrustning extends javax.swing.JFrame {
         bodyPanel = new javax.swing.JPanel();
         nyUtrustningNamnLabel = new javax.swing.JLabel();
         nyUtrustningTypLabel = new javax.swing.JLabel();
-        nyUtrustningKaliberLabel = new javax.swing.JLabel();
+        nyUtrustningExtraAttributLabel = new javax.swing.JLabel();
         nyUtrustningNamnTextField = new javax.swing.JTextField();
-        nyUtrustningKaliberTextField = new javax.swing.JTextField();
+        nyUtrustningExtraAttributTextField = new javax.swing.JTextField();
         nyUtrustningTypBox = new javax.swing.JComboBox<>();
         registreraNyUtrustningButton = new javax.swing.JButton();
         avbrytButton = new javax.swing.JButton();
@@ -115,8 +115,8 @@ public class RegistreraUtrustning extends javax.swing.JFrame {
         nyUtrustningTypLabel.setForeground(new java.awt.Color(0, 0, 0));
         nyUtrustningTypLabel.setText("Utrustningstyp:");
 
-        nyUtrustningKaliberLabel.setForeground(new java.awt.Color(0, 0, 0));
-        nyUtrustningKaliberLabel.setText("Kaliber:");
+        nyUtrustningExtraAttributLabel.setForeground(new java.awt.Color(0, 0, 0));
+        nyUtrustningExtraAttributLabel.setText("Kaliber:");
 
         nyUtrustningTypBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Vapen", "Kommunikation", "Teknik" }));
         nyUtrustningTypBox.addActionListener(new java.awt.event.ActionListener() {
@@ -155,12 +155,12 @@ public class RegistreraUtrustning extends javax.swing.JFrame {
                         .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nyUtrustningTypLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(nyUtrustningNamnLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(nyUtrustningKaliberLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(nyUtrustningExtraAttributLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(nyUtrustningNamnTextField, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(nyUtrustningTypBox, javax.swing.GroupLayout.Alignment.TRAILING, 0, 200, Short.MAX_VALUE)
-                            .addComponent(nyUtrustningKaliberTextField))))
+                            .addComponent(nyUtrustningExtraAttributTextField))))
                 .addContainerGap())
         );
         bodyPanelLayout.setVerticalGroup(
@@ -176,8 +176,8 @@ public class RegistreraUtrustning extends javax.swing.JFrame {
                     .addComponent(nyUtrustningTypBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nyUtrustningKaliberLabel)
-                    .addComponent(nyUtrustningKaliberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nyUtrustningExtraAttributLabel)
+                    .addComponent(nyUtrustningExtraAttributTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(registreraNyUtrustningButton)
@@ -221,23 +221,29 @@ public class RegistreraUtrustning extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void registreraNyUtrustningButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registreraNyUtrustningButtonActionPerformed
-        if (Validering.textNotEmpty(nyUtrustningNamnTextField) && Validering.textNotEmpty(nyUtrustningKaliberTextField)){
+        if (Validering.textNotEmpty(nyUtrustningNamnTextField) && Validering.textNotEmpty(nyUtrustningExtraAttributTextField) &&
+            Validering.nameTextFieldLengthCheck(nyUtrustningNamnTextField)){
             try{
                 int utrustningsID = 0;
                 utrustningsID = Integer.parseInt(db.getAutoIncrement("UTRUSTNING", "UTRUSTNINGS_ID"));
                 db.insert("INSERT INTO UTRUSTNING VALUES ( " + utrustningsID + " , \'" + nyUtrustningNamnTextField.getText() + "\' )");
                 if (nyUtrustningTypBox.getSelectedItem().toString().equals("Vapen")){
-                    db.insert("INSERT INTO " + nyUtrustningTypBox.getSelectedItem().toString().toUpperCase() + " VALUES ( " + utrustningsID + " , " + nyUtrustningKaliberTextField.getText() + " ) ");                    
+                    if(Validering.textIsIntegers(nyUtrustningExtraAttributTextField)){
+                        db.insert("INSERT INTO " + nyUtrustningTypBox.getSelectedItem().toString().toUpperCase() + " VALUES ( " + utrustningsID + " , " + nyUtrustningExtraAttributTextField.getText() + " ) ");
+                        JOptionPane.showMessageDialog(null, "Ny utrustning registrerad!");
+                        RegistreraUtrustning.this.dispose();
+                    }
+
                 }
-                else{
-                    db.insert("INSERT INTO " + nyUtrustningTypBox.getSelectedItem().toString().toUpperCase() + " VALUES ( " + utrustningsID + " , \'" + nyUtrustningKaliberTextField.getText() + "\' ) ");
+                else if (Validering.nameTextFieldLengthCheck(nyUtrustningExtraAttributTextField)){
+                    db.insert("INSERT INTO " + nyUtrustningTypBox.getSelectedItem().toString().toUpperCase() + " VALUES ( " + utrustningsID + " , \'" + nyUtrustningExtraAttributTextField.getText() + "\' ) ");
+                    JOptionPane.showMessageDialog(null, "Ny utrustning registrerad!");
+                    RegistreraUtrustning.this.dispose();
                 }
             }
             catch(InfException undantag){
-                System.out.println("NÃ¥got gick fel! " + undantag);
+                System.out.println("Något gick fel! " + undantag);
             }
-            JOptionPane.showMessageDialog(null, "Ny utrustning registrerad!");
-            RegistreraUtrustning.this.dispose();
         }
         
     }//GEN-LAST:event_registreraNyUtrustningButtonActionPerformed
@@ -248,13 +254,13 @@ public class RegistreraUtrustning extends javax.swing.JFrame {
 
     private void nyUtrustningTypBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nyUtrustningTypBoxActionPerformed
         if (nyUtrustningTypBox.getSelectedItem().toString().equals("Kommunikation")){
-            nyUtrustningKaliberLabel.setText("Ã–verfÃ¶ringsteknik:");
+            nyUtrustningExtraAttributLabel.setText("Överföringsteknik:");
         }
         else if(nyUtrustningTypBox.getSelectedItem().toString().equals("Teknik")){
-            nyUtrustningKaliberLabel.setText("KraftkÃ¤lla:");
+            nyUtrustningExtraAttributLabel.setText("Kraftkälla:");
         }
         else{
-            nyUtrustningKaliberLabel.setText("Kaliber:");
+            nyUtrustningExtraAttributLabel.setText("Kaliber:");
         }
     }//GEN-LAST:event_nyUtrustningTypBoxActionPerformed
 
@@ -264,8 +270,8 @@ public class RegistreraUtrustning extends javax.swing.JFrame {
     private javax.swing.JLabel headerLabel;
     private javax.swing.JPanel headerPanel;
     private javax.swing.JLabel mibPortalLabel;
-    private javax.swing.JLabel nyUtrustningKaliberLabel;
-    private javax.swing.JTextField nyUtrustningKaliberTextField;
+    private javax.swing.JLabel nyUtrustningExtraAttributLabel;
+    private javax.swing.JTextField nyUtrustningExtraAttributTextField;
     private javax.swing.JLabel nyUtrustningNamnLabel;
     private javax.swing.JTextField nyUtrustningNamnTextField;
     private javax.swing.JComboBox<String> nyUtrustningTypBox;

@@ -214,52 +214,50 @@ public class Login extends javax.swing.JFrame  {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    // entitetstyp
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         // TODO add your handling code here:
         boolean found = false;
         boolean admin = false;
-        try {
-            Integer.parseInt(iDTextField.getText());
+        if (!Validering.textIsIntegers(iDTextField) || !Validering.passwordNotEmpty(losenordPasswordField)){
         }
-        catch (NumberFormatException undantag){
-            JOptionPane.showMessageDialog(null, "Ett giltigt ID består av endast heltal!");
-            iDTextField.requestFocus();
-        }
-        try {
-            
-            if (entitetstyp && new String(losenordPasswordField.getPassword()).equals(db.fetchSingle("SELECT LOSENORD FROM AGENT WHERE AGENT_ID = " + iDTextField.getText()))){
-                found = true;
-                if (db.fetchSingle("SELECT ADMINISTRATOR FROM AGENT WHERE AGENT_ID =" + iDTextField.getText()).equals("J")){
-                    admin = true;
-                }    
-            }
-             
-            if (entitetstyp && found && admin){
-                new AgentPortal(db, iDTextField.getText(), admin).setVisible(true);
-                    Login.this.dispose();
-            }
-            else if (entitetstyp && found && !admin){
-                new AgentPortal(db, iDTextField.getText(), admin).setVisible(true);
-                    Login.this.dispose();;             
-            }
-            else if (entitetstyp && !found){
-                JOptionPane.showMessageDialog(null, "Ogiltigt " + checktyp + " och/eller lösenord!");             
-            }
-            
-            
-            else if (!entitetstyp && new String(losenordPasswordField.getPassword()).equals(db.fetchSingle("SELECT LOSENORD FROM ALIEN WHERE ALIEN_ID = " + iDTextField.getText()))){
-                new AlienPortal(db, iDTextField.getText()).setVisible(true);
-                    Login.this.dispose();
-            }
-            else if (!entitetstyp && !new String(losenordPasswordField.getPassword()).equals(db.fetchSingle("SELECT LOSENORD FROM ALIEN WHERE ALIEN_ID = " + iDTextField.getText()))){
-                JOptionPane.showMessageDialog(null, "Ogiltigt "+ checktyp +" och/eller lösenord!");                         
-            }
-            
-        }
-        catch (InfException undantag){
-            JOptionPane.showMessageDialog(null, "Någonting gick fel med databasuppkopplingen!");
-            System.out.println("Felet är: " + undantag);
+        else{
 
+            try {
+
+                if (entitetstyp && new String(losenordPasswordField.getPassword()).equals(db.fetchSingle("SELECT LOSENORD FROM AGENT WHERE AGENT_ID = " + iDTextField.getText()))){
+                    found = true;
+                    if (db.fetchSingle("SELECT ADMINISTRATOR FROM AGENT WHERE AGENT_ID =" + iDTextField.getText()).equals("J")){
+                        admin = true;
+                    }    
+                }
+
+                if (entitetstyp && found && admin){
+                    new AgentPortal(db, iDTextField.getText(), admin).setVisible(true);
+                        Login.this.dispose();
+                }
+                else if (entitetstyp && found && !admin){
+                    new AgentPortal(db, iDTextField.getText(), admin).setVisible(true);
+                        Login.this.dispose();;             
+                }
+                else if (entitetstyp && !found){
+                    JOptionPane.showMessageDialog(null, "Ogiltigt " + checktyp + " och/eller lösenord!");             
+                }
+                else if (!entitetstyp && new String(losenordPasswordField.getPassword()).equals(db.fetchSingle("SELECT LOSENORD FROM ALIEN WHERE ALIEN_ID = " + iDTextField.getText()))){
+                    new AlienPortal(db, iDTextField.getText()).setVisible(true);
+                        Login.this.dispose();
+                }
+                else if (!entitetstyp && !new String(losenordPasswordField.getPassword()).equals(db.fetchSingle("SELECT LOSENORD FROM ALIEN WHERE ALIEN_ID = " + iDTextField.getText()))){
+                    JOptionPane.showMessageDialog(null, "Ogiltigt "+ checktyp +" och/eller lösenord!");                         
+                }
+
+            }
+            catch (InfException undantag){
+                JOptionPane.showMessageDialog(null, "Någonting gick fel med databasuppkopplingen!");
+                System.out.println("Felet är: " + undantag.getMessage());
+
+            }
         }
         
     }//GEN-LAST:event_loginButtonActionPerformed

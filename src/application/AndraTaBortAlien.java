@@ -199,24 +199,6 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
 
         nyAlienIDTextField.setEditable(false);
 
-        nyAlienNamnTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nyAlienNamnTextFieldActionPerformed(evt);
-            }
-        });
-
-        nyAlienLosenordTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nyAlienLosenordTextFieldActionPerformed(evt);
-            }
-        });
-
-        nyAlienTelefonTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nyAlienTelefonTextFieldActionPerformed(evt);
-            }
-        });
-
         nyAlienRegistreringsdatumTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nyAlienRegistreringsdatumTextFieldActionPerformed(evt);
@@ -459,21 +441,8 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
     private void valjSoktAlienBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valjSoktAlienBoxActionPerformed
 
         if (valjSoktAlienBox.getSelectedItem().equals("---")){
-            DefaultComboBoxModel tomBox = new DefaultComboBoxModel();
-            tomBox.addElement("---");
-            nyAlienIDTextField.setText("");
-            nyAlienNamnTextField.setText("");
-            nyAlienLosenordTextField.setText("");
-            nyAlienTelefonTextField.setText("");
-            nyAlienRegistreringsdatumTextField.setText("");
-            nyAlienExtraAttributLabel.setVisible(false);
-            nyAlienExtraAttributTextField.setVisible(false);
-            nyAlienOmradesBox.setModel(tomBox);
-            nyAlienPlatsBox.setModel(tomBox);
-            nyAlienRasBox.setModel(tomBox);
-            nyAlienAnsvarigAgentBox.setModel(tomBox);
+            rensaFalt();
 
-            
         }
         else{
 
@@ -597,6 +566,22 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
         }
     }
     
+    private void rensaFalt(){
+        DefaultComboBoxModel tomBox = new DefaultComboBoxModel();
+        tomBox.addElement("---");
+        nyAlienIDTextField.setText("");
+        nyAlienNamnTextField.setText("");
+        nyAlienLosenordTextField.setText("");
+        nyAlienTelefonTextField.setText("");
+        nyAlienRegistreringsdatumTextField.setText("");
+        nyAlienExtraAttributLabel.setVisible(false);
+        nyAlienExtraAttributTextField.setVisible(false);
+        nyAlienOmradesBox.setModel(tomBox);
+        nyAlienPlatsBox.setModel(tomBox);
+        nyAlienRasBox.setModel(tomBox);
+        nyAlienAnsvarigAgentBox.setModel(tomBox);
+    }
+    
     
     private void initAndraAlien(boolean admin){
         nyAlienExtraAttributLabel.setVisible(false);
@@ -608,26 +593,12 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
     
     }
     
-    private void nyAlienNamnTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nyAlienNamnTextFieldActionPerformed
-        
-    }//GEN-LAST:event_nyAlienNamnTextFieldActionPerformed
-
-    private void nyAlienLosenordTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nyAlienLosenordTextFieldActionPerformed
-        
-    }//GEN-LAST:event_nyAlienLosenordTextFieldActionPerformed
-
-    private void nyAlienTelefonTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nyAlienTelefonTextFieldActionPerformed
-        
-    }//GEN-LAST:event_nyAlienTelefonTextFieldActionPerformed
-
-    private void nyAlienRegistreringsdatumTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nyAlienRegistreringsdatumTextFieldActionPerformed
-        
-    }//GEN-LAST:event_nyAlienRegistreringsdatumTextFieldActionPerformed
-
     private void sparaUppdateradInfoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sparaUppdateradInfoButtonActionPerformed
-        if (Validering.textNotEmpty(nyAlienNamnTextField) && Validering.textNotEmpty(nyAlienLosenordTextField) &&
-            Validering.textNotEmpty(nyAlienTelefonTextField) && Validering.textNotEmpty(nyAlienRegistreringsdatumTextField) && 
-            Validering.textNotEmpty(nyAlienExtraAttributTextField)){
+        if (Validering.iDIfyllt(nyAlienIDTextField, valjSoktAlienBox) && Validering.checkDatumFormat(nyAlienRegistreringsdatumTextField) &&
+            Validering.textNotEmpty(nyAlienNamnTextField) && Validering.textNotEmpty(nyAlienLosenordTextField) &&
+            Validering.textNotEmpty(nyAlienRegistreringsdatumTextField) && Validering.textNotEmpty(nyAlienExtraAttributTextField) && 
+            Validering.checkPhoneLength(nyAlienTelefonTextField) && Validering.nameTextFieldLengthCheck(nyAlienNamnTextField) &&
+            Validering.passwordTextFieldLengthCheck(nyAlienLosenordTextField)){
             
             String[] alienSök = valjSoktAlienBox.getSelectedItem().toString().split(" ");
             int alienID = Integer.parseInt(alienSök[1]);
@@ -653,8 +624,8 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
                 AndraTaBortAlien.this.dispose();
                 
             }
-            catch(Exception e){
-                System.out.println(e);
+            catch(InfException e){
+                System.out.println(e.getMessage());
             }
         }
     }//GEN-LAST:event_sparaUppdateradInfoButtonActionPerformed
@@ -711,16 +682,24 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
 
         @SuppressWarnings("unchecked")
     private void taBortAlienButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_taBortAlienButtonActionPerformed
-        String[] alienSök = valjSoktAlienBox.getSelectedItem().toString().split(" ");
-        int alienID = Integer.parseInt(alienSök[1]);
-        String gammalRas = alienSök[7];
+        if (Validering.iDIfyllt(nyAlienIDTextField, valjSoktAlienBox)){
+        }
+        else{
+            String[] alienSök = valjSoktAlienBox.getSelectedItem().toString().split(" ");
+            int alienID = Integer.parseInt(alienSök[1]);
+            String gammalRas = alienSök[7];
 
-        deleteAlien(alienID, gammalRas);
-        JOptionPane.showMessageDialog(null, "Alien har raderats!");
-        sokAlienTextField.setText("");
-        sokAlienTextFieldActionPerformed(evt);
-        valjSoktAlienBoxActionPerformed(evt);
+            deleteAlien(alienID, gammalRas);
+            JOptionPane.showMessageDialog(null, "Alien har raderats!");
+            sokAlienTextField.setText("");
+            sokAlienTextFieldActionPerformed(evt);
+            valjSoktAlienBoxActionPerformed(evt);
+        }
     }//GEN-LAST:event_taBortAlienButtonActionPerformed
+
+    private void nyAlienRegistreringsdatumTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nyAlienRegistreringsdatumTextFieldActionPerformed
+
+    }//GEN-LAST:event_nyAlienRegistreringsdatumTextFieldActionPerformed
 
     @SuppressWarnings("unchecked")
     private void setJComboBox(String söktNamn){

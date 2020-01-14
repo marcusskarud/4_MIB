@@ -208,7 +208,7 @@
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="nyAgentAnställningsdatumLabel" max="32767" attributes="0"/>
+                                          <Component id="nyAgentAnstallningsdatumLabel" max="32767" attributes="0"/>
                                           <Component id="nyAgentTelefonLabel" max="32767" attributes="0"/>
                                           <Component id="nyAgentOmradeLabel" max="32767" attributes="0"/>
                                       </Group>
@@ -218,7 +218,7 @@
                                               <Component id="nyAgentTelefonTextField" max="32767" attributes="0"/>
                                               <Component id="nyAgentOmradeBox" pref="140" max="32767" attributes="0"/>
                                           </Group>
-                                          <Component id="nyAgentAnställningsdatumTextField" alignment="1" min="-2" pref="140" max="-2" attributes="0"/>
+                                          <Component id="nyAgentAnstallningsdatumTextField" alignment="1" min="-2" pref="140" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -307,8 +307,8 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="nyAgentAnställningsdatumTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="nyAgentAnställningsdatumLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nyAgentAnstallningsdatumTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nyAgentAnstallningsdatumLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -405,7 +405,7 @@
                 <Property name="text" type="java.lang.String" value="Omr&#xe5;de:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="nyAgentAnst&#xe4;llningsdatumLabel">
+            <Component class="javax.swing.JLabel" name="nyAgentAnstallningsdatumLabel">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
@@ -468,24 +468,12 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="nyAgentNamnTextField">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nyAgentNamnTextFieldActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="nyAgentLosenordTextField">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nyAgentLosenordTextFieldActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="nyAgentTelefonTextField">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nyAgentTelefonTextFieldActionPerformed"/>
-              </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="nyAgentAnst&#xe4;llningsdatumTextField">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nyAgentAnst&#xe4;llningsdatumTextFieldActionPerformed"/>
-              </Events>
+            <Component class="javax.swing.JTextField" name="nyAgentAnstallningsdatumTextField">
             </Component>
             <Component class="javax.swing.JComboBox" name="nyAgentOmradeBox">
               <Properties>
@@ -495,9 +483,6 @@
                   </StringArray>
                 </Property>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nyAgentOmradeBoxActionPerformed"/>
-              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>

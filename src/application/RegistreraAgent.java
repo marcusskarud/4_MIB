@@ -251,18 +251,11 @@ public class RegistreraAgent extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void registreraNyAgentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registreraNyAgentButtonActionPerformed
-        if (Validering.textNotEmpty(nyAgentNamnTextField) && Validering.textNotEmpty(nyAgentTelefonTextField)){                
+        if (Validering.textNotEmpty(nyAgentNamnTextField) && Validering.textNotEmpty(nyAgentTelefonTextField) &&
+            Validering.nameTextFieldLengthCheck(nyAgentNamnTextField) && Validering.checkPhoneLength(nyAgentTelefonTextField)){                
             
-            
-            int nyAgentID = 0;
-            String namn = "";
-            int omradesID = 0;
-            String anstallningsdatum = "";
-            String lösenord = "";
-            String telefon = "";
-            String omrade = nyAgentOmradesBox.getSelectedItem().toString();
-            String administratör = "";
-            String ärAdmin = "";
+            String administratör;
+            String ärAdmin;
             if (nyAgentAdminCheckBox.getSelectedObjects() == null){
                 administratör = "N";
                 ärAdmin = "Nej";
@@ -273,19 +266,18 @@ public class RegistreraAgent extends javax.swing.JFrame {
             }
 
             try{
-                nyAgentID = Integer.parseInt(db.getAutoIncrement("AGENT", "AGENT_ID"));
+                int nyAgentID = Integer.parseInt(db.getAutoIncrement("AGENT", "AGENT_ID"));
 
-                System.out.println(1);
                 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
                 Date nyttDatum = new Date();
-                anstallningsdatum = dateFormat.format(nyttDatum);
+                String anstallningsdatum = dateFormat.format(nyttDatum);
 
-                lösenord = "" + randGenerator.nextInt(10) + randGenerator.nextInt(10) + randGenerator.nextInt(10) +randGenerator.nextInt(10) +randGenerator.nextInt(10) + randGenerator.nextInt(10);
-                namn = nyAgentNamnTextField.getText();
-                telefon = nyAgentTelefonTextField.getText();
+                String lösenord = "" + randGenerator.nextInt(10) + randGenerator.nextInt(10) + randGenerator.nextInt(10) +randGenerator.nextInt(10) +randGenerator.nextInt(10) + randGenerator.nextInt(10);
+                String namn = nyAgentNamnTextField.getText();
+                String telefon = nyAgentTelefonTextField.getText();
 
-                omradesID = Integer.parseInt(db.fetchSingle("SELECT OMRADES_ID FROM OMRADE WHERE BENAMNING = '" + nyAgentOmradesBox.getSelectedItem().toString() + "'"));
-                omrade = db.fetchSingle("SELECT BENAMNING FROM OMRADE WHERE OMRADES_ID = " + omradesID);
+                int omradesID = Integer.parseInt(db.fetchSingle("SELECT OMRADES_ID FROM OMRADE WHERE BENAMNING = '" + nyAgentOmradesBox.getSelectedItem().toString() + "'"));
+                String omrade = db.fetchSingle("SELECT BENAMNING FROM OMRADE WHERE OMRADES_ID = " + omradesID);
                 System.out.println(2);
                 
                 db.insert("INSERT INTO AGENT VALUES("+ nyAgentID + ", \'" + namn + "\' , \'" + telefon + "\', \'" + anstallningsdatum + "\', \'" + administratör + "\', \'" + lösenord + "\', " + omradesID + ")");

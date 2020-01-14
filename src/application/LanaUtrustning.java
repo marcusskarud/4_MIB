@@ -158,6 +158,8 @@ public class LanaUtrustning extends javax.swing.JFrame {
         ledigUtrustningLabel.setForeground(new java.awt.Color(0, 0, 0));
         ledigUtrustningLabel.setText("Ledig utrustning:");
 
+        ledigUtrustningBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---" }));
+
         lanaUtrustningButton.setText("Låna utrustning");
         lanaUtrustningButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -263,12 +265,16 @@ public class LanaUtrustning extends javax.swing.JFrame {
         DefaultComboBoxModel utrustningTillComboBox = new DefaultComboBoxModel();
     
         try{
-        ArrayList<HashMap<String,String>> ledigaVapen = db.fetchRows("SELECT * FROM UTRUSTNING JOIN VAPEN ON VAPEN.UTRUSTNINGS_ID=UTRUSTNING.UTRUSTNINGS_ID WHERE UTRUSTNING.UTRUSTNINGS_ID NOT IN (SELECT UTRUSTNINGS_ID FROM INNEHAR_UTRUSTNING)");
-        for(HashMap ledigtVapen : ledigaVapen){
-            String resultat = "ID: " + ledigtVapen.get("UTRUSTNINGS_ID") + " | Namn: " + ledigtVapen.get("BENAMNING") + " | Kaliber: " + ledigtVapen.get("KALIBER");
-            utrustningTillComboBox.addElement(resultat);
-        }
-
+            ArrayList<HashMap<String,String>> ledigaVapen = db.fetchRows("SELECT * FROM UTRUSTNING JOIN VAPEN ON VAPEN.UTRUSTNINGS_ID=UTRUSTNING.UTRUSTNINGS_ID WHERE UTRUSTNING.UTRUSTNINGS_ID NOT IN (SELECT UTRUSTNINGS_ID FROM INNEHAR_UTRUSTNING)");
+            if (ledigaVapen == null){
+                utrustningTillComboBox.addElement("---");
+            }
+            else{
+                for(HashMap ledigtVapen : ledigaVapen){
+                String resultat = "ID: " + ledigtVapen.get("UTRUSTNINGS_ID") + " | Namn: " + ledigtVapen.get("BENAMNING") + " | Kaliber: " + ledigtVapen.get("KALIBER");
+                utrustningTillComboBox.addElement(resultat);
+                }
+            }
         }
         catch(InfException undantag){
         
@@ -283,16 +289,20 @@ public class LanaUtrustning extends javax.swing.JFrame {
         
         try{
         ArrayList<HashMap<String,String>> ledigaKomm = db.fetchRows("SELECT * FROM UTRUSTNING JOIN KOMMUNIKATION ON KOMMUNIKATION.UTRUSTNINGS_ID=UTRUSTNING.UTRUSTNINGS_ID WHERE UTRUSTNING.UTRUSTNINGS_ID NOT IN (SELECT UTRUSTNINGS_ID FROM INNEHAR_UTRUSTNING)");
-        for(HashMap ledigKomm : ledigaKomm){
-            String resultat = "ID: " + ledigKomm.get("UTRUSTNINGS_ID") + " | Namn: " + ledigKomm.get("BENAMNING") + " | Ã–verfÃ¶ringsteknik: " + ledigKomm.get("OVERFORINGSTEKNIK");
-            utrustningTillComboBox.addElement(resultat);
-        }
-
+            if (ledigaKomm == null){
+                utrustningTillComboBox.addElement("---");
+            }
+            else{
+        
+                for(HashMap ledigKomm : ledigaKomm){
+                String resultat = "ID: " + ledigKomm.get("UTRUSTNINGS_ID") + " | Namn: " + ledigKomm.get("BENAMNING") + " | Överföringsteknik: " + ledigKomm.get("OVERFORINGSTEKNIK");
+                utrustningTillComboBox.addElement(resultat);
+                }
+            }
         }
         catch(InfException undantag){
         
         }
-        
         ledigUtrustningBox.setModel(utrustningTillComboBox);                                            
     }//GEN-LAST:event_kommunikationRadioButtonActionPerformed
 
@@ -301,12 +311,18 @@ public class LanaUtrustning extends javax.swing.JFrame {
         DefaultComboBoxModel utrustningTillComboBox = new DefaultComboBoxModel();
 
         try{
-        ArrayList<HashMap<String,String>> ledigTeknik = db.fetchRows("SELECT * FROM UTRUSTNING JOIN TEKNIK ON TEKNIK.UTRUSTNINGS_ID=UTRUSTNING.UTRUSTNINGS_ID WHERE UTRUSTNING.UTRUSTNINGS_ID NOT IN (SELECT UTRUSTNINGS_ID FROM INNEHAR_UTRUSTNING)");
-        for(HashMap ledigaTekniken : ledigTeknik){
-            String resultat = "ID: " + ledigaTekniken.get("UTRUSTNINGS_ID") + " | Namn: " + ledigaTekniken.get("BENAMNING") + " | KraftkÃ¤lla: " + ledigaTekniken.get("KRAFTKALLA");
-            utrustningTillComboBox.addElement(resultat);
-        }
-
+        
+            ArrayList<HashMap<String,String>> ledigTeknik = db.fetchRows("SELECT * FROM UTRUSTNING JOIN TEKNIK ON TEKNIK.UTRUSTNINGS_ID=UTRUSTNING.UTRUSTNINGS_ID WHERE UTRUSTNING.UTRUSTNINGS_ID NOT IN (SELECT UTRUSTNINGS_ID FROM INNEHAR_UTRUSTNING)");
+            if (ledigTeknik == null){
+                utrustningTillComboBox.addElement("---");
+            }
+            else{
+        
+                for(HashMap ledigaTekniken : ledigTeknik){
+                String resultat = "ID: " + ledigaTekniken.get("UTRUSTNINGS_ID") + " | Namn: " + ledigaTekniken.get("BENAMNING") + " | Kraftkälla: " + ledigaTekniken.get("KRAFTKALLA");
+                utrustningTillComboBox.addElement(resultat);
+                }
+            }
         }
         catch(InfException undantag){
         
@@ -320,20 +336,25 @@ public class LanaUtrustning extends javax.swing.JFrame {
     }//GEN-LAST:event_avbrytButtonActionPerformed
 
     private void lanaUtrustningButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lanaUtrustningButtonActionPerformed
-        String[] valdUtrustning = ledigUtrustningBox.getSelectedItem().toString().split(" ");
-        int utrustningsID = Integer.parseInt(valdUtrustning[1]);
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-        Date nyttDatum = new Date();
-        String utkvitteringsdatum = dateFormat.format(nyttDatum);
-        try{
-            db.insert("INSERT INTO INNEHAR_UTRUSTNING VALUES ( " + agentID + " , " + utrustningsID + " , \'" + utkvitteringsdatum + "\')");
-            JOptionPane.showMessageDialog(null, "UtrustningslÃ¥n genomfÃ¶rt!");
-        }
-        catch(InfException undantag){
-            JOptionPane.showMessageDialog(null, "UtrustningslÃ¥n kunde inte genomfÃ¶ras!");
-        
-        }
+        if(Validering.JComboBoxNotEmpty(ledigUtrustningBox)){
+            String[] valdUtrustning = ledigUtrustningBox.getSelectedItem().toString().split(" ");
+            int utrustningsID = Integer.parseInt(valdUtrustning[1]);
+            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+            Date nyttDatum = new Date();
+            String utkvitteringsdatum = dateFormat.format(nyttDatum);
+            
+            try{
+                db.insert("INSERT INTO INNEHAR_UTRUSTNING VALUES ( " + agentID + " , " + utrustningsID + " , \'" + utkvitteringsdatum + "\')");
+                JOptionPane.showMessageDialog(null, "Utrustningslån genomfört!");
+                LanaUtrustning.this.dispose();
+            }
+            catch(InfException undantag){
+                JOptionPane.showMessageDialog(null, "Utrustningslån kunde inte genomföras!");
 
+            }
+        }
+        else{
+        }
     }//GEN-LAST:event_lanaUtrustningButtonActionPerformed
 
     

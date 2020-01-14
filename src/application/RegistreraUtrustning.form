@@ -197,13 +197,13 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="nyUtrustningTypLabel" alignment="0" max="32767" attributes="0"/>
                                   <Component id="nyUtrustningNamnLabel" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="nyUtrustningKaliberLabel" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="nyUtrustningExtraAttributLabel" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="nyUtrustningNamnTextField" alignment="1" max="32767" attributes="0"/>
                                   <Component id="nyUtrustningTypBox" alignment="1" pref="200" max="32767" attributes="0"/>
-                                  <Component id="nyUtrustningKaliberTextField" max="32767" attributes="0"/>
+                                  <Component id="nyUtrustningExtraAttributTextField" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -226,8 +226,8 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="nyUtrustningKaliberLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="nyUtrustningKaliberTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="nyUtrustningExtraAttributLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="nyUtrustningExtraAttributTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="22" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -256,7 +256,7 @@
                 <Property name="text" type="java.lang.String" value="Utrustningstyp:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="nyUtrustningKaliberLabel">
+            <Component class="javax.swing.JLabel" name="nyUtrustningExtraAttributLabel">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
@@ -266,7 +266,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="nyUtrustningNamnTextField">
             </Component>
-            <Component class="javax.swing.JTextField" name="nyUtrustningKaliberTextField">
+            <Component class="javax.swing.JTextField" name="nyUtrustningExtraAttributTextField">
             </Component>
             <Component class="javax.swing.JComboBox" name="nyUtrustningTypBox">
               <Properties>

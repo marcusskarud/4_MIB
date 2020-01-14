@@ -124,6 +124,8 @@ public class TaBortUtrustning extends javax.swing.JFrame {
             }
         });
 
+        valjUtrustningBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---" }));
+
         sokUtrustningButton.setText("Sök");
         sokUtrustningButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -234,41 +236,43 @@ public class TaBortUtrustning extends javax.swing.JFrame {
 
     @SuppressWarnings("unchecked")    
     private void utrustningNamnTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_utrustningNamnTextFieldActionPerformed
-        try{
-            ArrayList<HashMap<String, String>> sökResultat = db.fetchRows("SELECT * FROM UTRUSTNING WHERE BENAMNING = \'" + utrustningNamnTextField.getText() + "\'");
-        
-            if (sökResultat == null){
-                JOptionPane.showMessageDialog(null, "Det finns ingen utrustning med det namnet!");
-                utrustningNamnTextField.requestFocus();
-            }
-            else{
+        if (Validering.textNotEmpty(utrustningNamnTextField)){
+            try{
+                ArrayList<HashMap<String, String>> sökResultat = db.fetchRows("SELECT * FROM UTRUSTNING WHERE BENAMNING = \'" + utrustningNamnTextField.getText() + "\'");
 
-                DefaultComboBoxModel utrustningTillComboBox = new DefaultComboBoxModel();
-                for(HashMap utrustning : sökResultat){
-                    String utrustningsInfo = "ID: " + utrustning.get("UTRUSTNINGS_ID") + " | Namn: " + utrustning.get("BENAMNING");
-                    String utrustningstyp = db.fetchSingle("SELECT UTRUSTNINGS_ID FROM KOMMUNIKATION WHERE UTRUSTNINGS_ID = " + utrustning.get("UTRUSTNINGS_ID"));
-                    if (utrustningstyp != null){
-                        utrustningsInfo += " | Kommunikation | Ã–verfÃ¶ringsteknik: " + db.fetchSingle("SELECT OVERFORINGSTEKNIK FROM KOMMUNIKATION WHERE UTRUSTNINGS_ID = " + utrustning.get("UTRUSTNINGS_ID"));
-                    }
-                    utrustningstyp = db.fetchSingle("SELECT UTRUSTNINGS_ID FROM TEKNIK WHERE UTRUSTNINGS_ID = " + utrustning.get("UTRUSTNINGS_ID"));
-                    if(utrustningstyp != null){
-                        utrustningsInfo += " | Teknik | KraftkÃ¤lla: " + db.fetchSingle("SELECT KRAFTKALLA FROM TEKNIK WHERE UTRUSTNINGS_ID = " + utrustning.get("UTRUSTNINGS_ID"));
-                    }
-                    utrustningstyp = db.fetchSingle("SELECT UTRUSTNINGS_ID FROM VAPEN WHERE UTRUSTNINGS_ID = " + utrustning.get("UTRUSTNINGS_ID"));
-                    if(utrustningstyp != null){
-                        utrustningsInfo += " | Vapen | Kaliber: " + db.fetchSingle("SELECT KALIBER FROM VAPEN WHERE UTRUSTNINGS_ID = " + utrustning.get("UTRUSTNINGS_ID"));
-                    }
-                    
-                    utrustningTillComboBox.addElement(utrustningsInfo);
-                    
-                    
+                if (sökResultat == null){
+                    JOptionPane.showMessageDialog(null, "Det finns ingen utrustning med det namnet!");
+                    utrustningNamnTextField.requestFocus();
                 }
-                valjUtrustningBox.setModel(utrustningTillComboBox);
+                else{
+
+                    DefaultComboBoxModel utrustningTillComboBox = new DefaultComboBoxModel();
+                    for(HashMap utrustning : sökResultat){
+                        String utrustningsInfo = "ID: " + utrustning.get("UTRUSTNINGS_ID") + " | Namn: " + utrustning.get("BENAMNING");
+                        String utrustningstyp = db.fetchSingle("SELECT UTRUSTNINGS_ID FROM KOMMUNIKATION WHERE UTRUSTNINGS_ID = " + utrustning.get("UTRUSTNINGS_ID"));
+                        if (utrustningstyp != null){
+                            utrustningsInfo += " | Kommunikation | Ã–verfÃ¶ringsteknik: " + db.fetchSingle("SELECT OVERFORINGSTEKNIK FROM KOMMUNIKATION WHERE UTRUSTNINGS_ID = " + utrustning.get("UTRUSTNINGS_ID"));
+                        }
+                        utrustningstyp = db.fetchSingle("SELECT UTRUSTNINGS_ID FROM TEKNIK WHERE UTRUSTNINGS_ID = " + utrustning.get("UTRUSTNINGS_ID"));
+                        if(utrustningstyp != null){
+                            utrustningsInfo += " | Teknik | KraftkÃ¤lla: " + db.fetchSingle("SELECT KRAFTKALLA FROM TEKNIK WHERE UTRUSTNINGS_ID = " + utrustning.get("UTRUSTNINGS_ID"));
+                        }
+                        utrustningstyp = db.fetchSingle("SELECT UTRUSTNINGS_ID FROM VAPEN WHERE UTRUSTNINGS_ID = " + utrustning.get("UTRUSTNINGS_ID"));
+                        if(utrustningstyp != null){
+                            utrustningsInfo += " | Vapen | Kaliber: " + db.fetchSingle("SELECT KALIBER FROM VAPEN WHERE UTRUSTNINGS_ID = " + utrustning.get("UTRUSTNINGS_ID"));
+                        }
+
+                        utrustningTillComboBox.addElement(utrustningsInfo);
+
+
+                    }
+                    valjUtrustningBox.setModel(utrustningTillComboBox);
+                }
             }
-        }
-        catch(InfException undantag){
-            
-            System.out.println(undantag);
+            catch(InfException undantag){
+
+                System.out.println(undantag);
+            }
         }
     }//GEN-LAST:event_utrustningNamnTextFieldActionPerformed
 
@@ -277,30 +281,33 @@ public class TaBortUtrustning extends javax.swing.JFrame {
     }//GEN-LAST:event_sokUtrustningButtonActionPerformed
 
     private void taBortUtrustningButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_taBortUtrustningButtonActionPerformed
-        String[] valdUtrustning = valjUtrustningBox.getSelectedItem().toString().split(" ");
-        int utrustningsID = Integer.parseInt(valdUtrustning[1]);
-        try{
-            
-        String utrustningstyp = db.fetchSingle("SELECT UTRUSTNINGS_ID FROM KOMMUNIKATION WHERE UTRUSTNINGS_ID = " + utrustningsID);
-        if (utrustningstyp != null){
-            db.delete("DELETE FROM KOMMUNIKATION WHERE UTRUSTNINGS_ID = " + utrustningsID);
-        }
-        utrustningstyp = db.fetchSingle("SELECT UTRUSTNINGS_ID FROM TEKNIK WHERE UTRUSTNINGS_ID = " + utrustningsID);
-        if(utrustningstyp != null){
-            db.delete("DELETE FROM TEKNIK WHERE UTRUSTNINGS_ID = " + utrustningsID);
-        }
-        utrustningstyp = db.fetchSingle("SELECT UTRUSTNINGS_ID FROM VAPEN WHERE UTRUSTNINGS_ID = " + utrustningsID);
-        if(utrustningstyp != null){
-            db.delete("DELETE FROM VAPEN WHERE UTRUSTNINGS_ID = " + utrustningsID);
-        }    
-        db.delete("DELETE FROM INNEHAR_UTRUSTNING WHERE UTRUSTNINGS_ID  = " + utrustningsID);
-        db.delete("DELETE FROM UTRUSTNING WHERE UTRUSTNINGS_ID  = " + utrustningsID);
+        if (Validering.textNotEmpty(utrustningNamnTextField) && Validering.JComboBoxNotEmpty(valjUtrustningBox)){
+            String[] valdUtrustning = valjUtrustningBox.getSelectedItem().toString().split(" ");
+            int utrustningsID = Integer.parseInt(valdUtrustning[1]);
+            try{
 
-        JOptionPane.showMessageDialog(null, "Utrustningen är borttagen!");
-        TaBortUtrustning.this.dispose();
-        }
-        catch (InfException undantag){
-            JOptionPane.showMessageDialog(null, "FEL!!!!!");
+                String utrustningstyp = db.fetchSingle("SELECT UTRUSTNINGS_ID FROM KOMMUNIKATION WHERE UTRUSTNINGS_ID = " + utrustningsID);
+
+                if (utrustningstyp != null){
+                    db.delete("DELETE FROM KOMMUNIKATION WHERE UTRUSTNINGS_ID = " + utrustningsID);
+                }
+                utrustningstyp = db.fetchSingle("SELECT UTRUSTNINGS_ID FROM TEKNIK WHERE UTRUSTNINGS_ID = " + utrustningsID);
+                if(utrustningstyp != null){
+                    db.delete("DELETE FROM TEKNIK WHERE UTRUSTNINGS_ID = " + utrustningsID);
+                }
+                utrustningstyp = db.fetchSingle("SELECT UTRUSTNINGS_ID FROM VAPEN WHERE UTRUSTNINGS_ID = " + utrustningsID);
+                if(utrustningstyp != null){
+                    db.delete("DELETE FROM VAPEN WHERE UTRUSTNINGS_ID = " + utrustningsID);
+                }    
+                db.delete("DELETE FROM INNEHAR_UTRUSTNING WHERE UTRUSTNINGS_ID  = " + utrustningsID);
+                db.delete("DELETE FROM UTRUSTNING WHERE UTRUSTNINGS_ID  = " + utrustningsID);
+
+                JOptionPane.showMessageDialog(null, "Utrustningen är borttagen!");
+                TaBortUtrustning.this.dispose();
+            }
+            catch (InfException undantag){
+                JOptionPane.showMessageDialog(null, "FEL!!!!!");
+            }
         }
     }//GEN-LAST:event_taBortUtrustningButtonActionPerformed
 

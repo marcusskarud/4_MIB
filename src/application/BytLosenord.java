@@ -18,8 +18,8 @@ public class BytLosenord extends javax.swing.JFrame {
     private String entitetsID;
     private boolean status;
     private static InfDB db;
-    private String entitetstyp = "";
-    private String entitetstypID = "";
+    private String entitetstyp;
+    private String entitetstypID;
     /**
      * Creates new form BytLosenord
      */
@@ -263,7 +263,8 @@ public class BytLosenord extends javax.swing.JFrame {
         
         try{
             if(new String(gammaltLosenordPasswordField.getPassword()).equals(db.fetchSingle("SELECT LOSENORD FROM " + entitetstyp + " WHERE " + entitetstypID + " = " + entitetsID)) 
-                    && Validering.passwordNotEmpty(nyttLosenord1PasswordField, nyttLosenord2PasswordField)
+                    && Validering.passwordNotEmpty(nyttLosenord1PasswordField)
+                    && Validering.passwordNotEmpty(nyttLosenord2PasswordField)
                     && Validering.passwordLengthCheck(nyttLosenord1PasswordField)
                     && Validering.newPasswordMatch(nyttLosenord1PasswordField, nyttLosenord2PasswordField)){
                 db.update("UPDATE " + entitetstyp + " SET LOSENORD=\'" + new String(nyttLosenord1PasswordField.getPassword()) + "\' WHERE " + entitetstypID +"=" + entitetsID);
@@ -292,6 +293,7 @@ public class BytLosenord extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_nyttLosenord2PasswordFieldKeyPressed
 
+    //Här ändras variabler som körs i en SQL fråga beroende på om det är en alien eller en agent som loggar in.
     private void checkEntityIdentity(boolean status){
         if (status){
             entitetstyp = "AGENT";

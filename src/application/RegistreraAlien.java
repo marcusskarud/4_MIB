@@ -282,43 +282,35 @@ public class RegistreraAlien extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_nyAlienRasBoxActionPerformed
     private void registreraNylienButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registreraNylienButtonActionPerformed
-        if (Validering.textNotEmpty(nyAlienNamnTextField) && Validering.textNotEmpty(nyAlienTelefonTextField)){                
+        if (Validering.textNotEmpty(nyAlienNamnTextField) && Validering.textNotEmpty(nyAlienTelefonTextField) &&
+            Validering.nameTextFieldLengthCheck(nyAlienNamnTextField) && Validering.checkPhoneLength(nyAlienTelefonTextField)){                
             
             if (nyAlienRasBox.getSelectedItem().toString().equals("Worm")
                     || nyAlienRasBox.getSelectedItem().toString().equals("Squid") && Validering.textNotEmpty(nyAlienExtraAttributTextField)
                     || nyAlienRasBox.getSelectedItem().toString().equals("Boglodite") && Validering.textNotEmpty(nyAlienExtraAttributTextField)){
                 
-                int nyAlienID = 0;
-                String namn = "";
-                int plats = 0;
-                String platsnamn = "";
-                String registreringsdatum = "";
-                String lösenord = "";
-                String telefon = "";
-                String ansvarig_agent = "";
-                int ansvarig_agentID = 0;
+                
                 String rasFraga = "";
                 String rasInfo = "";
-                String omrade = "";
                 
                 try{
-                    nyAlienID = Integer.parseInt(db.getAutoIncrement("ALIEN", "ALIEN_ID"));
+                    int nyAlienID = Integer.parseInt(db.getAutoIncrement("ALIEN", "ALIEN_ID"));
                     
                     DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
                     Date nyttDatum = new Date();
-                    registreringsdatum = dateFormat.format(nyttDatum);
+                    String registreringsdatum = dateFormat.format(nyttDatum);
                     
-                    lösenord = "" + randGenerator.nextInt(10) + randGenerator.nextInt(10) + randGenerator.nextInt(10) +randGenerator.nextInt(10) +randGenerator.nextInt(10) + randGenerator.nextInt(10);
-                    namn = nyAlienNamnTextField.getText();
-                    telefon = nyAlienTelefonTextField.getText();
+                    String lösenord = "" + randGenerator.nextInt(10) + randGenerator.nextInt(10) + randGenerator.nextInt(10) +randGenerator.nextInt(10) +randGenerator.nextInt(10) + randGenerator.nextInt(10);
+                    String namn = nyAlienNamnTextField.getText();
+                    String telefon = nyAlienTelefonTextField.getText();
 
-                    plats = randGenerator.nextInt(Integer.parseInt(db.fetchSingle("SELECT COUNT(PLATS_ID) FROM PLATS"))) + 1;                   
-                    platsnamn = db.fetchSingle("SELECT BENAMNING FROM PLATS WHERE PLATS_ID = " + plats);
-                    omrade = db.fetchSingle("SELECT FINNS_I FROM PLATS WHERE PLATS_ID = " + plats);
+                    int plats = randGenerator.nextInt(Integer.parseInt(db.fetchSingle("SELECT COUNT(PLATS_ID) FROM PLATS"))) + 1;                   
+                    String platsnamn = db.fetchSingle("SELECT BENAMNING FROM PLATS WHERE PLATS_ID = " + plats);
+                    String omrade = db.fetchSingle("SELECT FINNS_I FROM PLATS WHERE PLATS_ID = " + plats);
                     
                     
-                    ansvarig_agentID = Integer.parseInt(db.fetchSingle("SELECT FIRST 1 AGENT_ID, COUNT(ANSVARIG_AGENT) FROM AGENT LEFT JOIN ALIEN ON ANSVARIG_AGENT = AGENT_ID WHERE OMRADE = " + omrade + " GROUP BY AGENT_ID ORDER BY COUNT(*) ASC"));
-                    ansvarig_agent = db.fetchSingle("SELECT NAMN FROM AGENT WHERE AGENT_ID = " + ansvarig_agentID);
+                    int ansvarig_agentID = Integer.parseInt(db.fetchSingle("SELECT FIRST 1 AGENT_ID, COUNT(ANSVARIG_AGENT) FROM AGENT LEFT JOIN ALIEN ON ANSVARIG_AGENT = AGENT_ID WHERE OMRADE = " + omrade + " GROUP BY AGENT_ID ORDER BY COUNT(*) ASC"));
+                    String ansvarig_agent = db.fetchSingle("SELECT NAMN FROM AGENT WHERE AGENT_ID = " + ansvarig_agentID);
                     
                     if (nyAlienRasBox.getSelectedItem().toString().equals("Worm")){
                         rasFraga = "INSERT INTO WORM VALUES (" + nyAlienID + ")";
@@ -334,12 +326,8 @@ public class RegistreraAlien extends javax.swing.JFrame {
                     }
                     db.insert("INSERT INTO ALIEN VALUES("+ nyAlienID + ", \'" + registreringsdatum + "\' , \'" + lösenord + "\', \'" + namn +"\', \'" + telefon + "\', " + plats + ", " + ansvarig_agentID + ")");
                     db.insert(rasFraga);
-                }
-                catch(InfException undantag){
-            
-                }
-                
-                JOptionPane.showMessageDialog(null, "Ny alien registrerad!" +
+                    
+                    JOptionPane.showMessageDialog(null, "Ny alien registrerad!" +
                         "\n\nNamn: " + namn + 
                         rasInfo +
                         "\n\nAlienID: " + nyAlienID + 
@@ -348,13 +336,15 @@ public class RegistreraAlien extends javax.swing.JFrame {
                         "\n\nRegistreringsdatum: " + registreringsdatum + 
                         "\nTilldelad plats: " + platsnamn + 
                         "\nAnsvarig agent: " + ansvarig_agent);
-                RegistreraAlien.this.dispose();
-
+                    
+                    RegistreraAlien.this.dispose();
+                    
+                }
+                catch(InfException undantag){
+                    System.out.println(undantag.getMessage());
+                }
+                
             } 
-            else{
-                JOptionPane.showMessageDialog(null, "");
-            } 
-            
         }
     }//GEN-LAST:event_registreraNylienButtonActionPerformed
 
