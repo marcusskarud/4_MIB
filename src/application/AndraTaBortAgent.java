@@ -373,6 +373,7 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     @SuppressWarnings("unchecked")
+    // fyller områdesboxen med områden
     private void setOmradesBoxen(String omradesBenamning){
         DefaultComboBoxModel omradesBox = new DefaultComboBoxModel();
         try{
@@ -392,6 +393,8 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
     
         
     private void taBortAgentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_taBortAgentButtonActionPerformed
+        // när du trycker på ta bort agentknappen köra alla interna metodanrop enligt nedan som utför flera uppgifter.
+        // för att se förklaringar till dessa. Se respektive metod.
         if (Validering.iDIfyllt(nyAgentIDTextField, valjSoktAgentBox)){
         }
         else{
@@ -411,7 +414,10 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
     private void avbrytButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avbrytButtonActionPerformed
         AndraTaBortAgent.this.dispose();
     }//GEN-LAST:event_avbrytButtonActionPerformed
-
+    
+        // sparar uppdaterad information som blivit angett om man vill ändra information om en agent.
+        // sättet det utförs på är att den valda agenten tas bort helt. Sedan sätter vi en nya värden för en agent men lägger det på samma id.
+        // Detta sker när du trycker på spara ändringar. Flertalet valideringar utförs även.
     private void sparaUppdateradInfoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sparaUppdateradInfoButtonActionPerformed
         if (Validering.iDIfyllt(nyAgentIDTextField, valjSoktAgentBox) && Validering.checkDatumFormat(nyAgentAnstallningsdatumTextField) &&
             Validering.textNotEmpty(nyAgentNamnTextField) && Validering.textNotEmpty(nyAgentLosenordTextField) &&
@@ -446,7 +452,8 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_sparaUppdateradInfoButtonActionPerformed
 
-    @SuppressWarnings("unchecked")    
+    @SuppressWarnings("unchecked") 
+    // denna metod fyller ut all information om den valda agenten. I samtliga textfält.
     private void valjSoktAgentBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valjSoktAgentBoxActionPerformed
 
         if (valjSoktAgentBox.getSelectedItem().equals("---")){
@@ -492,6 +499,8 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
     }//GEN-LAST:event_sokAgentButtonActionPerformed
 
     @SuppressWarnings("unchecked")
+    // fyller ut comboboxen där du har möjlighet att välja den agent du vill ändra.
+    // alla agenter med sökträffar med angivet namn listas.
     private void setJComboBox(String söktNamn){
         try{
         ArrayList<HashMap<String,String>> agent = db.fetchRows("SELECT * FROM AGENT WHERE NAMN = '" + söktNamn + "'");
@@ -512,7 +521,10 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
         }
         
     }
-    @SuppressWarnings("unchecked")    
+    @SuppressWarnings("unchecked")
+        // tar bort agent som tar in en parameter av typen int. det värdet som skickas in är det unika idt för varje agent i databasen.
+        // det metoden gör är att rensa all information om agent vars id angivet.
+        // denna metod används exempelvis i metoden: sparaUppdateradInfoButtonActionPerformed
     private void deleteAgent(int agentID){
         
         try{
@@ -536,7 +548,8 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
         }
     }
     
-    @SuppressWarnings("unchecked")     
+    @SuppressWarnings("unchecked") 
+        // används för att nollställa samtliga textfält ifall en sökt agent inte finns.
     private void rensaFalt(){
         DefaultComboBoxModel tomBox = new DefaultComboBoxModel();
         tomBox.addElement("---");

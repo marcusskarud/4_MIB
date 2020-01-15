@@ -220,6 +220,7 @@ public class RegistreraUtrustning extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+        // funktion som registrerar ny utrsutning när knappen trycks på. 
     private void registreraNyUtrustningButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registreraNyUtrustningButtonActionPerformed
         if (Validering.textNotEmpty(nyUtrustningNamnTextField) && Validering.textNotEmpty(nyUtrustningExtraAttributTextField) &&
             Validering.nameTextFieldLengthCheck(nyUtrustningNamnTextField)){
@@ -252,6 +253,7 @@ public class RegistreraUtrustning extends javax.swing.JFrame {
         RegistreraUtrustning.this.dispose();
     }//GEN-LAST:event_avbrytButtonActionPerformed
 
+    // ändrar texten för extrainformation för vald vapentyp.
     private void nyUtrustningTypBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nyUtrustningTypBoxActionPerformed
         if (nyUtrustningTypBox.getSelectedItem().toString().equals("Kommunikation")){
             nyUtrustningExtraAttributLabel.setText("Överföringsteknik:");

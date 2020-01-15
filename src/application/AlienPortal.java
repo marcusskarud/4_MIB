@@ -424,7 +424,7 @@ public class AlienPortal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    // funktion för att byta losenrod.
+    // funktion för att byta losenrod när du trycker på knappen byt lösenord.
     private void bytLosenordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bytLosenordActionPerformed
         new BytLosenord(db, alienID, false).setVisible(true);
     }//GEN-LAST:event_bytLosenordActionPerformed

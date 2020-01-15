@@ -235,6 +235,8 @@ public class TaBortUtrustning extends javax.swing.JFrame {
     }//GEN-LAST:event_avbrytButtonActionPerformed
 
     @SuppressWarnings("unchecked")    
+        // hittar vapnet med det överenstämmande namnet som angivs i sökfältet och yfller ut information i comboboxen beroende på vilket vapen som söks.
+        // om inget vapen med ett namn finns så angivs även det.
     private void utrustningNamnTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_utrustningNamnTextFieldActionPerformed
         if (Validering.textNotEmpty(utrustningNamnTextField)){
             try{
@@ -251,11 +253,11 @@ public class TaBortUtrustning extends javax.swing.JFrame {
                         String utrustningsInfo = "ID: " + utrustning.get("UTRUSTNINGS_ID") + " | Namn: " + utrustning.get("BENAMNING");
                         String utrustningstyp = db.fetchSingle("SELECT UTRUSTNINGS_ID FROM KOMMUNIKATION WHERE UTRUSTNINGS_ID = " + utrustning.get("UTRUSTNINGS_ID"));
                         if (utrustningstyp != null){
-                            utrustningsInfo += " | Kommunikation | Ã–verfÃ¶ringsteknik: " + db.fetchSingle("SELECT OVERFORINGSTEKNIK FROM KOMMUNIKATION WHERE UTRUSTNINGS_ID = " + utrustning.get("UTRUSTNINGS_ID"));
+                            utrustningsInfo += " | Kommunikation | Överföringsteknik: " + db.fetchSingle("SELECT OVERFORINGSTEKNIK FROM KOMMUNIKATION WHERE UTRUSTNINGS_ID = " + utrustning.get("UTRUSTNINGS_ID"));
                         }
                         utrustningstyp = db.fetchSingle("SELECT UTRUSTNINGS_ID FROM TEKNIK WHERE UTRUSTNINGS_ID = " + utrustning.get("UTRUSTNINGS_ID"));
                         if(utrustningstyp != null){
-                            utrustningsInfo += " | Teknik | KraftkÃ¤lla: " + db.fetchSingle("SELECT KRAFTKALLA FROM TEKNIK WHERE UTRUSTNINGS_ID = " + utrustning.get("UTRUSTNINGS_ID"));
+                            utrustningsInfo += " | Teknik | Kraftkälla: " + db.fetchSingle("SELECT KRAFTKALLA FROM TEKNIK WHERE UTRUSTNINGS_ID = " + utrustning.get("UTRUSTNINGS_ID"));
                         }
                         utrustningstyp = db.fetchSingle("SELECT UTRUSTNINGS_ID FROM VAPEN WHERE UTRUSTNINGS_ID = " + utrustning.get("UTRUSTNINGS_ID"));
                         if(utrustningstyp != null){
@@ -279,7 +281,8 @@ public class TaBortUtrustning extends javax.swing.JFrame {
     private void sokUtrustningButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sokUtrustningButtonActionPerformed
         utrustningNamnTextFieldActionPerformed(evt);
     }//GEN-LAST:event_sokUtrustningButtonActionPerformed
-
+        
+    // funktion för att ta bort vald utsutning i comboboxfältet.
     private void taBortUtrustningButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_taBortUtrustningButtonActionPerformed
         if (Validering.textNotEmpty(utrustningNamnTextField) && Validering.JComboBoxNotEmpty(valjUtrustningBox)){
             String[] valdUtrustning = valjUtrustningBox.getSelectedItem().toString().split(" ");
