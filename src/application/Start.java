@@ -12,6 +12,7 @@ import oru.inf.InfException;
  *
  * @author MarcusSkarud
  */
+// Startklassen som instansierar databasen och öppnar en ny jFrame av Klassen Huvudfönster
 public class Start {
     
     private static InfDB db;
@@ -45,7 +46,7 @@ public class Start {
             }
         }
     
-        /* Create and display the form */
+        // Öppnar ett nytt "Huvudfönster" direkt.
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Huvudfönster(db).setVisible(true);

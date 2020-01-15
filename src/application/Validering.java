@@ -15,6 +15,7 @@ import javax.swing.JComboBox;
  *
  * @author MarcusSkarud
  */
+// Valideringsklassen vi har använt oss av för att utföra valideringar för flera funktioner i systemet.
 public class Validering {
     
     //Kollar om textfältet är tomt.

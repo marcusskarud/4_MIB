@@ -260,7 +260,8 @@ public class BytLosenord extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bytLosenordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bytLosenordButtonActionPerformed
-        
+        // metod som byter lösenrod för både agent och alien. Denna metod kollar värdena som skickas in och vad de matchar. samt
+        // om lösenrodet är inom kraven för det som är angivet.
         try{
             if(new String(gammaltLosenordPasswordField.getPassword()).equals(db.fetchSingle("SELECT LOSENORD FROM " + entitetstyp + " WHERE " + entitetstypID + " = " + entitetsID)) 
                     && Validering.passwordNotEmpty(nyttLosenord1PasswordField)

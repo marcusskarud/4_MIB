@@ -1193,13 +1193,14 @@ public class AgentPortal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    // öppnar ett nytt fönster med möjlighet att ändra lösenrod för din agent.
     private void bytLosenordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bytLosenordActionPerformed
         // TODO add your handling code here:
         new BytLosenord(db, agentID, true).setVisible(true);
     }//GEN-LAST:event_bytLosenordActionPerformed
 
     @SuppressWarnings("unchecked")
+    // fyller platsboxen med information beroende på vilket alternativ som vatls under områdesboxen.
     private void sokOmradesBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sokOmradesBoxActionPerformed
         String omradet = sokOmradesBox.getSelectedItem().toString();
         
@@ -1220,6 +1221,7 @@ public class AgentPortal extends javax.swing.JFrame {
     }//GEN-LAST:event_sokOmradesBoxActionPerformed
 
     @SuppressWarnings("unchecked")
+    // hämtar infomration från db om vilka aliens som finns på vilka platser och skriver ut informationen beroende på vilket alternativ som har valts.
     private void listaAlienEfterPlatsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaAlienEfterPlatsButtonActionPerformed
         resultatTextArea.setText("");
         String resultatsträng = "";
@@ -1252,7 +1254,7 @@ public class AgentPortal extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_listaAlienEfterPlatsButtonActionPerformed
-
+        // hämtar information om vald alien för varje ras och fyller ut deras namn i resultatlistan.
     private void listaAliensEfterRasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaAliensEfterRasButtonActionPerformed
         try{
             String sökRas = sokRasBox.getSelectedItem().toString().toUpperCase();
@@ -1267,7 +1269,7 @@ public class AgentPortal extends javax.swing.JFrame {
             System.out.println("Något gick fel! " + undantag);
         }
     }//GEN-LAST:event_listaAliensEfterRasButtonActionPerformed
-
+        // hämtar information om alien mellan 2 olika valda datum.
     private void listaAliensefterDatumButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaAliensefterDatumButtonActionPerformed
         try{
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -1287,6 +1289,7 @@ public class AgentPortal extends javax.swing.JFrame {
     }//GEN-LAST:event_listaAliensefterDatumButtonActionPerformed
 
     @SuppressWarnings("unchecked")
+    // denna metod fyller textarean för "resultat" näer aliens ska listas. beroende på vilken information som valts i menyerna.
     private void sokAlienNamnTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sokAlienNamnTextFieldActionPerformed
         String resultatsträng = "";
         try{
@@ -1356,6 +1359,8 @@ public class AgentPortal extends javax.swing.JFrame {
         new RegistreraUtrustning(db).setVisible(true);
     }//GEN-LAST:event_registreraUtrustningButtonActionPerformed
     @SuppressWarnings("unchecked")
+    // hela denna metod utöfr ifyllningar för det sökta området. den hittar fram nuvarande info om områdeschef samt skriver ut den information
+    // Metoden fyller också comboxen med namn på samtliga agenter i det området.
     private void soktOmradeBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_soktOmradeBoxActionPerformed
         String söktOmråde = soktOmradeBox.getSelectedItem().toString();
         DefaultComboBoxModel agenterIOmrade = new DefaultComboBoxModel();
@@ -1415,6 +1420,7 @@ public class AgentPortal extends javax.swing.JFrame {
         new AndraTaBortAgent(db).setVisible(true);
     }//GEN-LAST:event_andraTaBortAgentButtonActionPerformed
     @SuppressWarnings("unchecked")
+    // sätter ny omfrådeschef beroende på vilket område som är valt i områdesboxen och vilka agenter som finns tillgängliga inom det området.
     private void sattOmradeschefButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sattOmradeschefButtonActionPerformed
         try{
             String[] agentSök = valjOmradeschefBox.getSelectedItem().toString().split(" ");
@@ -1436,6 +1442,7 @@ public class AgentPortal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_sattOmradeschefButtonActionPerformed
     @SuppressWarnings("unchecked")
+    // hämtar nuvarande kontorschef i form av objekt och ändrar till en ny kontorschef efter vald ny agent från vaöjkontorschefs boxen.
     private void valjKontorschefButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valjKontorschefButtonActionPerformed
         try{
             String[] agentSök = valjKontorschefBox.getSelectedItem().toString().split(" ");
@@ -1451,6 +1458,7 @@ public class AgentPortal extends javax.swing.JFrame {
 
    
     @SuppressWarnings("unchecked")
+    // hämtar nuvarande kontorschef under utrsutning/område direkt när du loggar in som agent.
     private void initkontorsChefTextField(){
         
         try{
@@ -1466,6 +1474,7 @@ public class AgentPortal extends javax.swing.JFrame {
     }
     
     @SuppressWarnings("unchecked")
+    // metod för att söka all info om en viss alien.
     private String sökAllInfo(int iD){
         String resultatsträng = "";
         String ras = "";
@@ -1511,7 +1520,7 @@ public class AgentPortal extends javax.swing.JFrame {
     
     @SuppressWarnings("unchecked")    
     private void setOmradeJComboBox(JComboBox valdComboBox){
-        
+        // fyller comboboxen med valt område i de comboxarna metoden används
         try{    
         ArrayList<String> omradenIDB = db.fetchColumn("SELECT BENAMNING FROM OMRADE");
         DefaultComboBoxModel omradena = new DefaultComboBoxModel();
@@ -1527,6 +1536,7 @@ public class AgentPortal extends javax.swing.JFrame {
     }
     
     @SuppressWarnings("unchecked")
+    // metod för att välja alien mellan olika registreringsdatum i sökfunktionen
     private void setDatumJSpinner(){
         try{
             String stringDatum = db.fetchSingle("SELECT MIN(REGISTRERINGSDATUM) FROM ALIEN");  
@@ -1547,6 +1557,7 @@ public class AgentPortal extends javax.swing.JFrame {
     
     @SuppressWarnings("unchecked")
     private void setLanadUtrustningJTextArea(String agentID){
+        // metod för att fylla ut lånad utrsutning txt.area.
         lanadUtrustningTextArea.setText("");
         String vapenSträng = "";
         String kommunikationSträng = "";
@@ -1605,6 +1616,7 @@ public class AgentPortal extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
+    // fyller ut komboboxar direkt när vi loggar in som agent. Fyller även ut info om inloggad agent och lånad utrsutning.
     private void initAgentPortal(){
         setOmradeJComboBox(sokOmradesBox);
         setOmradeJComboBox(soktOmradeBox);
@@ -1630,6 +1642,7 @@ public class AgentPortal extends javax.swing.JFrame {
         }
     }
     @SuppressWarnings("unchecked")
+    // hämtar alla agenter för att välja ny kontorschef
     private void setAgenterIOmrade(){
         
         DefaultComboBoxModel agenterIOmrade = new DefaultComboBoxModel();
@@ -1650,7 +1663,7 @@ public class AgentPortal extends javax.swing.JFrame {
         
     
     }
-    
+    // beroende på om en vanlig agent loggar in tas vissa funktioner bort. vi sätter dem som "false" i set.visible.
     private void setAdminMode(boolean adminStatus){
         if (!adminStatus){
             menyTabbedPane.remove(laggTillAndraAgentPanel);

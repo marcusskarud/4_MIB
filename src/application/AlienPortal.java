@@ -22,6 +22,7 @@ public class AlienPortal extends javax.swing.JFrame {
     /**
      * Creates new form hejAgent
      */
+    // fyller information i samtliga textrutor beroende på vilken alien som är inloggad.
     public AlienPortal(InfDB db, String alienID) {
         this.db = db;
         this.alienID = alienID;
@@ -423,7 +424,7 @@ public class AlienPortal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    // funktion för att byta losenrod.
     private void bytLosenordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bytLosenordActionPerformed
         new BytLosenord(db, alienID, false).setVisible(true);
     }//GEN-LAST:event_bytLosenordActionPerformed

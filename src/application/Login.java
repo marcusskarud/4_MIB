@@ -21,6 +21,7 @@ public class Login extends javax.swing.JFrame  {
     /**
      * Creates new form agentLogin
      */
+    // Direkt i konstruktorn körs metoden "Checkentitetstyp" som kollar ifall det är en alien eller agent som skall loggas in.
     public Login(InfDB db, boolean entitetstyp) {
         this.db = db;
         this.entitetstyp = entitetstyp;
@@ -215,7 +216,9 @@ public class Login extends javax.swing.JFrame  {
     }// </editor-fold>//GEN-END:initComponents
 
     
-    // entitetstyp
+    // Denna metod utför alla krav för att logga in. Vi kollar ifall det är en admin/vanlig agent som ska logga in eller en alien.
+    // Beroende på vilken så utförs olika "if" satser för att kolla så att allt är inmatat korrekt och alla textfält är ifyllda.
+    // I annat fall skickas ett felmeddelande ut och användaren uppmanas att göra om.
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         // TODO add your handling code here:
         boolean found = false;
@@ -228,22 +231,24 @@ public class Login extends javax.swing.JFrame  {
 
                 if (entitetstyp && new String(losenordPasswordField.getPassword()).equals(db.fetchSingle("SELECT LOSENORD FROM AGENT WHERE AGENT_ID = " + iDTextField.getText()))){
                     found = true;
+                    // kollar ifall agent är admin
                     if (db.fetchSingle("SELECT ADMINISTRATOR FROM AGENT WHERE AGENT_ID =" + iDTextField.getText()).equals("J")){
                         admin = true;
                     }    
                 }
 
-                if (entitetstyp && found && admin){
+                if (entitetstyp && found && admin){// kollar ifall inlogg tillhör en admin, om allt är korrekt öppnas jFrame "Agentportal".
+                                                   // med samtliga admin-funktioner satta som true.
                     new AgentPortal(db, iDTextField.getText(), admin).setVisible(true);
                         Login.this.dispose();
                 }
-                else if (entitetstyp && found && !admin){
+                else if (entitetstyp && found && !admin){// kollar ifall inlogg tillhör en vanlig agent, om allt är korrekt öppnas jFrame "Agentportal".
                     new AgentPortal(db, iDTextField.getText(), admin).setVisible(true);
                         Login.this.dispose();;             
                 }
                 else if (entitetstyp && !found){
                     JOptionPane.showMessageDialog(null, "Ogiltigt " + checktyp + " och/eller lösenord!");             
-                }
+                } // kollar ifall inlogg tillhör en alien, om allt är korrekt öppnas jFrame "AlienPortal".
                 else if (!entitetstyp && new String(losenordPasswordField.getPassword()).equals(db.fetchSingle("SELECT LOSENORD FROM ALIEN WHERE ALIEN_ID = " + iDTextField.getText()))){
                     new AlienPortal(db, iDTextField.getText()).setVisible(true);
                         Login.this.dispose();
@@ -269,7 +274,7 @@ public class Login extends javax.swing.JFrame  {
     private void losenordPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_losenordPasswordFieldActionPerformed
         loginButton.doClick();
     }//GEN-LAST:event_losenordPasswordFieldActionPerformed
-
+    // Ändrar texten på vissa labels och fält om en alien loggar in.
     private void checkEntitetstyp(boolean status){
         if (!status){
             checktyp = "alienID";

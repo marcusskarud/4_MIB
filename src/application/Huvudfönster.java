@@ -204,15 +204,15 @@ public class Huvudfönster extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    // Öppnar en ny jFrame "Login" där du uppmanas att skriva in ID och Lösenrod för agenter.
     private void agentLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agentLoginButtonActionPerformed
         new Login(db, true).setVisible(true);
     }//GEN-LAST:event_agentLoginButtonActionPerformed
-
+// Öppnar en ny jFrame "Login" där du uppmanas att skriva in ID och Lösenrod för alien.
     private void alienLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alienLoginButtonActionPerformed
         new Login(db, false).setVisible(true);
     }//GEN-LAST:event_alienLoginButtonActionPerformed
-
+// Öppnar en ny jFrame "Credits" där den visar utvecklarna för systemet.
     private void creditsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_creditsButtonActionPerformed
         new Credits().setVisible(true);
     }//GEN-LAST:event_creditsButtonActionPerformed

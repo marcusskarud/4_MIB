@@ -9,6 +9,7 @@ package application;
  *
  * @author MarcusSkarud
  */
+// Denna klass gör inget mer än att visa information om utvecklarna och källa för bilderna.
 public class Credits extends javax.swing.JFrame {
 
     /**
