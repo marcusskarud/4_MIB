@@ -263,14 +263,15 @@ public class BytLosenord extends javax.swing.JFrame {
         // metod som byter lösenrod för både agent och alien. Denna metod kollar värdena som skickas in och vad de matchar. samt
         // om lösenrodet är inom kraven för det som är angivet.
         try{
-            if(new String(gammaltLosenordPasswordField.getPassword()).equals(db.fetchSingle("SELECT LOSENORD FROM " + entitetstyp + " WHERE " + entitetstypID + " = " + entitetsID)) 
-                    && Validering.passwordNotEmpty(nyttLosenord1PasswordField)
-                    && Validering.passwordNotEmpty(nyttLosenord2PasswordField)
-                    && Validering.passwordLengthCheck(nyttLosenord1PasswordField)
-                    && Validering.newPasswordMatch(nyttLosenord1PasswordField, nyttLosenord2PasswordField)){
-                db.update("UPDATE " + entitetstyp + " SET LOSENORD=\'" + new String(nyttLosenord1PasswordField.getPassword()) + "\' WHERE " + entitetstypID +"=" + entitetsID);
-                JOptionPane.showMessageDialog(null, "Nytt lösenord satt!");
-                BytLosenord.this.dispose();
+            if(new String(gammaltLosenordPasswordField.getPassword()).equals(db.fetchSingle("SELECT LOSENORD FROM " + entitetstyp + " WHERE " + entitetstypID + " = " + entitetsID))){ 
+                if (Validering.passwordNotEmpty(nyttLosenord1PasswordField)
+                && Validering.passwordNotEmpty(nyttLosenord2PasswordField)
+                && Validering.passwordLengthCheck(nyttLosenord1PasswordField)
+                && Validering.newPasswordMatch(nyttLosenord1PasswordField, nyttLosenord2PasswordField)){
+                    db.update("UPDATE " + entitetstyp + " SET LOSENORD=\'" + new String(nyttLosenord1PasswordField.getPassword()) + "\' WHERE " + entitetstypID +"=" + entitetsID);
+                    JOptionPane.showMessageDialog(null, "Nytt lösenord satt!");
+                    BytLosenord.this.dispose();
+                }
             }
             else {
                 JOptionPane.showMessageDialog(null, "Fel lösenord!");
@@ -279,6 +280,7 @@ public class BytLosenord extends javax.swing.JFrame {
         }
         catch(InfException undantag){
             JOptionPane.showMessageDialog(null, "Någonting gick fel!");
+            System.out.println(undantag.getMessage());
         } 
     }//GEN-LAST:event_bytLosenordButtonActionPerformed
 

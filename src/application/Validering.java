@@ -66,7 +66,6 @@ public class Validering {
             JOptionPane.showMessageDialog(null, "De nya lösenorden matchar inte!");
             return false;
         }
-    
     }
     
     // Kollar formatet på ett textfält för att se om det överensstämmer med ett datum.

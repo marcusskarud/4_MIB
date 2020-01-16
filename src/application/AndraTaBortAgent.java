@@ -396,9 +396,7 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
         // när du trycker på ta bort agentknappen köra alla interna metodanrop enligt nedan som utför flera uppgifter.
         // för att se förklaringar till dessa. Se respektive metod.
         if (Validering.iDIfyllt(nyAgentIDTextField, valjSoktAgentBox)){
-        }
-        else{
-            
+        
             String[] agentSök = valjSoktAgentBox.getSelectedItem().toString().split(" ");
             int agentID = Integer.parseInt(agentSök[1]);
 
@@ -406,7 +404,9 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
             sokAgentTextField.setText("");
             sokAgentTextFieldActionPerformed(evt);
             valjSoktAgentBoxActionPerformed(evt);
-            
+        }
+        else{
+  
         }
         
     }//GEN-LAST:event_taBortAgentButtonActionPerformed
@@ -540,6 +540,7 @@ public class AndraTaBortAgent extends javax.swing.JFrame {
                 db.delete("DELETE FROM OMRADESCHEF WHERE AGENT_ID = " + agentID);            
                 db.delete("DELETE FROM AGENT WHERE AGENT_ID = " + agentID);
             }
+            JOptionPane.showMessageDialog(null, "Agenten är borttagen!");
             
             
         }
