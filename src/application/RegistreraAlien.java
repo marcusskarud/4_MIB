@@ -262,6 +262,9 @@ public class RegistreraAlien extends javax.swing.JFrame {
         setBounds(0, 0, 533, 522);
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    // vid ras-val sätter denna texten och synligheten på nyAlienExtraAttribut-TextField samt -Label
+    // beroende på vilken ras som valts.
     private void nyAlienRasBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nyAlienRasBoxActionPerformed
         if(nyAlienRasBox.getSelectedItem().toString().equals("Squid")){
             nyAlienExtraAttributTextField.setEnabled(true);
@@ -281,6 +284,10 @@ public class RegistreraAlien extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_nyAlienRasBoxActionPerformed
+
+    // Efter validerng av de olika textfälten så tilldelas den nya alienen en plats och den
+    // agent i platsens område som är ansvarig för minst antal aliens. Efter att alien registrerats
+    // i databasen så visas en JOptionPane med all information om den nya alien som registrerats.
     private void registreraNylienButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registreraNylienButtonActionPerformed
         if (Validering.textNotEmpty(nyAlienNamnTextField) && Validering.textNotEmpty(nyAlienTelefonTextField) &&
             Validering.nameTextFieldLengthCheck(nyAlienNamnTextField) && Validering.checkPhoneLength(nyAlienTelefonTextField)){                

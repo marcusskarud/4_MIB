@@ -31,8 +31,6 @@ public class LanaUtrustning extends javax.swing.JFrame {
         this.agentID = agentID;
         initComponents();
         
-
-
     }
 
     /**
@@ -260,6 +258,8 @@ public class LanaUtrustning extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    // om man väljer vapen som utrustning att låna fylls ledigUtrustningBox med vapen som inte
+    // återfinns i INNEHAR_UTRUSTNING-tabellen, mao är ledig.
     @SuppressWarnings("unchecked")    
     private void vapenRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vapenRadioButtonActionPerformed
         DefaultComboBoxModel utrustningTillComboBox = new DefaultComboBoxModel();
@@ -283,6 +283,8 @@ public class LanaUtrustning extends javax.swing.JFrame {
         ledigUtrustningBox.setModel(utrustningTillComboBox);
     }//GEN-LAST:event_vapenRadioButtonActionPerformed
 
+    // om man väljer kommunikation som utrustning att låna fylls ledigUtrustningBox med kommunikation som inte
+    // återfinns i INNEHAR_UTRUSTNING-tabellen, mao är ledig.
     @SuppressWarnings("unchecked")    
     private void kommunikationRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kommunikationRadioButtonActionPerformed
         DefaultComboBoxModel utrustningTillComboBox = new DefaultComboBoxModel();
@@ -306,6 +308,8 @@ public class LanaUtrustning extends javax.swing.JFrame {
         ledigUtrustningBox.setModel(utrustningTillComboBox);                                            
     }//GEN-LAST:event_kommunikationRadioButtonActionPerformed
 
+    // om man väljer teknik som utrustning att låna fylls ledigUtrustningBox med teknik som inte
+    // återfinns i INNEHAR_UTRUSTNING-tabellen, mao är ledig.
     @SuppressWarnings("unchecked")    
     private void teknikRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teknikRadioButtonActionPerformed
         DefaultComboBoxModel utrustningTillComboBox = new DefaultComboBoxModel();
@@ -335,6 +339,7 @@ public class LanaUtrustning extends javax.swing.JFrame {
         LanaUtrustning.this.dispose();
     }//GEN-LAST:event_avbrytButtonActionPerformed
 
+    // lägger till ett lån i INNEHAR_UTRUSTNING-tabellen med AgentID, Utrustnings_ID och utkvitteringsdatum på valda utrustningen.
     private void lanaUtrustningButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lanaUtrustningButtonActionPerformed
         if(Validering.JComboBoxNotEmpty(ledigUtrustningBox)){
             String[] valdUtrustning = ledigUtrustningBox.getSelectedItem().toString().split(" ");

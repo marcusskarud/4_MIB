@@ -480,7 +480,7 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
 
     @SuppressWarnings("unchecked")  
     // denna metod fyller ut comboboxen ras med information om vilken ras vald alien tillhör samt vilka raser som går att ändra till.
-    // beroende på vald sätts även en ruta till true där du kan välja olika antal armar eller boogies.
+    // beroende på vald sätts även en ruta till setVisible(true) där du kan välja olika antal armar eller boogies.
     private void setRasBoxen(String ras, int alienID){
         DefaultComboBoxModel rasBox = new DefaultComboBoxModel();
         rasBox.addElement("Worm");
@@ -514,7 +514,7 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
     }
     
     @SuppressWarnings("unchecked")
-    //
+    // denna metod hämtar alla områden i databasen och fyller nyAlienComboBox med dessa.
     private void setOmradesBoxen(String omradesBenamning){
         DefaultComboBoxModel omradesBox = new DefaultComboBoxModel();
         try{
@@ -533,7 +533,8 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
     }
     
     @SuppressWarnings("unchecked")
-   //
+   // denna metod fyller nyAlienPlatsBox med valda områdets olika platser 
+   // och sätter nuvarande plats som vald med jComboBox-metoden setSelectedItem().
     private void setPlatsBoxen(String platsBenamning, int finnsI){
         DefaultComboBoxModel platsBox = new DefaultComboBoxModel();
         
@@ -589,7 +590,8 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
         nyAlienAnsvarigAgentBox.setModel(tomBox);
     }
     
-    
+    // denna metod körs när fönstret öppnas för att ta bort funktionen "ta bort alien"
+    // ifall inloggade agenten inte är administratör.
     private void initAndraAlien(boolean admin){
         nyAlienExtraAttributLabel.setVisible(false);
         nyAlienExtraAttributTextField.setVisible(false);
@@ -671,7 +673,8 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_nyAlienRasBoxActionPerformed
     @SuppressWarnings("unchecked")    
-    //
+    // denna metod körs när man väljer ett alternativ i nyAlienOmradesBox för att fylla
+    // nyAlienPlatsBox med områdets olika platser samt kör setAnsvarigAgentBoxen()-metoden.
     private void nyAlienOmradesBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nyAlienOmradesBoxActionPerformed
         DefaultComboBoxModel platsBox = new DefaultComboBoxModel();
         
@@ -687,7 +690,7 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
             nyAlienPlatsBox.setModel(platsBox);
         }
         catch (InfException undantag){
-        
+            System.out.println(undantag.getMessage());
         }
     }//GEN-LAST:event_nyAlienOmradesBoxActionPerformed
 
@@ -712,7 +715,9 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
     private void nyAlienRegistreringsdatumTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nyAlienRegistreringsdatumTextFieldActionPerformed
 
     }//GEN-LAST:event_nyAlienRegistreringsdatumTextFieldActionPerformed
-    // 
+    // vid sökning på en aliens namn så söker denna funtkion upp alla de alien med sökta namnet
+    // och information om deras AlienID, plats, ras och eventuella armar eller boogies för att
+    // kunna, i valjSoktAlienBox, välja den specifika alien man vill ändra eller ta bort.
     @SuppressWarnings("unchecked")
     private void setJComboBox(String söktNamn){
         try{
@@ -751,7 +756,7 @@ public class AndraTaBortAlien extends javax.swing.JFrame {
         
     }
     @SuppressWarnings("unchecked")
-    // funktion för att a bort all info om vald alien.    
+    // funktion för att ta bort all info om vald alien.    
     private void deleteAlien(int alienID, String gammalRas){
         try{
                 db.delete("DELETE FROM " + gammalRas + " WHERE ALIEN_ID = " + alienID);

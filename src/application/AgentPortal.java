@@ -1195,7 +1195,6 @@ public class AgentPortal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     // öppnar ett nytt fönster med möjlighet att ändra lösenrod för din agent.
     private void bytLosenordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bytLosenordActionPerformed
-        // TODO add your handling code here:
         new BytLosenord(db, agentID, true).setVisible(true);
     }//GEN-LAST:event_bytLosenordActionPerformed
 
@@ -1442,7 +1441,7 @@ public class AgentPortal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_sattOmradeschefButtonActionPerformed
     @SuppressWarnings("unchecked")
-    // hämtar nuvarande kontorschef i form av objekt och ändrar till en ny kontorschef efter vald ny agent från vaöjkontorschefs boxen.
+    // hämtar nuvarande kontorschef i form av objekt och ändrar till en ny kontorschef efter vald ny agent från valjkontorschefs boxen.
     private void valjKontorschefButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valjKontorschefButtonActionPerformed
         try{
             String[] agentSök = valjKontorschefBox.getSelectedItem().toString().split(" ");
@@ -1474,7 +1473,7 @@ public class AgentPortal extends javax.swing.JFrame {
     }
     
     @SuppressWarnings("unchecked")
-    // metod för att söka all info om en viss alien.
+    // metod för att söka all info om en viss alien och returenera all info formaterat som en string.
     private String sökAllInfo(int iD){
         String resultatsträng = "";
         String ras = "";
@@ -1641,6 +1640,8 @@ public class AgentPortal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Någonting gick fel!");
         }
     }
+    
+    
     @SuppressWarnings("unchecked")
     // hämtar alla agenter för att välja ny kontorschef
     private void setAgenterIOmrade(){
@@ -1648,9 +1649,9 @@ public class AgentPortal extends javax.swing.JFrame {
         DefaultComboBoxModel agenterIOmrade = new DefaultComboBoxModel();
 
         try{
-            ArrayList<HashMap<String, String>> agenternaIOmrade = db.fetchRows("SELECT * FROM AGENT ");
+            ArrayList<HashMap<String, String>> agenternaIDatabasen = db.fetchRows("SELECT * FROM AGENT ");
             
-                for (HashMap agenterna : agenternaIOmrade){
+                for (HashMap agenterna : agenternaIDatabasen){
                     agenterIOmrade.addElement("AgentID: " + agenterna.get("AGENT_ID") + " | Namn: " + agenterna.get("NAMN"));
                 }
  
@@ -1663,7 +1664,7 @@ public class AgentPortal extends javax.swing.JFrame {
         
     
     }
-    // beroende på om en vanlig agent loggar in tas vissa funktioner bort. vi sätter dem som "false" i set.visible.
+    // beroende på om en vanlig agent loggar in tas vissa funktioner bort. vi sätter dem som "false" i set.visible().
     private void setAdminMode(boolean adminStatus){
         if (!adminStatus){
             menyTabbedPane.remove(laggTillAndraAgentPanel);

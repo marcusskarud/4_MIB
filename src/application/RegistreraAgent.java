@@ -250,6 +250,10 @@ public class RegistreraAgent extends javax.swing.JFrame {
         setBounds(0, 0, 533, 484);
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    // Validering görs om alla nödvändiga fält fyllts i med godkända värden och om så är fallet så registreras en ny agent på
+    // nästa lediga AgentID som fås med InfDB:s getAutoIncrement()-metod. Lösenord randomiseras.
+    // JOptionPane skapas och visar den nyregistrerade agentens information.
     private void registreraNyAgentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registreraNyAgentButtonActionPerformed
         if (Validering.textNotEmpty(nyAgentNamnTextField) && Validering.textNotEmpty(nyAgentTelefonTextField) &&
             Validering.nameTextFieldLengthCheck(nyAgentNamnTextField) && Validering.checkPhoneLength(nyAgentTelefonTextField)){                
@@ -306,6 +310,7 @@ public class RegistreraAgent extends javax.swing.JFrame {
         RegistreraAgent.this.dispose();
     }//GEN-LAST:event_avbrytButtonActionPerformed
 
+    //nyAgentOmradesBox:en fylls med databasens alla områden. 
     @SuppressWarnings("unchecked")    
     private void setOmradesBox(){
         DefaultComboBoxModel omraden = new DefaultComboBoxModel();
